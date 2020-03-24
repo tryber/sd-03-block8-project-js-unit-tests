@@ -17,10 +17,10 @@
 */
 
 const vqv = (nome, idade) => (
-  console.log(`Oi, meu nome é ${nome}!
+  `Oi, meu nome é ${nome}!
   Tenho ${idade} anos,
   trabalho na Trybe e mando muito em programação!
-  #VQV!`);
+  #VQV!`
 );
 
 vqv('Tunico', 30);
