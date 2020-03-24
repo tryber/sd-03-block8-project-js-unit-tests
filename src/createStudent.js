@@ -18,6 +18,6 @@ const obj = {
   nome,
   feedback: () => 'Eita pessoa boa!',
 };
-const createStudent = (nome) => obj;
+const createStudent = () => obj;
 
 module.exports = createStudent;
