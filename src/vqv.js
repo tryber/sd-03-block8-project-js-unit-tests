@@ -16,14 +16,12 @@
       #VQV!'
 */
 
-const vqv = (nome, idade) => {
-
+const vqv = (nome, idade) => (
   console.log(`Oi, meu nome é ${nome}!
   Tenho ${idade} anos,
   trabalho na Trybe e mando muito em programação!
   #VQV!`);
-
-};
+);
 
 vqv('Tunico', 30);
 
