@@ -25,6 +25,4 @@ const average = (arrInput) => {
   return result;
 };
 
-// module.exports = average;
-
-average([1, 2, 3, 4, 5]);
+module.exports = average;
