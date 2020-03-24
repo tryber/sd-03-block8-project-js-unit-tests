@@ -13,29 +13,25 @@
 */
 
 const average = (arr) => {
+  let sum = 0;
+  let num = 0;
+  let aver = 0;
 
-  let sum = 0
-  let num = 0
-  let average = 0
-
-  if (arr.length==0){
-    average = undefined
+  if (arr.length === 0) {
+    aver = undefined;
   }
 
-  for (let i = 0; i < arr.length; i++){
-    if (typeof(arr[i])=="string"){
-      average = undefined
-      break
-    }else{
-      sum = sum + arr[i]
-      num = num + 1
-      average = Math.round(sum/num)
+  for (let i = 0; i < arr.length; i += 1) {
+    if (typeof (arr[i]) === 'string') {
+      aver = undefined;
+      break;
+    } else {
+      sum += arr[i];
+      num += 1;
+      aver = Math.round(sum / num);
     }
   }
-  return average
+  return aver;
 };
 
 module.exports = average;
-
-
-
