@@ -25,16 +25,6 @@ const circle = require('../src/circle');
 
 describe('#circle', (parametro) => {
   it('given a radius, should return an object with circles info', (parametro) => {
-    result = 2 * 3.14 * parametro;
-    radius = 3.14 * parametro * parametro; 
-    assert.fail();
-    assert.strictEqual(Object, 1);
-    assert.strictEqual({radius: parametro, area: radius, circuference: result});
-    if ( parametro === 0 || parametro === String ) { return undefined };
-    if ( parametro == 2 && result === 12.57 ) { return true };
-    if ( parametro == 3 && result == 18.85 ) { return true };
-    if ( parametro == 3 && result == 18.85 && radius == 9.42 ) { return true };
-    // Teste que a função retorna, dentro de um objeto, a área correta para um círculo de raio 3.
-    // Teste que a função retorna, num objeto, os dados corretos de um círculo de raio 3.
+    
   });
 });
