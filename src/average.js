@@ -15,7 +15,7 @@
 const average = (arrInput) => {
   let sum = 0;
   for (i = 0; i < arrInput.length; i += 1) {
-    if (typeof(arrInput[i]) == 'number') {
+    if (typeof (arrInput[i]) === 'number') {
       sum += arrInput[i];
     } else {
       return 1;
