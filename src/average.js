@@ -18,10 +18,10 @@ const average = (numbers) => {
     if (typeof (numbers[i]) === 'number') {
       sum += numbers[i];
     } else {
-        return;
+      return;
     }
   }
-  return parseInt(sum / numbers.length);
+  return parseInt(sum / numbers.length, 10);
 };
 
 module.exports = average;
