@@ -36,8 +36,6 @@ describe("#circle", () => {
       circumference: 18.84
     });
 
-    
-
     // ESCREVA SEUS TESTES ABAIXO:
     // Teste se circle é um objeto.
     // Teste se o objeto circle tem 3 entradas.

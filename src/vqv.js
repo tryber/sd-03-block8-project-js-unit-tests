@@ -17,7 +17,7 @@
 */
 
 const vqv = (nome, idade) =>
-    `Oi, meu nome é Tunico!
+  ` Oi, meu nome é Tunico!
   Tenho 29 anos,
   trabalho na Trybe e mando muito em programação!
   #VQV!`;
