@@ -27,7 +27,7 @@ describe('#circle', () => {
   it('given a radius, should return an object with circles info', () => {
     assert.strictEqual(typeof circle, 'object');
     assert.strictEqual(circle.length, 3);
-    assert.strictEqual(circle(""), undefined);
+    assert.strictEqual(circle( ), undefined);
     assert.strictEqual(circle(2), 12.57);
     assert.strictEqual(circle(3), 28.27);
     assert.strictEqual(circle(3), { radius: 3, area: 28.27, circumference: 18.85, });
