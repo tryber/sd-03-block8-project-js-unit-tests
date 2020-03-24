@@ -12,8 +12,27 @@
     - average([1, '2']) // Retorno: undefined;
 */
 
-const average = () => {};
+const assert = require('assert');
+
+const average = (arr) => {
+
+  for (const i in arr) {
+    if (typeof arr[i] !== 'number') {
+      return undefined;
+    }
+  }
+
+  if (arr.length === 0) {
+    return undefined;
+  }
+
+  let total = 0
+
+  for (const i in arr) {
+    total += arr[i];
+  }
+
+  return (Math.round(total / arr.length));
+}
 
 module.exports = average;
-
-// adicionando um comentaŕio para fazer o primeiro commit
