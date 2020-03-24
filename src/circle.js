@@ -18,21 +18,18 @@
         Use esse conhecimento para te ajudar a lidar com possíveis problemas que esses testes trarão!
 */
 
-const circle = (radius) => {
+const circle = (num) => {
   const PI = 3.14;
-  let result = {};
 
-  if (typeof radius !== 'number') {
+  if (typeof num !== 'number') {
     return undefined;
   }
 
-  return result = {
-    radius: radius,
+  return {
+    radius: num,
     area: parseFloat((PI * radius * radius).toPrecision(5)),
     circumference: parseFloat((2 * PI * radius).toPrecision(5)),
   };
 };
-
-console.log(circle(3));
 
 module.exports = circle;
