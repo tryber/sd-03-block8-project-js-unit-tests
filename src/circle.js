@@ -25,6 +25,10 @@ const circle = (num) => {
     return undefined;
   }
 
+  if (num === undefined) {
+    return undefined;
+  }
+
   return {
     area: parseFloat((PI * num * num).toPrecision(5)),
     circumference: parseFloat((2 * PI * num).toPrecision(5)),
@@ -32,4 +36,5 @@ const circle = (num) => {
   };
 };
 
+console.log(circle());
 module.exports = circle;
