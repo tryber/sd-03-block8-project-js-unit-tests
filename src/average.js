@@ -13,9 +13,10 @@
 */
 
 const average = (arr) => { 
-  if ( typeof(arr) === 'object') { 
+  if (typeof(arr) === 'object') { 
     return arr.reduce((a, e) => a + e) / arr.length 
   }
+  return undefined;
 };
 
 module.exports = average;
