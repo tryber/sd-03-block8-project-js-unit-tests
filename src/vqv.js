@@ -23,6 +23,4 @@ const vqv = (nome, idade) => (
   #VQV!`
 );
 
-vqv('Tunico', 30);
-
 module.exports = vqv;
