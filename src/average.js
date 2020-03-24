@@ -16,17 +16,17 @@ const average = (array) => {
   let aux = 0;
   let media = 0;
   for (let i = 0; i < array.length; i += 1) {
-    if(typeof array[i] !== 'number') {
+    if (typeof array[i] !== 'number') {
       return undefined;
     }
-  }  
-  for (i=0; i < array.length; i += 1) {
+  }
+  for (i = 0; i < array.length; i += 1) {
     aux += array[i];
   }
   media = aux / array.length;
   return Math.round(media);
 };
 
-//console.log(average([2,4,77,9,1,2,20,30]));
+//  console.log(average([2,4,77,9,1,2,20,30]));
 
 module.exports = average;
