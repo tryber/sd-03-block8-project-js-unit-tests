@@ -20,10 +20,10 @@
 */
 
 const calculator = {
-  add: (a,b) => parseInt(a + b),
-  mult: (a,b) => parseInt(a * b),
-  div: (a,b) => parseInt(a / b),
-  sub: (a,b) => parseInt(a - b),
+  add: (a, b) => parseInt(a + b, 10),
+  mult: (a, b) => parseInt(a * b, 10),
+  div: (a, b) => parseInt(a / b, 10),
+  sub: (a, b) => parseInt(a - b, 10),
 };
 
 module.exports = calculator;
