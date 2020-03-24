@@ -51,6 +51,12 @@ Você só deve alterar os arquivos indicados nos requisitos. **Os arquivos que n
 
 ---
 
+### Para rodar os testes localmente
+
+ Rode os testes da raiz do repositório com `jest tests/arquivo.spec.js`
+
+---
+
 ## Instruções para entregar seu projeto
 
 ### ANTES DE COMEÇAR A DESENVOLVER:
