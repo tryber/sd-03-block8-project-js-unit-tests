@@ -2,7 +2,7 @@
 
 /*
   Use template literals para escrever uma função que,
-  recebe seu nome e sua idade e retorna o parágrafo descrito abaixo .
+  recebe seu nome e sua idade e retorna o parágrafo descrito abaixo.
   Caso a função seja chamada sem nenhum parâmetro, o valor undefined deve ser retornado.
 
   Parâmetros:
