@@ -16,7 +16,7 @@
 const average = (array) => {
   const test = (!array.some(i => !Number.isInteger(i))); // ver se é num
 
-  if (test === false || array.length === 0 || array === null) { console.log('undefined'); }
+  if (test === false || array.length === 0 || array === null) { return undefined; }
 
   const soma = (a, b) => a + b;
   const result = Math.round(array.reduce(soma) / array.length);
