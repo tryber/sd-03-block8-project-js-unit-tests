@@ -16,7 +16,12 @@ const average = array => {
   for (let i = 0; i < array.length; i += 1) {
     if (typeof array[i] !== "number") return undefined;
   }
-  if(array.reduce((a, b) => a + b) / array.length - Math.floor(array.reduce((a, b) => a + b) / array.length) == 0.5) return Math.floor(array.reduce((a, b) => a + b) / array.length);
+  if (
+    array.reduce((a, b) => a + b) / array.length -
+      Math.floor(array.reduce((a, b) => a + b) / array.length) ===
+    0.5
+  )
+    return Math.floor(array.reduce((a, b) => a + b) / array.length);
 
   return Math.round(array.reduce((a, b) => a + b) / array.length);
 };
