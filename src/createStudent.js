@@ -14,12 +14,10 @@
     estudante.name // Retorna: 'Leandrão, o Lobo Solitário'
     estudante.feedback() // Retorna: 'Eita pessoa boa!'
 */
-
-const createStudent = (array) => {
-  return {
-    nome: `${array}, o Lobo Solitário`,
-    feedback: () => 'Eita pessoa boa!',
-  };
+let obj = {
+  nome: `${array}, o Lobo Solitário`,
+  feedback: () => 'Eita pessoa boa!',
 };
+const createStudent = (array) => obj;
 
 module.exports = createStudent;
