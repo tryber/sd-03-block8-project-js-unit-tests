@@ -19,7 +19,7 @@ const createStudent = (array) => {
   return {
     nome: `${array}, o Lobo Solitário`,
     feedback: () => 'Eita pessoa boa!',
-  }
+  };
 };
 
 module.exports = createStudent;
