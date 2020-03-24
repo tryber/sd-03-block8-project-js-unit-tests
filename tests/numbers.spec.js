@@ -16,6 +16,20 @@ const numbers = require('../src/numbers');
   OBS: Lembre-se que você não precisa se preocupar com o describe e o it por enquanto, isso será aprendido posteriormente.
 */
 
+const parameter = [1, 2, 3, 4, 5]
+assert.equal(numbers(parameter),true)
+
+const parameter1 = [1, 2, '3', 4, 5]
+assert.equal(numbers(parameter1),true)
+
+const parameter2 = [1, 'a', 3]
+assert.equal(numbers(parameter2),true)
+
+const parameter3 = [' ']
+assert.equal(numbers(parameter3),true)
+
+
+
 describe('#numbers', () => {
   it('should return an array and return if it has only numbers or not', () => {
     assert.fail();
