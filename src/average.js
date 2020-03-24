@@ -17,11 +17,11 @@ const average = (array) => {
   if (array.length === 0) {
     return undefined;
   }
-  for (let item in array) {
-    if ( typeof(array[item]) == 'string') {
+  for (let i = 0; i < array.length; i += 1) {
+    if (typeof (array[i]) === 'string') {
       return undefined;
     }
-    total += array[item];
+    total += array[i];
   }
   media = Math.round(total / array.length);
   return media;
