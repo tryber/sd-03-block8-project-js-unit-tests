@@ -19,8 +19,8 @@ const average = (array) => {
     return undefined;
   }
 
-  const soma = (a, b) => a + b;
-  const resultado = Math.round(array.reduce(soma) / array.length);
+  const dividir = (a, b) => a + b;
+  const resultado = Math.round(array.reduce(dividir) / array.length);
 
   return resultado;
 };

@@ -5,7 +5,7 @@ const assert = require('assert');
 const circle = require('../src/circle');
 
 /*
-  Essa função recebe o raio de um círculo e retorna um objeto contendo suas informações (Raio, Área e Circunferência).
+  Essa função recebe o raio de um círculo e retorna um objeto contendo suas informações (CC).
   Se não for especificado um raio, a função retorna undefined.
   Elabore testes para verificar se a função está correta.
 
@@ -23,14 +23,17 @@ const circle = require('../src/circle');
   OBS: Lembre-se que você não precisa se preocupar com o describe e o it por enquanto, isso será aprendido posteriormente.
 */
 
-describe('#circle', () => {
-  it('given a radius, should return an object with circles info', () => {
+describe('#circle', (parametro) => {
+  it('given a radius, should return an object with circles info', (parametro) => {
+    result = 2 * 3.14 * parametro;
+    radius = 3.14 * parametro * parametro; 
     assert.fail();
-    // ESCREVA SEUS TESTES ABAIXO:
-    // Teste se circle é um objeto.
-    // Teste se o objeto circle tem 3 entradas.
-    // Teste se a função, quando não recebe nenhum parâmetro, retorna undefined.
-    // Teste que a função retorna, dentro de um objeto, a circunferência correta para um círculo de raio 2.
+    assert.strictEqual(Object, 1);
+    assert.strictEqual({radius: parametro, area: radius, circuference: result});
+    if ( parametro === 0 || parametro === String ) { return undefined };
+    if ( parametro == 2 && result === 12.57 ) { return true };
+    if ( parametro == 3 && result == 18.85 ) { return true };
+    if ( parametro == 3 && result == 18.85 && radius == 9.42 ) { return true };
     // Teste que a função retorna, dentro de um objeto, a área correta para um círculo de raio 3.
     // Teste que a função retorna, num objeto, os dados corretos de um círculo de raio 3.
   });
