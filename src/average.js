@@ -12,14 +12,13 @@
     - average([1, '2']) // Retorno: undefined;
 */
 
-const average = arr => {
+const average = (arr) => {
   let sum = 0;
   for (let i = 0; i < arr.length; i += 1) {
     if (typeof arr[i] !== 'number') {
-      return undefined
-    } else {
-      sum += arr[i];
+      return undefined;
     }
+    sum += arr[i];
   }
   const media = Math.floor(sum / arr.length);
   return media;
