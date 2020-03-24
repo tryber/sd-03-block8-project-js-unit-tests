@@ -15,10 +15,11 @@
 const average = (numbers) => {
   let sum = 0;
   for (let i = 0; i < numbers.length; i++){
-      if (typeof numbers[i] != number){
+      if (typeof numbers[i] == number){
+        sum += numbers[i];
+      }else {
         return undefined;
       }
-      sum += numbers[i];
   }
   return parseInt(sum/numbers.length);
 };
