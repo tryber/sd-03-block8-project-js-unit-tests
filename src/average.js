@@ -13,8 +13,8 @@
 */
 
 const average = array => {
-  for (const e of array) {
-    if (typeof e !== "number") return undefined;
+  for (let i=0;i < array.length;i++) {
+    if (typeof array[i] !== "number") return undefined;
   }
 
   return Math.round(array.reduce((a, b) => a + b) / array.length);
