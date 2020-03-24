@@ -14,9 +14,9 @@
 
 const average = (num) => {
   let soma = 0;
-  for (let num = 0; i < num.length - 1; i += 1) {
+  for (let i = 0; i < num.length - 1; i += 1) {
     soma += num[i];
   }
   return soma / num.length;
-}
+};
 module.exports = average;
