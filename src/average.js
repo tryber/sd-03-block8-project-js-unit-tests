@@ -15,3 +15,5 @@
 const average = () => {};
 
 module.exports = average;
+
+// adicionando um comentaŕio para fazer o primeiro commit
