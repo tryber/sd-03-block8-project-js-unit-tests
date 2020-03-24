@@ -19,6 +19,10 @@ const numbers = require('../src/numbers');
 describe('#numbers', () => {
   it('should return an array and return if it has only numbers or not', () => {
     assert.fail();
+    if ( myArray == [1, 2, 3, 4, 5] ) { return true };
+    if ( myArray == [1, 2, '3', 4, 5] ) { return false };
+    if ( myArray == [1, 'a', 3] ) {return false };
+    if ( myArray == [' '] ) { return false };
     // Escreva um teste em que a função recebe [1, 2, 3, 4, 5] e retorna true
     // Escreva um teste em que a função recebe [1, 2, '3', 4, 5] e retorna false
     // Escreva um teste em que a função recebe [1, 'a', 3] e retorna false
