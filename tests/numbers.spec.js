@@ -1,8 +1,8 @@
 /* eslint-disable max-len */
 /* eslint-disable no-unused-vars */
 
-const assert = require('assert');
-const numbers = require('../src/numbers');
+const assert = require("assert");
+const numbers = require("../src/numbers");
 
 /*
   A função numbers recebe um array (tamanho variável) e retorna true se todos os parâmetros forem do tipo 'number' e false caso contrário.
@@ -16,13 +16,13 @@ const numbers = require('../src/numbers');
   OBS: Lembre-se que você não precisa se preocupar com o describe e o it por enquanto, isso será aprendido posteriormente.
 */
 
-describe('#numbers', () => {
-  it('should return an array and return if it has only numbers or not', () => {
+describe("#numbers", () => {
+  it("should return an array and return if it has only numbers or not", () => {
     assert.fail();
-    assert.equal(numbers([1,2,3,4,5]),true)
-    assert.equal(numbers([1,2,'3',4,5]),false)
-    assert.equal(numers(1,'a',3),false)
-    assert.equal(numbers([' ']),false)
+    assert.equal(numbers([1, 2, 3, 4, 5]), true);
+    assert.equal(numbers([1, 2, "3", 4, 5]), false);
+    assert.equal(numbers(1, "a", 3), false);
+    assert.equal(numbers([" "]), false);
     // Escreva um teste em que a função recebe [1, 2, 3, 4, 5] e retorna true
     // Escreva um teste em que a função recebe [1, 2, '3', 4, 5] e retorna false
     // Escreva um teste em que a função recebe [1, 'a', 3] e retorna false
