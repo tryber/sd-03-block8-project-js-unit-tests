@@ -25,9 +25,9 @@ const circle = require("../src/circle");
 
 describe("#circle", () => {
   it("given a radius, should return an object with circles info", () => {
-    assert.equal(typeof circle == "object");
+    assert.equal(typeof circle == "object",true);
     assert.equal();
-    assert.equal(circle() == undefined);
+    assert.equal(circle() == undefined,true);
     assert.equal();
     // ESCREVA SEUS TESTES ABAIXO:
     // Teste se circle é um objeto.
