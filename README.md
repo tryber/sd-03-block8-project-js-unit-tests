@@ -145,3 +145,5 @@ Se ainda houver alguma dúvida sobre como entregar seu projeto, [aqui tem um vid
 À medida que você e as outras pessoas que estudam na Trybe forem entregando os projetos, vocês receberão um alerta **via Slack** para também fazer a revisão dos _Pull Requests_ dos seus colegas. Fiquem atentos às mensagens do _"Pull Reminders"_ no _Slack_!
 
 Use o material que você já viu sobre [Code Review](https://course.betrybe.com/real-life-engineer/code-review/) para te ajudar a revisar os projetos que chegaram para você.
+
+Um adicional ao leia-me
