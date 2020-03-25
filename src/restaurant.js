@@ -80,9 +80,10 @@ const payFood = () => {
   let payFood = 0;
 
   for (let i = 0; i < food.length; i += 1) {
+    let selectFood = food[i];
     for (let j = 0; j < restaurant.consumption.length; j += 1) {
-      if (restaurant.consumption[j] === food[i][0]) {
-        payFood += food[i][1];
+      if (restaurant.consumption[j] === selectFood[0]) {
+        payFood += selectFood[1];
       }
     }
   }
@@ -95,9 +96,10 @@ const payDrink = () => {
   let payDrink = 0;
 
   for (let i = 0; i < drink.length; i += 1) {
+    let selectDrink = drink[i];
     for (let j = 0; j < restaurant.consumption.length; j += 1) {
-      if (restaurant.consumption[j] === drink[i][0]) {
-        payDrink += drink[i][1];
+      if (restaurant.consumption[j] === selectDrink[0]) {
+        payDrink += selectDrink[1];
       }
     }
   }
