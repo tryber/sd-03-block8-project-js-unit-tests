@@ -10,8 +10,10 @@
 */
 
 const numbers = myArray => {
+  console.log(myArray)
   for (let i = 0; i < myArray.length; i += 1) {
-    if (typeof myArray[i] !== "number") {
+    console.log(myArray[i])
+    if (!Number.isInteger(myArray[i])) {
       return false;
     }
   }
@@ -19,3 +21,5 @@ const numbers = myArray => {
 };
 
 module.exports = numbers;
+
+console.log(numbers(1, "a", 3))

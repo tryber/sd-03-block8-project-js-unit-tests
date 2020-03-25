@@ -16,10 +16,15 @@
       #VQV!'
 */
 
-const vqv = (nome, idade) =>
-  ` Oi, meu nome é Tunico!
+const vqv = (nome, idade) => {
+  if (!nome || !idade) {
+    return undefined;
+  }
+  let menssagem= `Oi, meu nome é Tunico!
   Tenho 29 anos,
   trabalho na Trybe e mando muito em programação!
-  #VQV!`;
+  #VQV!`
+  return menssagem
+};
 
 module.exports = vqv;
