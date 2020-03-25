@@ -14,15 +14,16 @@
 const assert = require('assert');
 const average = (arr) => {
   arr = arr.map(Number);
-  for (i = 0; i <= arr.legth; =+1) {
+  for (i = 0; i <= arr.legth; ++i) {
     const total =+ arr[i];
     if (i = arr.legth) {
       return Math.round(total / i);
     } 
       return 'undefined';
   }
-  return average;
-};
+
+}; 
+return average;
 const array1 = average([1, 2]);
 const array2 = average([1, 2, 3, 4, 5]);
 const array3 = average([1, 2, '3']);
