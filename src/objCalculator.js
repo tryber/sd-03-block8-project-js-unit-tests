@@ -46,7 +46,7 @@ const calculator = {
       return 0;
     }
     return parseInt(num1 - num2, 10);
-  }
+  },
 };
 
 module.exports = calculator;
