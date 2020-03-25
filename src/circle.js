@@ -18,7 +18,7 @@
         Use esse conhecimento para te ajudar a lidar com possíveis problemas que esses testes trarão!
 */
 
-const circle = (radius = undefined) => {
+const circle = (radius) => {
   const PI = 3.14;
   if (radius === undefined || radius === '') {
     return undefined;
