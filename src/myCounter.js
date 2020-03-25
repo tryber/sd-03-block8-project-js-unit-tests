@@ -21,7 +21,7 @@ const myCounter = () => {
     myArray.push(counter);
     console.log(counter);
   }
-  for (var counter = 2; counter < 3; counter += 1) {
+  for (var counter = 2; counter < 3; counter += 2) {
     myArray.push(counter);
   }
   return myArray;
