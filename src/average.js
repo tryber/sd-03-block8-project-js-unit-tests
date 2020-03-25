@@ -22,7 +22,7 @@ const average = (param) => {
     if (typeof param[i] === 'number') {
       soma += param[i];
     } else {
-        return undefined;
+      return undefined;
     }
   }
   const media = soma / param.length;
