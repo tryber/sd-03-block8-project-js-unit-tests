@@ -20,12 +20,14 @@ const average = (arr) => {
       return undefined;
     }
   }
-  let soma = 0;
-  let divisao = 0;
+  let soma = null;
+  let divisao = null;
   for (let i = 0; i < arr.length; i += 1) {
     soma += arr[i];
+    divisao = soma / arr.length;
   }
-  divisao = soma / arr.length;
-  return divisao;
+  return Math.round(divisao);
 };
+
+console.log(average([-11, -5, 2]));
 module.exports = average;
