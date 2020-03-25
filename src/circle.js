@@ -36,5 +36,4 @@ const circle = (num) => {
   };
 };
 
-console.log(circle());
 module.exports = circle;
