@@ -2,24 +2,26 @@
 /* eslint-disable no-unused-vars */
 
 const assert = require('assert');
-const createStudent = require('../src/createStudent');
+const circle = require('../src/circle');
 
 /*
-  Dada uma função chamada createStudent que recebe como parâmetro um nome, retorne um objeto que contenha duas chaves:
-    (1) name, contendo o nome passado como parâmetro;
-    (2) feedback, contendo uma função que retorna a frase 'Eita pessoa boa!' ao ser chamada.
-  Faça a função da chave feedback com arrow functions!
+  Essa função recebe o raio de um círculo e retorna um objeto contendo suas informações (Raio, Área e Circunferência).
+  Se não for especificado um raio, a função retorna undefined.
+  Elabore testes para verificar se a função está correta.
   Parâmetros:
-    - Uma string;
+    - Um número inteiro. Exemplos: 1; 3;
   Comportamento:
-    const estudante = createStudent('Leandrão, o Lobo Solitário')
-    estudante.name // Retorna: 'Leandrão, o Lobo Solitário'
-    estudante.feedback() // Retorna: 'Eita pessoa boa!'
+    - circle(1) // Retorno: {radius: 1, area: 3.14, circumference: 6.28}
+    - circle(7) // Retorno: {radius: 7, area: 153.86, circumference: 43.96}
+    - circle(3) // Retorno: {radius: 3, area: 28,26, circumference: 18.84}
+  DICA: Números de ponto flutuante em JavaScript são imprecisos!  Para testar, vá no seu navegador e faça `0.2 + 0.1`.
+        Uma solução pra isso pode ser fazer a soma no seguinte formato: `parseFloat((0.2 + 0.1).toPrecision(2))`.
+        Use esse conhecimento para te ajudar a lidar com possíveis problemas que esses testes trarão!
   OBS: Lembre-se que você não precisa se preocupar com o describe e o it por enquanto, isso será aprendido posteriormente.
 */
 
-describe('#createStudent', () => {
-  it('returns the object as specified', () => {
+describe('#circle', () => {
+  it('given a radius, should return an object with circles info', () => {
     const estudante = createStudent('Leandrão, o Lobo Solitário');
     assert.strictEqual(typeof estudante, 'object');
     assert.strictEqual(typeof estudante.feedback, 'function');
