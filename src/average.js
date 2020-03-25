@@ -14,8 +14,8 @@
 const assert = require('assert');
 const average = (arr) => {
   arr = arr.map(Number);
-  for (i = 0; i <= arr.legth; +=1) {
-    const total += arr[i];
+  for (i = 0; i <= arr.legth; =+1) {
+    const total =+ arr[i];
     if (i = arr.legth) {
       return Math.round(total / i);
     } 
