@@ -34,7 +34,7 @@ const productDetails = require("../src/productDetails");
 describe("#productDetails", () => {
   it("tests the function has the correct behaviour", () => {
     assert.equal(typeof productDetails(), "object");
-    assert.equal(typeof productDetails().length, 2);
+    assert.equal(productDetails().length, 2);
     assert.equal(typeof productDetails()[0], "object");
     assert.equal(typeof productDetails()[1], "object");
     assert.notDeepStrictEqual(productDetails()[0], productDetails()[1]);
