@@ -13,7 +13,7 @@ const numbers = (myArray) => {
   if (myArray.length === 0) {
     return false;
   }
-  
+
   for (let i = 0; i < myArray.length; i += 1) {
     if (typeof myArray[i] !== 'number') {
       return false;
