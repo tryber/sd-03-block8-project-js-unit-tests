@@ -76,7 +76,6 @@
 // `food` quanto o objeto da chave `drink`.
 const orderFromMenu = request => this.consumption.push(request);
 const createMenu = obj => ({ fetchMenu: obj, consumption: [], order: orderFromMenu });
-
 const obj = { food: { coxinha: 3.9, sopa: 9.9 }, drink: { agua: 3.9, cerveja: 6.9 } };
 const restaurant = createMenu(obj).bind();
 console.log(restaurant.order());
