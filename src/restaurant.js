@@ -75,43 +75,10 @@ const restaurant = {};
 
 const orderFromMenu = request => restaurant.consumption.push(request);
 
-const payFood = () => {
-  const food = Object.entries(restaurant.fetchMenu.food);
-  let pay = 0;
-
-  for (let i = 0; i < food.length; i += 1) {
-    const selectFood = food[i];
-    for (let j = 0; j < restaurant.consumption.length; j += 1) {
-      if (restaurant.consumption[j] === selectFood[0]) {
-        pay += selectFood[1];
-      }
-    }
-  }
-
-  return pay;
-};
-
-const payDrink = () => {
-  const drink = Object.entries(restaurant.fetchMenu.drink);
-  let pay = 0;
-
-  for (let i = 0; i < drink.length; i += 1) {
-    const selectDrink = drink[i];
-    for (let j = 0; j < restaurant.consumption.length; j += 1) {
-      if (restaurant.consumption[j] === selectDrink[0]) {
-        pay += selectDrink[1];
-      }
-    }
-  }
-
-  return pay;
-};
-
 const createMenu = objeto => Object.assign(restaurant, {
   fetchMenu: objeto,
   consumption: [],
   order: request => orderFromMenu(request),
-  pay: () => payFood() + payDrink(),
 });
 
 module.exports = createMenu;
