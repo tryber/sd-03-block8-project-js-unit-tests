@@ -12,7 +12,7 @@
     - average([1, '2']) // Retorno: undefined;
 */
 
-const average = (array) => {
+const average = array => {
   let soma = 0;
   let media = 0;
 
@@ -21,9 +21,8 @@ const average = (array) => {
   }
 
   for (let i = 0; i < array.length; i += 1) {
-    if (typeof (array[i]) !== 'number') {
+    if (typeof array[i] !== 'number') {
       return undefined;
-      break;
     }
     soma += array[i];
     media = Math.round(soma / array.length);
