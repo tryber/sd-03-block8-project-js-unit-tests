@@ -17,12 +17,12 @@ const average = array => {
     if (typeof array[i] !== "number") return undefined;
   }
 
-  if (
-    array.reduce((a, b) => a + b) / array.length -
-      Math.floor(array.reduce((a, b) => a + b) / array.length) ===
-    0.5
-  )
-    return Math.floor(array.reduce((a, b) => a + b) / array.length);
+  // if (
+  //   array.reduce((a, b) => a + b) / array.length -
+  //     Math.floor(array.reduce((a, b) => a + b) / array.length) ===
+  //   0.5
+  // )
+  // return Math.floor(array.reduce((a, b) => a + b) / array.length);
 
   if (array.length === 0) {
     return undefined;
