@@ -21,8 +21,8 @@
 const circle = (radius) => {
   const PI = 3.14;
 
-  if(radius === 0)
-  return undefined;
+  if (radius === 0)
+    return undefined;
 
 
   return {
