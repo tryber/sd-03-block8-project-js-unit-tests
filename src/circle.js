@@ -23,7 +23,8 @@ const circle = (radius) => {
 
   if (radius === 0)
     return undefined;
-
+    
+  if (!radius) { return undefined; }
 
   return {
     radius,
