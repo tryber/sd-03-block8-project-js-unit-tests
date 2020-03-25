@@ -14,7 +14,13 @@
 
 const average = (num) => {
   let soma = 0;
-  for (let i = 0; i < num.length - 1; i += 1) {
+  if (num.length == 0) {
+    return undefined;
+  }
+  for (let i = 0; i < num.length; i += 1) {
+    if (Number.isInteger(num[i]) !== true) {
+      return undefined;
+    }
     soma += num[i];
   }
   return Math.round(soma / num.length);
