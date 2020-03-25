@@ -20,13 +20,13 @@ const average = (array) => {
     return undefined;
   }
 
-    for(let i=0; i<array.length; i++) {
-      if (typeof (array[i]) !== 'nunber') {
-        return undefined;
-        break;
-      } else {
-        soma += array [i];
-        media = Math.round(soma / array.length);
+  for(let i=0; i<array.length; i++) {
+    if (typeof (array[i]) !== 'nunber') {
+      return undefined;
+      break;
+    } else {
+      soma += array [i];
+      media = Math.round(soma / array.length);
       }
     }
 
