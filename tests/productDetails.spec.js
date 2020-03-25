@@ -1,8 +1,8 @@
 /* eslint-disable max-len*/
 /* eslint-disable no-unused-vars */
 
-const assert = require('assert');
-const productDetails = require('../src/productDetails');
+const assert = require("assert");
+const productDetails = require("../src/productDetails");
 
 /*
   Dadas duas strings que representam nomes de produtos, retorne um array contendo dois objetos com os detalhes dos respectivos produtos.
@@ -31,12 +31,25 @@ const productDetails = require('../src/productDetails');
   OBS: Lembre-se que você não precisa se preocupar com o describe e o it por enquanto, isso será aprendido posteriormente.
 */
 
-describe('#productDetails', () => {
-  it('tests the function has the correct behaviour', () => {
-    assert.strictEqual(productDetails('Alcool gel', 'Máscara').constructor === Array);
-    assert.strictEqual(productDetails(), false);
-    assert.strictEqual(productDetails('Alcool gel', 'Máscara').lastIndexOf === Object);
-    assert.strictEqual(productDetails(1, 2), 1 != 2);
+describe("#productDetails", () => {
+  it("tests the function has the correct behaviour", () => {
+    assert.strictEqual(
+      typeof productDetails("Alcool gel", "Máscara"),
+      "object"
+    );
+    assert.strictEqual(productDetails("Alcool gel", "Máscara").length, 2);
+    assert.strictEqual(
+      typeof productDetails("Alcool gel", "Máscara")[1],
+      "object"
+    );
+    assert.notDeepStrictEqual(
+      productDetails("Alcool gel", "Máscara")[0],
+      productDetails("Alcool gel", "Máscara")[1]
+    );
+    assert.strictEqual(
+      productDetails("Alcool gel", "Máscara")[0].details.productId.slice(-3),
+      productDetails("Alcool gel", "Máscara")[1].details.productId.slice(-3)
+    );
     // Teste que o retorno da função é um array.
     // Teste que o array retornado pela função contém dois itens dentro.
     // Teste que os dois itens dentro do array retornado pela função são objetos.
