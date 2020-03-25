@@ -13,15 +13,21 @@
 */
 
 const average = (arr) => {
-if (typeof arr === 'object' && arr.length > 0 && arr.every(e => typeof e === 'number')) {
   let sum = 0;
-  for (let i=0; i < arr.length;  i+= ) {
+  let avr;
+  if (arr.length === 0) {
+    avr = undefined;
+    return avr;
+  }
+  for (let i = 0; i < arr.length; i += 1) {
+    if (typeof arr[i] !== 'number') {
+      avr = undefined;
+      return avr;
+    }
     sum += arr[i];
   }
-  let avr = Math.round(sum/arr.length);
-  return avr;
-}
-return undefined;
-}
+  avr = sum / arr.length;
+  return Math.round(avr);
+};
 
-module.exports = average
+module.exports = average;
