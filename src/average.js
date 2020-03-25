@@ -16,9 +16,10 @@ const average = (arr) => {
   let soma = 0;
   for (let i = 0; i < arr.length; i += 1) {
     if (typeof arr[i] !== 'number' || arr[0] === undefined || arr === undefined) {
-      return undefined;}
-      soma += arr[i];
+      return undefined;
     }
+    soma += arr[i];
+  }
   return Math.round(soma / arr.length);
 };
 
