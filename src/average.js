@@ -12,14 +12,15 @@
     - average([1, '2']) // Retorno: undefined;
 */
 
-const average = array => {
+const average = (array) => {
   // add your implemetation here
   // Using .every() method to test array elements type and defining condi
   if (
     array.every(element => typeof element === 'number') === false ||
     array.length === 0
-  )
+  ) {
     return undefined;
+  }
   let arraySum = 0;
   let arrayAverageValue = 0;
   for (let i = 0; i < array.length; i += 1) {
