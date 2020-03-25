@@ -11,9 +11,24 @@
     - average([1, 2]) // Retorno: 1;
     - average([1, '2']) // Retorno: undefined;
 */
-
+const assert = require('assert');
 const average = (arr) => {
-  
+  arr = arr.map(Number);
+  for (i = 0; i <= arr.legth; i++) {
+    let total = + arr[i]
+    if (i = arr.legth) {
+      return Math.round(total / i)
+    }
+    else {
+      return "undefined"
+    }
+  }
 };
+const array1 = average([1, 2]);
+const array2 = average([1, 2, 3, 4, 5]);
+const array3 = average([1, 2, '3']);
 
 module.exports = average;
+assert.strictEqual(array1, 1);
+assert.strictEqual(array2, 7);
+assert.strictEqual(array3, undefined);
