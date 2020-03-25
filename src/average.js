@@ -13,8 +13,8 @@
 */
 
 const average = (vetor) => {
-  if(vetor.includes(NaN)||vetor.length==0) return undefined;
-  return vetor.reduce( (acc,c) => acc + c, 0 ) / vetor.length;
+  if ( vetor.includes(NaN) || vetor.length===0 ) return undefined;
+  return vetor.reduce((acc, c) => acc + c, 0 ) / vetor.length;
 };
 
 module.exports = average;
