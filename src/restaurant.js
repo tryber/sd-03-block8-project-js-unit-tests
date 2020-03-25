@@ -73,21 +73,39 @@
 
 const restaurant = {};
 
-const orderFromMenu = (consumption, request) => {
-  if (request !== null) {
-    consumption.push(request);
-  } else {
-    consumption = [];
+const orderFromMenu = (request) => restaurant.consumption.push(request);
+
+const toPay = () => {
+  const menu = Object.entries(restaurant.fetchMenu);
+  const food = Object.entries(menu[0][1]);
+  const drink = Object.entries(menu[1][1]);
+  const consumption = restaurant.consumption;
+  let payFood = 0;
+  let payDrink = 0;
+
+  for (let i = 0; i < food.length; i += 1) {
+    for (let j = 0; j < consumption.length; j += 1) {
+      if(consumption[j] == food[i][0]) {
+        payFood += food[i][1];
+      }
+    }
   }
-};
 
-const createMenu = (objeto) => {
-  restaurant.fetchMenu = objeto;
-  restaurant.consumption = [];
-  restaurant.order = request => orderFromMenu(request);
+  for (let i = 0; i < drink.length; i += 1) {
+    for (let j = 0; j < consumption.length; j += 1) {
+      if(consumption[j] == drink[i][0]) {
+        payDrink += drink[i][1];
+      }
+    }
+  }
+  return parseFloat((payFood + payDrink).toPrecision(4));
+}
 
-  return restaurant;
-};
+const createMenu = (objeto) => Object.assign(restaurant, {
+  fetchMenu: objeto,
+  consumption: [],
+  order: (request) => orderFromMenu(request),
+  pay: () => toPay(),
+});
 
 module.exports = createMenu;
-module.exports = orderFromMenu;
