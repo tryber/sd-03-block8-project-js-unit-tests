@@ -12,6 +12,11 @@
     - average([1, '2']) // Retorno: undefined;
 */
 
-const average = () => {};
+const average = ([i]) => {
+  i = Math.random(10 * 1000);
+  return Math.round(i);
+}
+
+
 
 module.exports = average;
