@@ -11,9 +11,20 @@
     - average([1, 2]) // Retorno: 1;
     - average([1, '2']) // Retorno: undefined;
 */
-
-const average = () => {
+const assert = require('assert');
+const average = array => {
   // add your implemetation here
+  // Using .every() method to test array elements type
+  if (array.every(element => typeof element === 'number') === false|| array.length === 0) return undefined;
+  let arraySum = 0;
+  let arrayAverageValue = 0;
+  for (let i = 0; i < array.length; i += 1) {
+    arraySum += array[i];
+    arrayAverageValue = arraySum / array.length;
+  }
+  return Math.round(arrayAverageValue);
 };
 
 module.exports = average;
+
+
