@@ -73,21 +73,21 @@
 
 const restaurant = {};
 
-const createMenu = (objeto) => {
-  restaurant.fetchMenu = objeto;
-  restaurant.consumption = [];
-  restaurant.order = (request) => orderFromMenu(request);
-
-  return restaurant;
-};
-
 const orderFromMenu = (consumption, request) => {
-  if(request !== null) {
+  if (request !== null) {
     consumption.push(request);
   } else {
     consumption = [];
   }
-}
+};
+
+const createMenu = (objeto) => {
+  restaurant.fetchMenu = objeto;
+  restaurant.consumption = [];
+  restaurant.order = request => orderFromMenu(request);
+
+  return restaurant;
+};
 
 module.exports = createMenu;
 module.exports = orderFromMenu;
