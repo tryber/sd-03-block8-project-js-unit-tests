@@ -20,10 +20,7 @@
 */
 
 const calculator = {
-  add: 4,
-  mult: 30,
-  div: 2,
-  sub: -2,
+  
 };
 
 module.exports = calculator;
