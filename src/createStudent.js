@@ -15,8 +15,6 @@
     estudante.feedback() // Retorna: 'Eita pessoa boa!'
 */
 
-const createStudent = () => {
-  assert.strictEqual(typeof circle(4), 'object');
-};
+const createStudent = () => {};
 
 module.exports = createStudent;
