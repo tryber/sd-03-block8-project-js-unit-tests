@@ -22,8 +22,28 @@ const myCounter = () => {
     for (var counter = 2; counter <= 3; counter += 1) {
       myArray.push(counter);
     }
+    for (var counter = 1; counter <= 3; counter += 1) {
+      myArray.push(counter);
+      for (var counter = 2; counter <= 3; counter += 1) {
+        myArray.push(counter);
+      }
+      for (var counter = 2; counter <= 3; counter += 1) {
+        myArray.push(counter);
+        for (var counter = 2; counter <= 3; counter += 1) {
+          myArray.push(counter);
+        }
+        for (var counter = 3; counter <= 3; counter += 1) {
+          myArray.push(counter);
+          for (var counter = 2; counter <= 3; counter += 1) {
+            myArray.push(counter);
+          }
+        }
+        return myArray;
+      }
+    }
   }
-  return myArray;
 };
 
 module.exports = myCounter;
+
+console.log(myCounter());
