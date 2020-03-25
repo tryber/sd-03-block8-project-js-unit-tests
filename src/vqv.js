@@ -14,7 +14,8 @@
       tenho 30 anos,
       trabalho na Trybe e mando muito em programação!
       #VQV!'
-*/
+*/ 
+//OK
 
 const vqv = (nome, idade) => {
   if ((nome || idade) == undefined) {
