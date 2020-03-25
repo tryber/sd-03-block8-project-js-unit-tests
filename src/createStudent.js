@@ -25,6 +25,4 @@ const createStudent = (str) => {
 
 module.exports = createStudent;
 
-estudante = createStudent('Orcola, o cheio de marola!');
-console.log(estudante.feedback())
 
