@@ -77,35 +77,35 @@ const orderFromMenu = request => restaurant.consumption.push(request);
 
 const payFood = () => {
   const food = Object.entries(restaurant.fetchMenu.food);
-  let payFood = 0;
+  let pay = 0;
 
   for (let i = 0; i < food.length; i += 1) {
-    let selectFood = food[i];
+    const selectFood = food[i];
     for (let j = 0; j < restaurant.consumption.length; j += 1) {
       if (restaurant.consumption[j] === selectFood[0]) {
-        payFood += selectFood[1];
+        pay += selectFood[1];
       }
     }
   }
 
-  return payFood;
-}
+  return pay;
+};
 
 const payDrink = () => {
   const drink = Object.entries(restaurant.fetchMenu.drink);
-  let payDrink = 0;
+  let pay = 0;
 
   for (let i = 0; i < drink.length; i += 1) {
-    let selectDrink = drink[i];
+    const selectDrink = drink[i];
     for (let j = 0; j < restaurant.consumption.length; j += 1) {
       if (restaurant.consumption[j] === selectDrink[0]) {
-        payDrink += selectDrink[1];
+        pay += selectDrink[1];
       }
     }
   }
 
-  return payDrink;
-}
+  return pay;
+};
 
 const createMenu = objeto => Object.assign(restaurant, {
   fetchMenu: objeto,
