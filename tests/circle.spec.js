@@ -1,8 +1,8 @@
 /* eslint-disable max-len */
 /* eslint-disable no-unused-vars */
 
-const assert = require('assert');
-const circle = require('../src/circle');
+const assert = require("assert");
+const circle = require("../src/circle");
 
 /*
   Essa função recebe o raio de um círculo e retorna um objeto contendo suas informações (CC).
@@ -23,14 +23,28 @@ const circle = require('../src/circle');
   OBS: Lembre-se que você não precisa se preocupar com o describe e o it por enquanto, isso será aprendido posteriormente. a
 */
 
-describe('#circle', () => {
-  it('given a radius, should return an object with circles info', () => {
-    assert.strictEqual(typeof circle, 'object');
-    assert.strictEqual(circle.length, 3);
-    assert.strictEqual(circle( ), undefined);
-    assert.strictEqual(circle(2), 12.57);
-    assert.strictEqual(circle(3), 28.27);
-    assert.strictEqual(circle(3), { radius: 3, area: 28.27, circumference: 18.85, });
+describe("#circle", () => {
+  it("given a radius, should return an object with circles info", () => {
+    assert.strictEqual(typeof circle(5), "object");
+    assert.strictEqual(Object.keys(circle(1)).length, 3);
+    assert.strictEqual(
+      circle(2).circumference,
+      parseFloat((2 * 2 * 3.14).toFixed(2))
+    );
+    assert.strictEqual(
+      parseFloat(circle(3).area.toPrecision(3)),
+      parseFloat((3 * 3 * 3.14).toPrecision(3))
+    );
+    const object = {
+      radius: circle(3).radius,
+      area: parseFloat(circle(3).area.toPrecision(3)),
+      circumference: parseFloat(circle(3).circumference.toPrecision(3))
+    };
+    assert.deepStrictEqual(object, {
+      radius: 3,
+      area: parseFloat((3 * 3 * 3.14).toPrecision(3)),
+      circumference: parseFloat((2 * 3 * 3.14).toPrecision(3))
+    });
     // Teste se circle é um objeto.
     // Teste se o objeto circle tem 3 entradas.
     // Teste se a função, quando não recebe nenhum parâmetro, retorna undefined.
