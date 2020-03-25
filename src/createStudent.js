@@ -16,8 +16,10 @@
 */
 
 const createStudent = (name) => {
-  estudante.name = $(name);
-  estudante.feedback = 'Eita pessoa boa!';
+  const estudante = {
+    name = $(name),
+    feedback = 'Eita pessoa boa!',
+  }
 };
 
 module.exports = createStudent;
