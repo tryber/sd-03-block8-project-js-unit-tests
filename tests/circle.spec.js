@@ -35,7 +35,7 @@ describe('#circle', () => {
     // Teste que a função retorna, num objeto, os dados corretos de um círculo de raio 3.
     assert.strictEqual(typeof circle(1), 'object');
     assert.strictEqual(Object.keys(circle(1)).length, 3);
-    assert.strictEqual(circle(), undefined);
+    assert.deepEqual(circle(), undefined);
     const circleTwo = circle(2);
     assert.strictEqual(circleTwo.circumference, 12.56);
     const circleThree = circle(3);
