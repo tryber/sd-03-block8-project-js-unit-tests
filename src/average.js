@@ -11,17 +11,9 @@
     - average([1, 2]) // Retorno: 1;
     - average([1, '2']) // Retorno: undefined;
 */
-const average = arr => {
-  if (typeof arr === 'object') {
-    for (i = 0; i <= arr.legth; i += 1) {
-      let total = 0;
-      total += parseInt(arr[i], 10);
-      if (i === arr.legth) {
-        return Math.round(total / i);
-      }
-      return 'undefined';
-    }
-    return average;
-  }
-};
+const average = (arr) => {
+  
+}
 module.exports = average;
+
+
