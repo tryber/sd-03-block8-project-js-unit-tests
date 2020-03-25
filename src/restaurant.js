@@ -74,5 +74,5 @@
 const createMenu = () => {
 };
 const objetoRetornado = createMenu('objetoQualquer');
-console.log(objetoRetornado.fetchMenu('osso'))
+console.log(objetoRetornado.fetchMenu('osso'));
 module.exports = createMenu;
