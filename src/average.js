@@ -37,12 +37,12 @@ const average = (valor) => {
   let resultado = 0;
 
   if (valor.length === 0) return undefined;
-  for (let i = 0; i < valor.length; i++) {
-    if (typeof valor[i] !== 'number') return undefined
+  for (let i = 0; i < valor.length; i += 1) {
+    if (typeof valor[i] !== 'number') return undefined;
     resultado += valor[i];
     media = (resultado / valor.length);
   }
   return Math.round(media);
-}
+};
 
-  module.exports = average;
+module.exports = average;
