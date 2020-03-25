@@ -11,16 +11,17 @@
     - average([1, 2]) // Retorno: 1;
     - average([1, '2']) // Retorno: undefined;
 */
-//Falta os casos especiais...
+//  Falta os casos especiais...
 
 const average = (parArray) => {
-  let soma = 0, i = 0;
+  let soma = 0;
+  let i = 0;
   while (i < parArray.length) {
     soma += parArray[i];
-    i++;
+    i += 1;
   }
-  return Math.round(soma/parArray.length);
+  return Math.round(soma / parArray.length);
 };
-console.log(average([6,7,8,9]));
+//  console.log(average([6, 7, 8, 9]));
 
 module.exports = average;
