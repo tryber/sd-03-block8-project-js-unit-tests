@@ -12,7 +12,7 @@
     - average([1, '2']) // Retorno: undefined;
 */
 const assert = require('assert');
-const average = arr => {
+const average = (arr) => {
   arr = arr.map(Number);
   for (i = 0; i <= arr.legth; i++) {
     const total = +arr[i];
@@ -22,6 +22,7 @@ const average = arr => {
       return 'undefined';
     }
   }
+  return average
 };
 const array1 = average([1, 2]);
 const array2 = average([1, 2, 3, 4, 5]);
