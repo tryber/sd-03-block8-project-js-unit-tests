@@ -26,7 +26,7 @@ const average = (param) => {
   }
   const media = soma / param.length;
   return Math.round(media);
-}
+};
 
 assert.strictEqual(average([' ']), undefined);
 
