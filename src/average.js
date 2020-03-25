@@ -14,23 +14,20 @@ const assert = require('assert');
 */
 
 const average = (param) => {
-  if(param.length == 0){
+  if (param.length === 0){
     return undefined;
   }
-  let soma=0;
-  for(let i = 0; i < param.length; i++){
-    if(typeof param[i]==='number'){
+  let soma = 0;
+  for (let i = 0; i < param.length; i+= 1) {
+    if (typeof param[i] === 'number') {
     soma += param[i];
     }
     return undefined;
   }
-  const media = soma/param.length;
+  const media = soma / param.length;
   return Math.round(media);
 }
 
-const param = [1, 2]; [1, 2, 3, 4, 5]; [1, 2, '3']; [];
-const expected = average([2, 2]) // Retorno: 2;;
-
-assert.strictEqual(average(['']),undefined);
+assert.strictEqual(average([' ']),undefined);
 
 module.exports = average;
