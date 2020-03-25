@@ -20,8 +20,17 @@
 
 const circle = (radius) => {
   const PI = 3.14;
-
-  return radius ? { radius, area: PI * radius * radius, circumference: 2 * PI * radius } : undefined;
+  let returnVariable;
+  if (!radius) {
+    returnVariable = undefined;
+  } else {
+    returnVariable = {
+      radius,
+      area: PI * radius * radius,
+      circumference: 2 * PI * radius,
+    };
+  }
+  return returnVariable;
 };
 
 module.exports = circle;
