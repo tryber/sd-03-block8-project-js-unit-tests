@@ -14,7 +14,7 @@
 
 const average = (num) => {
   let soma = 0;
-  if (num.length == 0) {
+  if (num.length === 0) {
     return undefined;
   }
   for (let i = 0; i < num.length; i += 1) {
