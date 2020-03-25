@@ -13,19 +13,17 @@
 */
 
 const average = (parArray) => {
-  let soma = 0;
-  const tamanho = parArray.length;
-  if (tamanho == 0)
-    return undefined;
-  else {
-    for (let i = 0 ; i < tamanho ; i++) {
-      if (typeof(parArray[i]) == 'number' && tamanho > 0)
+  if (parArray.length) {
+    let soma = 0;
+    for ( let i in parArray ) {
+      if (typeof(parArray[i]) === 'number')
         soma += parArray[i];
       else
         return undefined;
       }
-    return Math.round(soma/tamanho);
-    }};
+    return Math.round(soma/parArray.length);
+    }
+  };
 console.log(average([6,7,8,9]));
 
 module.exports = average;

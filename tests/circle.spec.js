@@ -31,8 +31,9 @@ describe('#circle', () => {
 
     // Teste se o objeto circle tem 3 entradas.
     assert.strictEqual(Object.keys(circle(3)).length, 3);
+
     // Teste se a função, quando não recebe nenhum parâmetro, retorna undefined.
-    //assert.strictEqual(circle(), undefined);
+    assert.strictEqual(circle(), undefined);
 
     // Teste que a função retorna, dentro de um objeto, a circunferência correta para um círculo de raio 2.
     assert.strictEqual(circle(2).circumference, 12.56);

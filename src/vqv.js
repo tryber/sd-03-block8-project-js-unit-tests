@@ -18,13 +18,14 @@
 
 const vqv = (nome, idade) => {
   let mensagem;
-  if (nome && idade)
-      mensagem = (
+  if (nome && idade) {
+    mensagem = (
     `Oi, meu nome é ${nome}!
 Tenho ${idade} anos,
 trabalho na Trybe e mando muito em programação!
 #VQV!`);
-    return mensagem;
+  return mensagem;
+  }
 };
-//console.log(vqv('André',29));
+
 module.exports = vqv;
