@@ -15,14 +15,12 @@
 const average = (array) => {
   if (array.every(e => typeof e === 'number') && array.length > 0 && typeof array === 'object') {
     let media = 0;
-    for (let i = 0; i < array.length; i += 1) { 
-      media += array[i]; 
+    for (let i = 0; i < array.length; i += 1) {
+      media += array[i];
     }
-      media = media/array.length;
-      return Math.round(media);
-  } else {
-      return;
-  }
+    media /= array.length;
+    return Math.round(media);
+  } return undefined;
 };
 
 module.exports = average;
