@@ -1,3 +1,4 @@
+const assert = require('assert');
 /*
   A função average recebe um array (tamanho variável) e retorna a média dos valores recebidos.
   Caso a função receba algum valor não númerico ou um array vazio,
@@ -12,6 +13,38 @@
     - average([1, '2']) // Retorno: undefined;
 */
 
-const average = () => {};
+const average = array => {
+  let soma = 0;
+  let media = 0;
+  if (array.length === 0) {
+    media = undefined;
+  }
+  for (let i = 0; i < array.length; i += 1) {
+    if (typeof array[i] === 'string') {
+      media = undefined;
+      break;
+    } else {
+      soma += array[i];
+      media = Math.round(soma / array.length);
+    }
+  }
+  return media;
+};
+
+assert.strictEqual(average([3, 4, 5]), 4);
+assert.strictEqual(average([1, 2, 3, '4', 5]), undefined);
+assert.strictEqual(average([0, 0, 0, 0, 0, 0, 0]), 0);
+assert.strictEqual(average([1, 2, '3']), undefined);
+assert.strictEqual(average([1, 2, 3]), 2);
+assert.strictEqual(average([0, 0, 0, 0, 0, 0, 1]), 0);
+
+assert.strictEqual(average([]), undefined);
+assert.strictEqual(average([' ']), undefined);
+assert.strictEqual(average(['um', 'dois', 'tres']), undefined);
+assert.strictEqual(average([47, 63, 122]), 77);
+
+assert.strictEqual(average([-11, 2, 5]), -1);
+
+assert.strictEqual(average([-11, -5, 2]), -5);
 
 module.exports = average;
