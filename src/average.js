@@ -12,8 +12,6 @@
     - average([1, '2']) // Retorno: undefined;
 */
 
-const average = () => {
-  //addyout implementation here
-};
+const average = () => {};
 
 module.exports = average;
