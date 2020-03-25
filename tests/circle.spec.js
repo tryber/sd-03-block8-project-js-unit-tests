@@ -30,7 +30,7 @@ describe('#circle', () => {
     const PI = 3.14;
     assert.strictEqual(typeof circle(1), 'object');
     // Teste se o objeto circle tem 3 entradas.
-    assert.strictEqual(Object.entries(circle(1).length, 1));
+    assert.strictEqual(Object.entries(circle(1).length,
     // Teste se a função, quando não recebe nenhum parâmetro, retorna undefined.
     assert.notStrictEqual(circle(), undefined);
     // Teste que a função retorna, dentro de um objeto, a circunferência correta para um círculo de raio 2.
