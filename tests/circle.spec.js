@@ -27,6 +27,7 @@ describe('#circle', () => {
   it('given a radius, should return an object with circles info', () => {
     // ESCREVA SEUS TESTES ABAIXO:
     // Teste se circle é um objeto.
+    const PI = 3.14;
     assert.strictEqual(typeof circle, 'function');
     // Teste se o objeto circle tem 3 entradas.
     assert.equal(circle.length, 1);
