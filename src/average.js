@@ -21,9 +21,9 @@ const average = (arr) => {
     } 
       return 'undefined';
   }
-
-}; 
 return average;
+}; 
+
 const array1 = average([1, 2]);
 const array2 = average([1, 2, 3, 4, 5]);
 const array3 = average([1, 2, '3']);
