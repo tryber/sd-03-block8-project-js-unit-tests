@@ -22,6 +22,4 @@ const createStudent = (estudanteObjeto) => {
   return obj;
 };
 
-const createStudent = () => {};
-
 module.exports = createStudent;
