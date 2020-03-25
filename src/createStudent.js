@@ -14,7 +14,16 @@
     estudante.name // Retorna: 'Leandrão, o Lobo Solitário'
     estudante.feedback() // Retorna: 'Eita pessoa boa!'
 */
+const assert = require('assert');
 
-const createStudent = () => {};
+const createStudent = (nome) => ({
+  name: nome,
+  feedback: () => 'Eita pessoa boa!'
+});
+
+
+
+assert.deepStrictEqual(createStudent('test').name , 'test')
+assert.deepStrictEqual(createStudent('test').feedback(), 'Eita pessoa boa!' )
 
 module.exports = createStudent;
