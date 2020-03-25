@@ -19,8 +19,8 @@ const average = (arr) => {
   for (let i = 0; i < arr.length; i += 1) {
     if (typeof arr[i] !== 'number') {
       return undefined;
-    }
   }
-    return Math.round(arr.reduce((a, b) => a + b) / arr.length);
   }
-  module.exports = average;
+  return Math.round(arr.reduce((a, b) => a + b) / arr.length);
+  };
+module.exports = average;
