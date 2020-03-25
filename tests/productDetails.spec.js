@@ -41,6 +41,7 @@ describe('#productDetails', () => {
     // (Difícil) Teste que os dois productIds terminam com 123.
     const product1 = 'Alcool gel';
     const product2 = 'Máscara';
+    
     assert.strictEqual(Array.isArray(productDetails()), true);
     assert.strictEqual(productDetails().length, 2);
     assert.strictEqual(typeof productDetails()[0], 'object');
