@@ -27,7 +27,7 @@ describe('#circle', () => {
   it('given a radius, should return an object with circles info', () => {
     // ESCREVA SEUS TESTES ABAIXO:
     // Teste se circle é um objeto.
-    assert.strictEqual(typeof circle(10), 'object');
+    assert.strictEqual(typeof circle(2), 'object');
 
     // Teste se o objeto circle tem 3 entradas.
     assert.strictEqual(Object.keys(circle(1)).length, 3);
@@ -40,7 +40,7 @@ describe('#circle', () => {
 
     // Teste que a função retorna, dentro de um objeto, a área correta para um círculo de raio 3.
     assert.strictEqual(parseFloat(circle(3).area.toPrecision(3)), parseFloat((3 * 3 * 3.14).toPrecision(3)));
-    
+
     // Teste que a função retorna, num objeto, os dados corretos de um círculo de raio 3.
     const object = {
       radius: circle(3).radius,
