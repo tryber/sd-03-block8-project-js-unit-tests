@@ -23,7 +23,7 @@ const average = (array) => {
       return undefined;
     }
     aux += array[i];
-  }  
+  }
   media = aux / array.length;
   return Math.round(media);
 };
