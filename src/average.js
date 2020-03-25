@@ -42,8 +42,8 @@ const average = (arr) => {
   if (arr.length === 0) return undefined;
   for (let i = 0; i < arr.length; i++) {
     if (typeof arr[i] !== 'number') return undefined
-    sum += arr[i];
-    avg = (sum / arr.length);
+      sum += arr[i];
+      avg = (sum / arr.length);
   }
   return Math.round(avg);
 }
