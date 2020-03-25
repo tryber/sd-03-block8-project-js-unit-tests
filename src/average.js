@@ -13,7 +13,7 @@ const assert = require('assert');
     - average([1, '2']) // Retorno: undefined;
 */
 
-const average = array => {
+const average = (array) => {
   let soma = 0;
   let media = 0;
   if (array.length === 0) {
