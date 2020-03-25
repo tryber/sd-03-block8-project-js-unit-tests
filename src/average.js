@@ -13,19 +13,10 @@
 */
 
 const average = (arr) => {
-  if (typeof (arr) === 'object' && arr.length > 0) {
-    let sum = 0;
-    for (let i = 0; i < arr.length; i += 1) {
-      if (typeof (arr[i]) === 'number') {
-        sum += arr[i];
-      } else {
-        return undefined;
-      }
-    }
-    return Math.round(sum / arr.length);
+  if (typeof (arr) === 'object' && arr.length > 0 && arr.every((e) => typeof (e) === 'number')) {
+    return Math.round(arr.reduce((a, e) => a + e) / arr.length);
   }
   return undefined;
 };
 
-console.log(average([0, 0, 0, 0, 0, 0, 1]));
 module.exports = average;
