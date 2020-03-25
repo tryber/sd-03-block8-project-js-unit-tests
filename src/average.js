@@ -12,11 +12,9 @@
     - average([1, '2']) // Retorno: undefined;
 */
 
-const assert = require('assert');
-
 const average = (arr) => {
 
-  for (const i in arr) {
+  for (let i = 0; i < arr.length; i += 1) {
     if (typeof arr[i] !== 'number') {
       return undefined;
     }
@@ -26,13 +24,14 @@ const average = (arr) => {
     return undefined;
   }
 
-  let total = 0
+  let total = 0;
 
-  for (const i in arr) {
+  for (let i = 0; i < arr.length; i += 1) {
     total += arr[i];
   }
 
   return (Math.round(total / arr.length));
+
 }
 
 module.exports = average;
