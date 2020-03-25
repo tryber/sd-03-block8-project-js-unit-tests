@@ -15,7 +15,7 @@ let media = 0;
 const average = arr => {
   for (i = 0; i <= arr.legth; i += 1) {
     if (typeof arr[i] === number) {
-      for (i = 0; i <= arr.legth; 1 += i) {
+      for (i = 0; i <= arr.legth; i += 1) {
         media += arr[i];
       }
       media /= i;
