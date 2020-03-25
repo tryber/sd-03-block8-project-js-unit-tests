@@ -1,55 +1,41 @@
 /* eslint-disable max-len */
 /* eslint-disable no-unused-vars */
 
-const assert = require("assert");
-const circle = require("../src/circle");
+const assert = require('assert');
+const createStudent = require('../src/createStudent');
 
 /*
-  Essa função recebe o raio de um círculo e retorna um objeto contendo suas informações (CC).
-  Se não for especificado um raio, a função retorna undefined.
-  Elabore testes para verificar se a função está correta.
-
+  Dada uma função chamada createStudent que recebe como parâmetro um nome, retorne um objeto que contenha duas chaves:
+    (1) name, contendo o nome passado como parâmetro;
+    (2) feedback, contendo uma função que retorna a frase 'Eita pessoa boa!' ao ser chamada.
+  Faça a função da chave feedback com arrow functions!
   Parâmetros:
-    - Um número inteiro. Exemplos: 1; 3;
+    - Uma string;
   Comportamento:
-    - circle(1) // Retorno: {radius: 1, area: 3.14, circumference: 6.28}
-    - circle(7) // Retorno: {radius: 7, area: 153.86, circumference: 43.96}
-    - circle(3) // Retorno: {radius: 3, area: 28,26, circumference: 18.84}
-
-  DICA: Números de ponto flutuante em JavaScript são imprecisos!  Para testar, vá no seu navegador e faça `0.2 + 0.1`.
-        Uma solução pra isso pode ser fazer a soma no seguinte formato: `parseFloat((0.2 + 0.1).toPrecision(2))`.
-        Use esse conhecimento para te ajudar a lidar com possíveis problemas que esses testes trarão!
-
-  OBS: Lembre-se que você não precisa se preocupar com o describe e o it por enquanto, isso será aprendido posteriormente. a
+    const estudante = createStudent('Leandrão, o Lobo Solitário')
+    estudante.name // Retorna: 'Leandrão, o Lobo Solitário'
+    estudante.feedback() // Retorna: 'Eita pessoa boa!'
+  OBS: Lembre-se que você não precisa se preocupar com o describe e o it por enquanto, isso será aprendido posteriormente.
 */
 
-describe("#circle", () => {
-  it("given a radius, should return an object with circles info", () => {
-    assert.strictEqual(typeof circle(5), "object");
-    assert.strictEqual(Object.keys(circle(1)).length, 3);
-    assert.strictEqual(
-      circle(2).circumference,
-      parseFloat((2 * 2 * 3.14).toFixed(2))
-    );
-    assert.strictEqual(
-      parseFloat(circle(3).area.toPrecision(3)),
-      parseFloat((3 * 3 * 3.14).toPrecision(3))
-    );
-    const object = {
-      radius: circle(3).radius,
-      area: parseFloat(circle(3).area.toPrecision(3)),
-      circumference: parseFloat(circle(3).circumference.toPrecision(3))
-    };
-    assert.deepStrictEqual(object, {
-      radius: 3,
-      area: parseFloat((3 * 3 * 3.14).toPrecision(3)),
-      circumference: parseFloat((2 * 3 * 3.14).toPrecision(3))
-    });
-    // Teste se circle é um objeto.
-    // Teste se o objeto circle tem 3 entradas.
-    // Teste se a função, quando não recebe nenhum parâmetro, retorna undefined.
-    // Teste que a função retorna, dentro de um objeto, a circunferência correta para um círculo de raio 2.
-    // Teste que a função retorna, dentro de um objeto, a área correta para um círculo de raio 3.
-    // Teste que a função retorna, num objeto, os dados corretos de um círculo de raio 3.
+describe('#createStudent', () => {
+  it('returns the object as specified', () => {
+    const estudante = createStudent('Leandrão, o Lobo Solitário');
+    assert.strictEqual(typeof estudante, 'object');
+    assert.strictEqual(typeof estudante.feedback, 'function');
+    assert.strictEqual(estudante.name, 'Leandrão, o Lobo Solitário');
+    assert.strictEqual(estudante.feedback(), 'Eita pessoa boa!');
+
+    const estudante2 = createStudent('Nobre');
+    assert.strictEqual(typeof estudante2, 'object');
+    assert.strictEqual(typeof estudante2.feedback, 'function');
+    assert.strictEqual(estudante2.name, 'Nobre');
+    assert.strictEqual(estudante2.feedback(), 'Eita pessoa boa!');
+
+    const estudante3 = createStudent('Inácio');
+    assert.strictEqual(typeof estudante3, 'object');
+    assert.strictEqual(typeof estudante3.feedback, 'function');
+    assert.strictEqual(estudante3.name, 'Inácio');
+    assert.strictEqual(estudante3.feedback(), 'Eita pessoa boa!');
   });
 });
