@@ -21,10 +21,18 @@
 const assert = require('assert');
 
 const calculator = {
-  add: (n1, n2) => !Number.isInteger(n1, n2) ? undefined : Math.floor(n1 + n2),
-  mult: (n1, n2) => !Number.isInteger(n1, n2) ? undefined : Math.floor(n1 * n2),
-  div: (n1, n2) => !Number.isInteger(n1, n2) ? undefined : Math.floor(n1 / n2),
-  sub: (n1, n2) => !Number.isInteger(n1, n2) ? undefined : Math.floor(n1 - n2),
+  add: (n1, n2) => {
+    return !Number.isInteger(n1, n2) ? undefined : Math.floor(n1 + n2);
+  },
+  mult: (n1, n2) => {
+    return !Number.isInteger(n1, n2) ? undefined : Math.floor(n1 * n2);
+  },
+  div: (n1, n2) => {
+    return !Number.isInteger(n1, n2) ? undefined : Math.floor(n1 / n2);
+  },
+  sub: (n1, n2) => {
+    return !Number.isInteger(n1, n2) ? undefined : Math.floor(n1 - n2);
+  },
 };
-assert.equal(calculator.add(1,2), 3)
+assert.equal(calculator.add(1, 2), 3);
 module.exports = calculator;

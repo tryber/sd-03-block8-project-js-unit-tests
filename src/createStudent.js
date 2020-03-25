@@ -18,12 +18,10 @@ const assert = require('assert');
 
 const createStudent = (nome) => ({
   name: nome,
-  feedback: () => 'Eita pessoa boa!'
+  feedback: () => 'Eita pessoa boa!',
 });
 
-
-
-assert.deepStrictEqual(createStudent('test').name , 'test')
-assert.deepStrictEqual(createStudent('test').feedback(), 'Eita pessoa boa!' )
+assert.deepStrictEqual(createStudent('test').name, 'test');
+assert.deepStrictEqual(createStudent('test').feedback(), 'Eita pessoa boa!');
 
 module.exports = createStudent;

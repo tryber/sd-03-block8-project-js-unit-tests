@@ -16,13 +16,14 @@
       #VQV!'
 */
 const assert = require('assert');
+
 const vqv = (nome, idade) => {
   let frase = `Oi, meu nome é ${nome}!
 Tenho ${idade} anos,
 trabalho na Trybe e mando muito em programação!
-#VQV!`
-  typeof idade !== 'number' ? frase = undefined : idade = idade
-  return frase
+#VQV!`;
+  if (typeof idade !== 'number') { frase = undefined; }
+  return frase;
 };
 console.log(vqv('Tunico', 30));
 assert.strictEqual(typeof vqv('Tunico', 30), 'string');

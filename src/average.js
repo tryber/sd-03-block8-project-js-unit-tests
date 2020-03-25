@@ -15,22 +15,18 @@ const assert = require('assert');
 
 
 const average = (arr) => {
-  if (arr.length === 0) { return undefined }
-  for (let e of arr) {
-    if (typeof e !== 'number') {return undefined}
-  } {
-    let soma = Math.round((arr.reduce((acc, current) => acc + current) / (arr.length)))
-    console.log(soma);
-    return soma
+  if (arr.length === 0) { return undefined; }
+
+  for (let i = 0; i < arr.length; i += 1) {
+    if (typeof arr[i] !== 'number') {
+      return undefined;
+    }
   }
-}
-assert.deepEqual(average(["a"]), undefined)
-assert.deepStrictEqual(average([1, 2, 3, 4, 5]), 3)
-assert.strictEqual(average([1, 3, 'blha']), undefined)
+  const soma = Math.round((arr.reduce((acc, current) => acc + current) / (arr.length)));
+  console.log(soma);
+  return soma;
+};
+assert.deepEqual(average(['a']), undefined);
+assert.deepStrictEqual(average([1, 2, 3, 4, 5]), 3);
+assert.strictEqual(average([1, 3, 'blha']), undefined);
 module.exports = average;
-/*
- arr.forEach(e => {
-    typeof e !== 'number' ? undefined : Math.floor((arr.reduce((acc, current) => acc + current) / (arr.length))
-    );
-  });
-*/
