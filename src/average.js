@@ -18,7 +18,7 @@ const average = arr => {
       for (i = 0; i <= arr.legth; 1 += i) {
         media += arr[i];
       }
-      media /= 2;
+      media /= i;
     }
   }
   return media;
