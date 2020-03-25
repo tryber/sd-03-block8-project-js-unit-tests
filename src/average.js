@@ -11,16 +11,3 @@
     - average([1, 2]) // Retorno: 1;
     - average([1, '2']) // Retorno: undefined;
 */
-let media = 0;
-const average = arr => {
-  for (i = 0; i <= arr.legth; i += 1) {
-    if (typeof arr[i] === number) {
-      for (i = 0; i <= arr.legth; i += 1) {
-        media += arr[i];
-      }
-      media /= i;
-    }
-  }
-  return media;
-};
-module.exports = average;
