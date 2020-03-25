@@ -18,15 +18,15 @@
 const myCounter = () => {
   var myArray = [];
   for (var counter = 0; counter <= 3; counter += 1) {
-    myArray.push(counter); // 0
-    for (var counter = 2; counter <= 3; counter += 1) myArray.push(counter); // 2 3 
-    for (var counter = 1; counter <= 3; counter += 1) myArray.push(counter); // 1 2 3 
+    myArray.push(counter);
+    for (var counter = 2; counter <= 3; counter += 1) myArray.push(counter);
+    for (var counter = 1; counter <= 3; counter += 1) myArray.push(counter);
     for (var counter = 2; counter <= 3; counter += 1) {
-      myArray.push(counter)
-      for (var counter = 2; counter <= 3; counter += 1) myArray.push(counter); // 2 3 
-    }; // 2 3 deveria ser 2 e 2 
-    for (var counter = 3; counter <= 3; counter += 1) myArray.push(counter); // 2 3 
-    for (var counter = 2; counter <= 3; counter += 1) myArray.push(counter); // 2 3  
+      myArray.push(counter);
+      for (var counter = 2; counter <= 3; counter += 1) myArray.push(counter);
+    }
+    for (var counter = 3; counter <= 3; counter += 1) myArray.push(counter);
+    for (var counter = 2; counter <= 3; counter += 1) myArray.push(counter); 
   }
   return myArray;
 };
