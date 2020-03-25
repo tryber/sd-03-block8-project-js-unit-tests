@@ -20,7 +20,7 @@
 
 const circle = (radius) => {
   const PI = 3.14;
-  if (typeof radius === 'undefined') return undefined;
+  if (typeof radius !== 'number') return undefined;
   return {
     radius,
     area: PI * radius * radius,
