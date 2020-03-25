@@ -23,17 +23,13 @@ const circle = (num) => {
 
   if (typeof num !== 'number') {
     return undefined;
+  } else {
+    return {
+      area: parseFloat((PI * num * num).toPrecision(5)),
+      circumference: parseFloat((2 * PI * num).toPrecision(5)),
+      radius: num,
+    };
   }
-
-  if (num === undefined) {
-    return undefined;
-  }
-
-  return {
-    area: parseFloat((PI * num * num).toPrecision(5)),
-    circumference: parseFloat((2 * PI * num).toPrecision(5)),
-    radius: num,
-  };
 };
 
 module.exports = circle;
