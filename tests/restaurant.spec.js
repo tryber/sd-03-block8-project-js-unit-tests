@@ -156,7 +156,7 @@ describe('#createMenu', () => {
     objeto8.order('agua');
     objeto8.order('coxinha');
     const input8 = objeto8.pay();
-    const output8 = 11.70;
+    const output8 = 11.7;
 
     assert.deepStrictEqual(input8, output8);
     // Agora faça o PASSO 4 no arquivo `src/restaurant.js`.

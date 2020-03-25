@@ -79,6 +79,7 @@ const createMenu = objeto => Object.assign(restaurant, {
   fetchMenu: objeto,
   consumption: [],
   order: request => orderFromMenu(request),
+  pay: () => {},
 });
 
 module.exports = createMenu;
