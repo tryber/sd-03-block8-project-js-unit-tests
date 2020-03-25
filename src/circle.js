@@ -16,13 +16,13 @@
         Use esse conhecimento para te ajudar a lidar com possíveis problemas que esses testes trarão!
 */
 
-const circle = (radius) => {
+const circle = (num) => {
   const PI = 3.14;
-  if (!radius) { return undefined; }
+  if (!num) { return undefined; }
   return {
-    radius,
-    area: PI * radius * radius,
-    circumference: 2 * PI * radius,
+    area: parseFloat((PI * num * num).toPrecision(5)),
+    circumference: parseFloat((2 * PI * num).toPrecision(5)),
+    radius: num,
   };
 };
 
