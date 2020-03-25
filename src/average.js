@@ -17,10 +17,10 @@ const average = (arr) => {
     let total = total + arr[ i ];
     if (i = arr.legth) {
       return Math.round(total / i);
-    } 
+    }
       return 'undefined';
   }
 return average;
-}; 
+};
 module.exports = average;
 
