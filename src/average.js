@@ -11,11 +11,10 @@
     - average([1, 2]) // Retorno: 1;
     - average([1, '2']) // Retorno: undefined;
 */
-const assert = require('assert');
 const average = (arr) => {
   arr = arr.map(Number);
-  for (i = 0; i <= arr.legth; ++i) {
-    const total =+ arr[i];
+  for (i = 0; i <= arr.legth; i += 1) {
+    let total = total + arr[ i ];
     if (i = arr.legth) {
       return Math.round(total / i);
     } 
