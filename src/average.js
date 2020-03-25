@@ -17,7 +17,7 @@
 //   let sum = 0;
 //   let avg = 0;
 //   for(var i = 0; i < average.length; i++) {
-//     return (average[i] !== 'number') ? undefined : let sum += average[i] return avg = sum / average.lenght};
+//     return (average[i] !== 'number') ? undefined : let sum += average[i]};
 //     // return sum += average[i]};
 //   // return avg = sum / average.length;
 // };
@@ -40,12 +40,12 @@ const average = (arr) => {
   let sum = 0;
 
   if (arr.length === 0) return undefined;
-  for (let i = 0; i < arr.length; i++) {
+  for (let i = 0; i < arr.length; i+=1) {
     if (typeof arr[i] !== 'number') return undefined
-      sum += arr[i];
-      avg = (sum / arr.length);
+    sum += arr[i];
+    avg = (sum / arr.length);
   }
   return Math.round(avg);
-}
+};
 
 module.exports = average;
