@@ -98,7 +98,7 @@ const createMenu = (obj) => {
       const listaKeys = Object.keys(lista);
       const consumo = menu.comsuption;
       return pagamento(lista, listaKeys, consumo);
-  },
+    },
   };
   return menu;
 };
