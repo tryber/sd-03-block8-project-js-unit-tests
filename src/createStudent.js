@@ -20,7 +20,7 @@ const retorno = () => {
 };
 
 const createStudent = (literal) => {
-  let estudante = {
+  const estudante = {
     name: literal,
     feedback: retorno,
   };
