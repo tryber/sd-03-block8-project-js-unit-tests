@@ -36,7 +36,7 @@ describe('#productDetails', () => {
     
     // ESCREVA SEUS TESTES ABAIXO:
     // Teste que o retorno da função é um array.
-    assert.strictEqual(typeof productDetails('papel', 'papel2'), 'object');
+    assert.strictEqual(typeof productDetails('item1', 'item2'), 'object');
 
     // Teste que o array retornado pela função contém dois itens dentro.
     assert.strictEqual(productDetails('item1', 'item2').length, 2);
