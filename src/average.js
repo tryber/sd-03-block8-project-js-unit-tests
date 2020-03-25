@@ -21,10 +21,7 @@ const average = (array) => {
       return undefined;
     }
   }
-  if (result !== null) {
-    return Math.round(result / array.length);
-  }
-  return undefined;
+  if (result !== null) return Math.round(result / array.length);
 };
 
 module.exports = average;
