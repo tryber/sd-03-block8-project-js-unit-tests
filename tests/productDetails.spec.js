@@ -35,7 +35,7 @@ describe('#productDetails', () => {
   it('tests the function has the correct behaviour', () => {
     // ESCREVA SEUS TESTES ABAIXO:
     // Teste que o retorno da função é um array.
-    assert.equal(typeof(productDetails('Alcool gel','Mascara')),'array')
+    assert.equal(typeof(Object.entries(productDetails('Alcool gel','Mascara'))),'array')
     // Teste que o array retornado pela função contém dois itens dentro.
     assert.equal(productDetails('Alcool gel','Mascara').length,2)
     // Teste que os dois itens dentro do array retornado pela função são objetos.
