@@ -27,9 +27,8 @@ describe('#circle', () => {
   it('given a radius, should return an object with circles info', () => {
     // ESCREVA SEUS TESTES ABAIXO:
     // Teste se circle é um objeto.
-    assert.strictEqual(typeof circle(1), 'object');
-    assert.strictEqual(typeof circle(100), 'object');
-    assert.strictEqual(typeof circle(3.4), 'object');
+    assert.strictEqual(typeof circle(10), 'object');
+    assert.strictEqual(typeof circle(30), 'object');
     // Teste se o objeto circle tem 3 entradas.
     assert.strictEqual(Object.keys(circle(1)).length, 3);
     // Teste se a função, quando não recebe nenhum parâmetro, retorna undefined.
