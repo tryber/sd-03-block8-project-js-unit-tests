@@ -19,9 +19,9 @@
 */
 
 const circle = (radius) => {
-  // if (!radius) {
-  //   return undefined;
-  // }
+  if (!radius) {
+    return undefined;
+  }
   const PI = 3.14;
 
   return {
@@ -30,5 +30,8 @@ const circle = (radius) => {
     circumference: 2 * PI * radius,
   };
 };
+
+const teste = (circle(3));
+console.log(teste);
 
 module.exports = circle;
