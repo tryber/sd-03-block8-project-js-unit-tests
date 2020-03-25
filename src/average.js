@@ -13,15 +13,17 @@
 */
 
 const average = (arrInput) => {
+  
   let sum = 0;
+    
+  if (!arrInput || arrInput.length === 0) return undefined;
   for (i = 0; i < arrInput.length; i += 1) {
-    if (typeof (arrInput[i]) === 'number') {
-      sum += arrInput[i];
-    } else {
-      return 1;
-    }
+    if (typeof (arrInput[i]) === 'string') return undefined;
+    sum += arrInput[i]; 
   }
-  const result = Math.floor(sum / arrInput.length);
+
+  const result = Math.round(sum / arrInput.length);
+  console.log(sum, result);
   return result;
 };
 
