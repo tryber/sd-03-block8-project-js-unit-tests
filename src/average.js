@@ -22,14 +22,12 @@ const average = (array) => {
     if (typeof array[i] !== 'number') {
       return undefined;
     }
-  }
-  for (i = 0; i < array.length; i += 1) {
     aux += array[i];
   }
+  
   media = aux / array.length;
   return Math.round(media);
 };
 
-console.log(average([]));
 
 module.exports = average;
