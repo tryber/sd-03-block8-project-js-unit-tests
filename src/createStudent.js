@@ -24,5 +24,3 @@ const createStudent = (str) => {
 };
 
 module.exports = createStudent;
-
-
