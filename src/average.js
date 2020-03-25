@@ -11,10 +11,9 @@
     - average([1, 2]) // Retorno: 1;
     - average([1, '2']) // Retorno: undefined;
 */
-const assert = require('assert');
 
 const average = (array) => {
-  if (array.length == 0) {
+  if (array.length === 0) {
     return undefined;
   }
   let soma = 0;
@@ -22,7 +21,7 @@ const average = (array) => {
     if (typeof array[i] === 'number') {
       soma += array[i];
     } else {
-      return undefined
+      return undefined;
     }
   }
   const resultado = soma / array.length;
