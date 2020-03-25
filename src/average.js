@@ -11,36 +11,21 @@
     - average([1, 2]) // Retorno: 1;
     - average([1, '2']) // Retorno: undefined;
 */
-const assert = require('assert');
-
 const average = (arr) => {
-
-
-
-
+  if (arr.length == 0) {
+    return undefined;
+  }
+  for (let i = 0; i < arr.length; i++) {
+    if (typeof arr[i] == 'string') {
+      return undefined;
+    }
+  }
   let soma = 0;
   let divisao = 0;
   for (let i = 0; i < arr.length; i++) {
     soma += arr[i];
   }
-
   divisao = soma / arr.length;
   return divisao;
 };
-
-let saida = average([10, 10, 10]);
-assert.strictEqual(10, saida);
-
-saida = average("string");
-assert.strictEqual(undefined, saida);
-
-saida = average([]);
-assert.strictEqual(0, saida);
-
-saida = average([10, "1", 10]);
-assert.strictEqual(undefined, saida);
-
-assert.strictEqual(typeof average, 'function');
-
-
 module.exports = average;
