@@ -18,7 +18,7 @@
 const createStudent = (nome) => {
   const student = {
     name: nome,
-    feedback: function () {
+    feedback: () => {
       return 'Eita pessoa boa!'
     },
   };
@@ -27,4 +27,3 @@ const createStudent = (nome) => {
 
 module.exports = createStudent;
 
-const estudante = createStudent('Leandrão, o Lobo Solitário');
