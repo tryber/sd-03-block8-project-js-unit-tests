@@ -13,7 +13,7 @@
 */
 
 const average = (vetor) => {
-  if (!vetor.every(elem => typeof(elem)==="number") || vetor.length === 0) return undefined;
+  if (!vetor.every(elem => typeof (elem) === 'number') || vetor.length === 0) return undefined;
   return vetor.reduce((acc, c) => acc + c, 0) / vetor.length;
 };
 module.exports = average;
