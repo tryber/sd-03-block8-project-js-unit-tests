@@ -14,7 +14,8 @@
 const average = (arr) => {
   arr = arr.map(Number);
   for (i = 0; i <= arr.legth; i += 1) {
-    let total = total + arr[ i ];
+    let total = 0;
+     total = total + arr[i];
     if (i = arr.legth) {
       return Math.round(total / i);
     }
