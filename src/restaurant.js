@@ -72,11 +72,23 @@
 const restaurant = {};
 
 const orderFromMenu = request => restaurant.consumption.push(request);
+const price = () => {
+  restaurant.consumption.reduce((total, consumpted) => {
+    for (const restType in restaurant.fetchMenu) {
+      const prodPrice = Object.entries(restType);
+
+      for (const prodInd in prodPrice) {
+        if (prodInd === consumpted) total += prodPrice[prodInd][1];
+      }
+    };
+  }, 0);
+}
 
 const createMenu = obj => (Object.assign(restaurant, {
   fetchMenu: obj,
   consumption: [],
   order: request => orderFromMenu(request),
+  pay: () => price(),
 }));
 
 module.exports = createMenu;
