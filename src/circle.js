@@ -27,5 +27,5 @@ const circle = (radius) => {
     circumference: 2 * PI * radius,
   };
 };
-console.log(circle(3), { radius: 3, area: 28.259999999999998, circumference: 18.84 })
+console.log(circle(3), { radius: 3, area: 28.259999999999998, circumference: 18.84 });
 module.exports = circle;

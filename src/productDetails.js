@@ -38,5 +38,5 @@ const productDetails = (firstProduct, secondProduct) => [
     },
   },
 ];
-
+//console.log(Object.values(productDetails('um','dois'))[1])
 module.exports = productDetails;
