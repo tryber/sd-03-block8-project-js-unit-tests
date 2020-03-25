@@ -23,4 +23,4 @@ const createStudent = (str) => {
   return estudante;
 };
 
-module.exports = createStudent();
+module.exports = createStudent;
