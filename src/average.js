@@ -12,7 +12,7 @@
     - average([1, '2']) // Retorno: undefined;
 */
 let media = 0;
-const average = arr => {
+const average = (arr) => {
   if (arr.every(torf => typeof torf === 'number')) {
     for (i = 0; i <= arr.legth; i += 1) {
       media += arr[i];
