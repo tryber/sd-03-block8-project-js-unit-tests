@@ -15,9 +15,9 @@
 const average = (arry) => {
   if (!Array.isArray(arry) || arry.length === 0) return undefined;
   let count = 0;
-  for (const iterator of arry) {
-    if (typeof iterator !== 'number') return undefined;
-    count += iterator;
+  for (let x = 0; x < arry.length; x += 1) {
+    if (typeof arry[x] !== 'number') return undefined;
+    count += arry[x];
   }
   return Math.round(count / arry.length);
 };
