@@ -34,4 +34,4 @@ const circle = radius => {
 
 module.exports = circle;
 
-console.log(circle());
+console.log(circle(3).area.toFixed(2));
