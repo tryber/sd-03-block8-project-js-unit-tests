@@ -19,6 +19,34 @@
   calculator.div(3, 2) // Retorno: 1;
 */
 
-const calculator = {};
+const calculator = {
+  add: (num1, num2) => {
+    if (typeof num1 !== 'number' || typeof num2 !== 'number') {
+      return 0;
+    }
+    return parseInt(num1 + num2, 10);
+  },
+  mult: (num1, num2) => {
+    if (typeof num1 !== 'number' || typeof num2 !== 'number') {
+      return 0;
+    }
+    return parseInt(num1 * num2, 10);
+  },
+  div: (num1, num2) => {
+    if (typeof num1 !== 'number' || typeof num2 !== 'number') {
+      return 0;
+    }
+    if (num2 === 0) {
+      return 'Infinito';
+    }
+    return parseInt(num1 / num2, 10);
+  },
+  sub: (num1, num2) => {
+    if (typeof num1 !== 'number' || typeof num2 !== 'number') {
+      return 0;
+    }
+    return parseInt(num1 - num2, 10);
+  },
+};
 
 module.exports = calculator;

@@ -70,7 +70,69 @@
 //------------------------------------------------------------------------------------------
 
 // PASSO 4: Adicione ao objeto retornado por `createMenu()` uma chave `pay` com uma função que varre todo os itens de `objetoRetornado.consumption`, soma o preço de todos checando-os no menu e retorna o valor somado acrescido de 10%. DICA: para isso, você precisará varrer tanto o objeto da chave `food` quanto o objeto da chave `drink`.
+let menu = {};
 
-const createMenu = () => {};
+const toArray = (objx, keyx) => {
+  const result = [];
+  for (let i = 0; i < keyx.length; i += 1) {
+    result.push(objx[keyx[i]]);
+  }
+  return result;
+};
+
+const products = (arg1, arg2) => {
+  let productsList = [];
+  const pnf = {};
+
+  productsList = toArray(arg1, arg2);
+
+  for (let i = 0; i < productsList.length; i += 1) {
+    const pn = Object.keys(productsList[i]);
+    const pk = Object.values(productsList[i]);
+    for (let j = 0; j < pn.length; j += 1) {
+      pnf[pn[j]] = pk[j];
+    }
+  }
+  return pnf;
+};
+
+const calculaConta = (pk, pv, cm) => {
+  let result = 0;
+
+  for (let k = 0; k < cm.length; k += 1) {
+    const j = pk.indexOf(cm[k]);
+    if (pk[j] === cm[k]) {
+      result += pv[j];
+    }
+  }
+  return result;
+};
+
+const pagamento = (pm, cm) => {
+  let conta = 0;
+  const produtos = pm;
+  const produtosKeys = Object.keys(produtos);
+  const produtosValues = Object.values(produtos);
+  const consumo = cm;
+  conta = calculaConta(produtosKeys, produtosValues, consumo);
+  conta = parseFloat((conta + (conta * 0.1)).toPrecision(10));
+  return conta;
+};
+
+const createMenu = (obj) => {
+  menu = {
+    fetchMenu: () => obj,
+    comsuption: [],
+    order: (obj1) => { menu.comsuption.push(obj1); },
+    pay: () => {
+      const lista = menu.fetchMenu();
+      const listaKeys = Object.keys(lista);
+      const consumo = menu.comsuption;
+      const produtosMenu = products(lista, listaKeys);
+      return pagamento(produtosMenu, consumo);
+    },
+  };
+  return menu;
+};
 
 module.exports = createMenu;
