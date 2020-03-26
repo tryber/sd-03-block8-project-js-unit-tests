@@ -12,10 +12,10 @@
     - average([1, '2']) // Retorno: undefined;
 */
 const average = (arr) => {
-  if (arr.every(torf => typeof torf === 'number')) {
+  if (arr.every(element => typeof element !== 'string') && arr.every(element => typeof element === 'number')) {
     return Math.round(
       arr.reduce(((a, c) => a + c), 0) / arr.length);
   }
-  return undefined;
+  return;
 };
 module.exports = average;
