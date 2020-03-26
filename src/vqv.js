@@ -16,14 +16,7 @@
       #VQV!'
 */
 
-const vqv = (nome, idade) => {if (nome && idade) { return `Oi, meu nome é ${nome}!\nTenho ${idade} anos,\ntrabalho na Trybe e mando muito em programação!\n#VQV!`; } return undefined; };
-// const vqv = (nome, idade) => {
-//   if (nome && idade) {
-//     return `Oi, meu nome é ${nome}!\nTenho ${idade} anos,\ntrabalho na Trybe e mando muito em programação!\n#VQV!`;
-//   }
-//   return undefined;
-// };
+const vqv = (nome, idade) => { if (nome && idade) { return `Oi, meu nome é ${nome}!\nTenho ${idade} anos,\ntrabalho na Trybe e mando muito em programação!\n#VQV!`; } return undefined; };
 
-//vqv('Jafet', 25);
 
 module.exports = vqv;
