@@ -40,10 +40,10 @@ describe('#productDetails', () => {
     // Teste que os dois itens dentro do array retornado pela função são objetos.
     // Teste que os dois objetos são diferentes entre si.
     // (Difícil) Teste que os dois productIds terminam com 123.
-    assert.ok(productDetails('Alcool gel', 'Máscara')[0] && typeof (productDetails('Alcool gel', 'Máscara')[0]) === 'object' );
-    assert.ok(productDetails('Alcool gel', 'Máscara').length === 2);
-    assert.ok(typof (productDetails('Alcool gel', 'Máscara')[0]) === 'object' && typeof (productDetails('Alcool gel', 'Máscara')[1]) === 'object');
+    assert.strictEqual(productDetails('Alcool gel', 'Máscara')[0] && typeof (productDetails('Alcool gel', 'Máscara')[0]) === 'object' );
+    assert.strictEqual(productDetails('Alcool gel', 'Máscara').length === 2);
+    assert.strictEqual(typof (productDetails('Alcool gel', 'Máscara')[0]) === 'object' && typeof (productDetails('Alcool gel', 'Máscara')[1]) === 'object');
     assert.notEqual(productDetails('Alcool gel', 'Máscara')[0], productDetails('Alcool gel', 'Máscara')[1]);
-    assert.ok((productDetails('Alcool gel', 'Máscara')[1].details.productId.slice(-3) === '123') && (productDetails('Alcool gel', 'Máscara')[0].details.productId.slice(-3) === '123'));
+    assert.strictEqual((productDetails('Alcool gel', 'Máscara')[1].details.productId.slice(-3) === '123') && (productDetails('Alcool gel', 'Máscara')[0].details.productId.slice(-3) === '123'));
   });
 });
