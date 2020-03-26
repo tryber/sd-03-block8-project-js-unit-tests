@@ -80,9 +80,9 @@ const consumptionValue = (chave, j) => {
     if (restaurant.consumption[j] === chave[i][0]) {
       return chave[i][1];
     }
-    return 0;
   }
-}
+  return 0;
+};
 
 const toPay = (chave) => {
   let pay = 0;
