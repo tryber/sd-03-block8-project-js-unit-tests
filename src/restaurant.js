@@ -80,7 +80,7 @@ let restaurant = {};
 
 const orderFromMenu = request => restaurant.consumption.push(request);
 
-const createMenu = objMenu => {
+const createMenu = (objMenu) => {
   const rest = {
     fetchMenu: {
       food: objMenu.food,

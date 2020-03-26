@@ -12,7 +12,7 @@
     - average([1, '2']) // Retorno: undefined;
 */
 
-const average = arr => {
+const average = (arr) => {
   let count = null;
   if (arr.length === 0) {
     count = undefined;
