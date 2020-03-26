@@ -23,8 +23,12 @@
   },
   "homepage": "https://github.com/betrybe/sd-01-week14-js-unit-tests#readme",
   "devDependencies": {
-    "jest": "^24.9.0",
     "acorn": ">=5.7.4",
+    "jest": "^24.9.0",
     "minimist": ">=1.2.2"
+  },
+  "dependencies": {
+    "node": "^13.11.0",
+    "nodejs": "0.0.0"
   }
 }
