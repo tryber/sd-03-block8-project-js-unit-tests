@@ -23,5 +23,5 @@ const calculator = {
   mult: (numUm, numDois) => Math.floor(numUm * numDois),
   div: (numUm, numDois) => Math.floor(numUm / numDois),
   sub: (numUm, numDois) => Math.floor(numUm - numDois),
-}
+};
 module.exports = calculator;
