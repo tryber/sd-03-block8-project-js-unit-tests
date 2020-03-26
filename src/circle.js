@@ -15,20 +15,14 @@
         Uma solução pra isso pode ser fazer a soma no seguinte formato: `parseFloat((0.2 + 0.1).toPrecision(2))`.
         Use esse conhecimento para te ajudar a lidar com possíveis problemas que esses testes trarão!
 */
-/*
-function roundToTwo(num) {
-  const numero = `${num}e+2`;
-  return +(`${Math.round(numero)}e-2`);
-} //
-*/
 
-const circle = (num) => {
+const circle = (radius) => {
   const PI = 3.14;
-  if (!num) { return undefined; }
+  if (!radius) { return undefined; }
   return {
-    area: parseFloat((PI * num * num).toFixed(2)), // roundToTwo(PI * num * num), // parseFloat((PI * num * num).toPrecision(5)),
-    circumference: parseFloat((2 * PI * num).toFixed(5)), // roundToTwo(2 * PI * num), // parseFloat((2 * PI * num).toPrecision(5)),
-    radius: num,
+    radius,
+    area: PI * radius * radius,
+    circumference: 2 * PI * radius,
   };
 };
 
