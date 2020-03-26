@@ -12,7 +12,7 @@
     - average([1, '2']) // Retorno: undefined;
 */
 const average = (arr) => {
-  if (arr.legth === 0 && arr.every(element => typeof element === 'number')) {
+  if ((arr.legth === 0) && arr.every(element => typeof element === 'number')) {
     return Math.round(
       arr.reduce(((a, c) => a + c), 0) / arr.length);
   }
