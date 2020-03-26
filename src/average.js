@@ -11,13 +11,16 @@
     - average([1, 2]) // Retorno: 1;
     - average([1, '2']) // Retorno: undefined;
 */
-let media = 0;
+let media;
 const average = (arr) => {
   if (arr.every(torf => typeof torf === 'number')) {
-    for (i = 0; i <= arr.legth; i += 1) {
+    for (i = 0; i <= arr.length; i += 1) {
       media += arr[i];
     }
   }
-  return Math.round(media/i);
+  return Math.round(media/arr.length);
 };
 module.exports = average;
+
+let test = average([1, 2])
+console.log(test)
