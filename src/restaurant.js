@@ -84,7 +84,7 @@ const products = (arg1, arg2) => {
   let productsList = [];
   const pnf = {};
 
-  productsList = toArray (arg1,arg2);
+  productsList = toArray(arg1, arg2);
 
   for (let i = 0; i < productsList.length; i += 1) {
     const pn = Object.keys(productsList[i]);
@@ -98,13 +98,15 @@ const products = (arg1, arg2) => {
 
 const pagamento = (lt, lk, cm) => {
   let conta = 0;
-  let produtos = [];
-  produtos = products(lt, lk);
+  let produtos = products(lt, lk);
+  const produtosKeys = Object.keys(produtos);
+  const produtosValues = Object.values(produtos);
+  const consumo = cm; 
 
-  for (let j = 0; j < Object.keys(produtos).length; j += 1) {
-    for (let k = 0; k < cm.length; k += 1) {
-      if (Object.keys(produtos)[j] === cm[k]) {
-        conta += Object.values(produtos)[j];
+  for (let j = 0; j < produtosKeys.length; j += 1) {
+    for (let k = 0; k < consumo.length; k += 1) {
+      if (produtosKeys[j] === consumo[k]) {
+        conta += produtosValues[j];
       }
     }
   }
