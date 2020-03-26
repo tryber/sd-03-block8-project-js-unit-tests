@@ -12,11 +12,24 @@
     - average([1, '2']) // Retorno: undefined;
 */
 
-const average = ([i]) => {
-  i = Math.random(10 * 1000);
-  return Math.round(i);
+const average = (array) => {
+  let soma = 0;
+ 
+  for (let i = 0; i < array.length; i += 1) {
+    if (typeof array[i] == 'number') {
+      soma += array[i];
+    }
+   else {
+    return undefined
+    }
+  }
+  const media = soma /array.length;
+  return Math.round(media);
 }
 
-
+const a = ['um','dois','tres']
+console.log(average(a))
 
 module.exports = average;
+
+array = isNaN (array) ? [] : array
