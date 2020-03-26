@@ -96,7 +96,7 @@ const products = (arg1, arg2) => {
   return pnf;
 };
 
-const pagamento = (pm, cm) => 0;
+const pagamento = (pm, cm) => pm + cm;
 
 /*
 const pagamento = (pm, cm) => {
