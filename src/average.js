@@ -17,8 +17,7 @@ const average = (arr) => {
     for (i = 0; i <= arr.legth; i += 1) {
       media += arr[i];
     }
-    media /= i;
   }
-  return Math.round(media);
+  return Math.round(media/i);
 };
 module.exports = average;
