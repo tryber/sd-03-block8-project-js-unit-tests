@@ -83,14 +83,13 @@ const createMenu = obj => ({
   order: orderFromMenu,
   pay() {
     let asw = 0;
-    for (let i = 0; i < this.consumption.length; i += 1) {
-      const con = this.consumption[i];
-      if (this.fetchMenu.food[con]) {
-        asw += this.fetchMenu.food[con];
+    this.consumption.forEach((e) => {
+      if (this.fetchMenu.food[e]) {
+        asw += this.fetchMenu.food[e];
       } else {
-        asw += this.fetchMenu.drink[con];
+        asw += this.fetchMenu.drink[e];
       }
-    }
+    });
     return asw;
   },
 });
