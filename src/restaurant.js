@@ -96,12 +96,12 @@ const products = (arg1, arg2) => {
   return pnf;
 };
 
-const pagamento = (lt, lk, cm) => {
+const pagamento = (pm, cm) => {
   let conta = 0;
-  let produtos = products(lt, lk);
+  const produtos = pm;
   const produtosKeys = Object.keys(produtos);
   const produtosValues = Object.values(produtos);
-  const consumo = cm; 
+  const consumo = cm;
 
   for (let j = 0; j < produtosKeys.length; j += 1) {
     for (let k = 0; k < consumo.length; k += 1) {
@@ -123,7 +123,8 @@ const createMenu = (obj) => {
       const lista = menu.fetchMenu();
       const listaKeys = Object.keys(lista);
       const consumo = menu.comsuption;
-      return pagamento(lista, listaKeys, consumo);
+      const produtosMenu = products(lista, listaKeys);
+      return pagamento(produtosMenu, consumo);
     },
   };
   return menu;
