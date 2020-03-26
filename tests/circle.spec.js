@@ -25,22 +25,12 @@ aa
 
 describe('#circle', () => {
   it('given a radius, should return an object with circles info', () => {
-    const estudante = createStudent('Leandrão, o Lobo Solitário');
-    assert.strictEqual(typeof estudante, 'object');
-    assert.strictEqual(typeof estudante.feedback, 'function');
-    assert.strictEqual(estudante.name, 'Leandrão, o Lobo Solitário');
-    assert.strictEqual(estudante.feedback(), 'Eita pessoa boa!');
-
-    const estudante2 = createStudent('Nobre');
-    assert.strictEqual(typeof estudante2, 'object');
-    assert.strictEqual(typeof estudante2.feedback, 'function');
-    assert.strictEqual(estudante2.name, 'Nobre');
-    assert.strictEqual(estudante2.feedback(), 'Eita pessoa boa!');
-
-    const estudante3 = createStudent('Inácio');
-    assert.strictEqual(typeof estudante3, 'object');
-    assert.strictEqual(typeof estudante3.feedback, 'function');
-    assert.strictEqual(estudante3.name, 'Inácio');
-    assert.strictEqual(estudante3.feedback(), 'Eita pessoa boa!');
+    //assert.fail();
+    assert.strictEqual(typeof circle(), 'object');
+    assert.strictEqual(Object.entries(circle()).length, 3);
+    assert.strictEqual(Object.values(circle())[0], undefined);
+    assert.strictEqual(Object.values(circle(2))[2], 12.56);
+    assert.strictEqual(Object.values(circle(3))[1], 28.259999999999998);
+    assert(Object.values(circle(3))[1] === 28.259999999999998 && Object.values(circle(3))[2] === 18.84);
   });
 });
