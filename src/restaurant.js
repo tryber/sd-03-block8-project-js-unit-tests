@@ -48,9 +48,7 @@ const algo = {
 };
 // PASSO 1: Crie uma função `createMenu()` que, dado um objeto passado por parâmetro, retorna um objeto com o seguinte formato: { fetchMenu: objetoPassadoPorParametro }.
 
-const createMenu = objeto => {
-  return { fetchMenu: objeto };
-};
+const createMenu = objeto => { fetchMenu: objeto };
 // Agora faça o TESTE 2 no arquivo `tests/restaurant.spec.js`.
 //------------------------------------------------------------------------------------------
 
