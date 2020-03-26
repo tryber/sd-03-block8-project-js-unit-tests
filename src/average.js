@@ -11,7 +11,7 @@
     - average([1, 2]) // Retorno: 1;
     - average([1, '2']) // Retorno: undefined;
 */
-const average = arr => {
+const average = (arr) => {
   if (arr.every(torf => typeof torf === 'number')) {
     return Math.round(
       arr.reduce((a, c) => {
