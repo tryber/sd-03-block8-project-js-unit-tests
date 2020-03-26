@@ -99,18 +99,14 @@ const products = (arg1, arg2) => {
 const calculaConta = (pk, pv, cm) => {
   let result = 0;
 
-  // for (let j = 0; j < pk.length; j += 1) {
   for (let k = 0; k < cm.length; k += 1) {
     const j = pk.indexOf(cm[k]);
     if (pk[j] === cm[k]) {
       result += pv[j];
     }
   }
-  // }
   return result;
 };
-
-// const pagamento = (pm, cm) => pm + cm;
 
 const pagamento = (pm, cm) => {
   let conta = 0;
@@ -119,15 +115,6 @@ const pagamento = (pm, cm) => {
   const produtosValues = Object.values(produtos);
   const consumo = cm;
   conta = calculaConta(produtosKeys, produtosValues, consumo);
- /*
-  for (let j = 0; j < produtosKeys.length; j += 1) {
-    for (let k = 0; k < consumo.length; k += 1) {
-      if (produtosKeys[j] === consumo[k]) {
-        conta += produtosValues[j];
-      }
-    }
-  }
-  */
   conta = parseFloat((conta + (conta * 0.1)).toPrecision(10));
   return conta;
 };
@@ -149,4 +136,3 @@ const createMenu = (obj) => {
 };
 
 module.exports = createMenu;
-
