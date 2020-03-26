@@ -73,20 +73,28 @@ const restaurant = {};
 
 const verifiedElem = (prodPrice, consumpted) => {
   for (let prodInd = 0; prodInd < prodPrice.length; prodInd += 1) {
-    if (prodInd === consumpted) total += prodPrice[prodInd][1];
+    if (prodPrice[prodInd][0] === consumpted) {
+      return prodPrice[prodInd][1];
+    }
   }
+
+  return 0;
 };
 
 const orderFromMenu = request => restaurant.consumption.push(request);
 const price = () => {
-  restaurant.consumption.reduce((total, consumpted) => {
-    const restType = Object.keys(restaurant.fetchMenu);
+  const restType = Object.keys(restaurant.fetchMenu);
+  const value = restaurant.consumption.reduce((total, consumpted) => {
+
     for (let indice = 0; indice < restType.length; indice += 1) {
-      const prodPrice = Object.entries(indice);
+      const prodPrice = Object.entries(restaurant.fetchMenu[restType[indice]]);
       total += verifiedElem(prodPrice, consumpted);
     }
+
     return total;
   }, 0);
+
+  return parseFloat((value * 1.1).toFixed(2));
 };
 
 const createMenu = obj => (Object.assign(restaurant, {
