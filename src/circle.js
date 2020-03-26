@@ -16,7 +16,8 @@
         Use esse conhecimento para te ajudar a lidar com possíveis problemas que esses testes trarão!
 */
 function roundToTwo(num) {
-  return +(`${Math.round(num + 'e+2')}e-2`);
+  const numero = `${num}e+2`;
+  return +(`${Math.round(numero)}e-2`);
 }
 
 const circle = (num) => {
