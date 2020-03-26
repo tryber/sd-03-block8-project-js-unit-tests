@@ -84,8 +84,8 @@ const verifiedElem = (prodPrice, consumpted) => {
 const orderFromMenu = request => restaurant.consumption.push(request);
 const price = () => {
   const restType = Object.keys(restaurant.fetchMenu);
-  const value = restaurant.consumption.reduce((total, consumpted) => {
 
+  const value = restaurant.consumption.reduce((total, consumpted) => {
     for (let indice = 0; indice < restType.length; indice += 1) {
       const prodPrice = Object.entries(restaurant.fetchMenu[restType[indice]]);
       total += verifiedElem(prodPrice, consumpted);
