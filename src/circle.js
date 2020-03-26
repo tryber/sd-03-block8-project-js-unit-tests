@@ -15,10 +15,12 @@
         Uma solução pra isso pode ser fazer a soma no seguinte formato: `parseFloat((0.2 + 0.1).toPrecision(2))`.
         Use esse conhecimento para te ajudar a lidar com possíveis problemas que esses testes trarão!
 */
+/*
 function roundToTwo(num) {
   const numero = `${num}e+2`;
   return +(`${Math.round(numero)}e-2`);
 }
+*/
 
 const circle = (num) => {
   const PI = 3.14;
