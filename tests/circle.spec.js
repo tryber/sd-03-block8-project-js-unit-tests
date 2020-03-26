@@ -25,12 +25,14 @@ aa
 
 describe('#circle', () => {
   it('given a radius, should return an object with circles info', () => {
-    //assert.fail();
-    assert.strictEqual(typeof circle(), 'object');
-    assert.strictEqual(Object.entries(circle()).length, 3);
-    assert.strictEqual(Object.values(circle())[0], undefined);
-    assert.strictEqual(Object.values(circle(2))[2], 12.56);
-    assert.strictEqual(Object.values(circle(3))[1], 28.259999999999998);
-    assert(Object.values(circle(3))[1] === 28.259999999999998 && Object.values(circle(3))[2] === 18.84);
+    assert.strictEqual(typeof circle(1), 'object');
+    assert.strictEqual(Object.keys(circle(1)).length, 3);
+    assert.strictEqual(circle(), undefined);
+    const circleTwo = circle(2);
+    assert.strictEqual(circleTwo.circumference, 12.56);
+    const circleThree = circle(3);
+    circleThree.area = Number(parseFloat(circleThree.area).toPrecision(4));
+    assert.strictEqual(circleThree.area, 28.26);
+    assert.deepStrictEqual(Object.values(circleThree), [3, 28.26, 18.84]);
   });
 });
