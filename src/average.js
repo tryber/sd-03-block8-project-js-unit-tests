@@ -19,5 +19,5 @@ const average = (arr) => {
       }, 0) / arr.length
     );
   }
-};
+  return average};
 module.exports = average;
