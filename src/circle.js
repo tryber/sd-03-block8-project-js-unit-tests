@@ -19,7 +19,7 @@
 function roundToTwo(num) {
   const numero = `${num}e+2`;
   return +(`${Math.round(numero)}e-2`);
-}
+} //
 */
 
 const circle = (num) => {
