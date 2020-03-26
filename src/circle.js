@@ -18,6 +18,14 @@
         Use esse conhecimento para te ajudar a lidar com possíveis problemas que esses testes trarão!
 */
 
-const circle = () => undefined;
+const circle = (radius) => {
+  const PI = 3.14;
+  if (typeof radius !== 'number') return undefined;
+  return {
+    radius,
+    area: PI * radius * radius,
+    circumference: 2 * PI * radius,
+  };
+};
 
 module.exports = circle;
