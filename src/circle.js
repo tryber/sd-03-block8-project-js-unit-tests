@@ -20,7 +20,7 @@
 
 const circle = (radius) => {
   if (!radius) return undefined;
-  
+
   const PI = 3.14;
   return {
     radius,
