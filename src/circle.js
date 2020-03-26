@@ -24,8 +24,8 @@ const circle = (num) => {
   const PI = 3.14;
   if (!num) { return undefined; }
   return {
-    area: roundToTwo(PI * num * num), // parseFloat((PI * num * num).toPrecision(5)),
-    circumference: roundToTwo(2 * PI * num), // parseFloat((2 * PI * num).toPrecision(5)),
+    area: parseFloat((PI * num * num).toFixed(2)), // roundToTwo(PI * num * num), // parseFloat((PI * num * num).toPrecision(5)),
+    circumference: parseFloat((2 * PI * num).toFixed(5)), // roundToTwo(2 * PI * num), // parseFloat((2 * PI * num).toPrecision(5)),
     radius: num,
   };
 };
