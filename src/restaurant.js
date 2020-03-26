@@ -73,16 +73,16 @@
 const restaurant = {};
 const orderFromMenu = request => restaurant.consumption.push(request);
 const payment = () => {
-  soma = 0;
+  sum = 0;
   restaurant.consumption.forEach((e) => {
     if (restaurant.fetchMenu.food[e]) {
-      soma += restaurant.fetchMenu.food[e];
+      sum += restaurant.fetchMenu.food[e];
     } else {
-      soma += restaurant.fetchMenu.drinks[e];
+      sum += restaurant.fetchMenu.drinks[e];
     }
   });
   restaurant.consumption = [];
-  return soma;
+  return sum;
 };
 const createMenu = (object) => {
   Object.assign(restaurant, {
