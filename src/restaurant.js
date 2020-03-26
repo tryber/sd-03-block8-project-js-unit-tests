@@ -102,12 +102,12 @@ const calculaConta = (pk, pv, cm) => {
   for (let j = 0; j < pk.length; j += 1) {
     for (let k = 0; k < cm.length; k += 1) {
       if (pk[j] === cm[k]) {
-        result += pv[j];
+        //result += pv[j];
       }
     }
   }
   return result;
-}
+};
 
 // const pagamento = (pm, cm) => pm + cm;
 
