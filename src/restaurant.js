@@ -79,7 +79,8 @@ const objTest = {
 let restaurant = {};
 
 const orderFromMenu = request => restaurant.consumption.push(request);
-let somaDosPreçosDosPedidos = () => {};
+
+// let somaDosPreçosDosPedidos = () => {};
 
 const createMenu = (objMenu) => {
   const rest = {
@@ -89,38 +90,35 @@ const createMenu = (objMenu) => {
     },
     consumption: [],
     order: orderFromMenu,
-    pay: somaDosPreçosDosPedidos,
+    pay: () => {
+      let count = 0;
+      restaurant.consumption.forEach((e) => {
+        if (restaurant.fetchMenu.food[e]) {
+          count += restaurant.fetchMenu.food[e];
+        } else {
+          count += restaurant.fetchMenu.drink[e];
+        }
+      });
+      return count;
+    },
   };
   return rest;
 };
 
 restaurant = createMenu(objTest);
 
-somaDosPreçosDosPedidos = () => {
-  let count = 0;
-  for (let i = 0; i < restaurant.consumption.length; i += 1) {
-    const ord = restaurant.consumption[i];
-    if (restaurant.fetchMenu.food[ord]) {
-      count += restaurant.fetchMenu.food[ord];
-    } else {
-      count += restaurant.fetchMenu.drink[ord];
-    }
-  }
-  return count;
-};
-
-// () => {
+// somaDosPreçosDosPedidos = () => {
 //   let count = 0;
+//   restaurant.consumption.forEach(e => console.log(e));
 //   for (let i = 0; i < restaurant.consumption.length; i += 1) {
-//     const ord = restaurant.consumption[i];
-//     if (restaurant.fetchMenu.food[ord]) {
-//       count += restaurant.fetchMenu.food[ord];
+//     if (restaurant.fetchMenu.food[restaurant.consumption[i]]) {
+//       count += restaurant.fetchMenu.food[restaurant.consumption[i]];
 //     } else {
-//       count += restaurant.fetchMenu.drink[ord];
+//       count += restaurant.fetchMenu.drink[restaurant.consumption[i]];
 //     }
 //   }
 //   return count;
-// },
+// };
 
 module.exports = {
   createMenu, orderFromMenu, restaurant, objTest,
