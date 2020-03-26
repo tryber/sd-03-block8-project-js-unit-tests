@@ -75,15 +75,21 @@ const restaurant = {};
 
 const orderFromMenu = request => restaurant.consumption.push(request);
 
+const consumptionValue = (chave, j) => {
+  for (let i = 0; i < chave.length; i += 1) {
+    if (restaurant.consumption[j] === chave[i][0]) {
+      return chave[i][1];
+    }
+    return 0;
+  }
+}
+
 const toPay = (chave) => {
   let pay = 0;
-  for (let i = 0; i < chave.length; i += 1) {
-    for (let j = 0; j < restaurant.consumption.length; j += 1) {
-      if (restaurant.consumption[j] === chave[i][0]) {
-        pay += chave[i][1];
-      }
-    }
+  for (let j = 0; j < restaurant.consumption.length; j += 1) {
+    pay += consumptionValue(chave, j);
   }
+
   return pay;
 };
 
