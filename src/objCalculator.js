@@ -24,11 +24,11 @@ const subtracao = (num1, num2) => Math.trunc(num1 - num2);
 const multiplicacao = (num1, num2) => Math.trunc(num1 * num2);
 const divisao = (num1, num2) => Math.trunc(num1 / num2);
 
-const calculator = {  
+const calculator = {
   add: adicao,
   mult: multiplicacao,
   div: divisao,
-  sub: subtracao,  
+  sub: subtracao,
 };
 
 module.exports = calculator;
