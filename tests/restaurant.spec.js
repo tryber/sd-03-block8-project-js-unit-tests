@@ -51,14 +51,62 @@ const createMenu = require('../src/restaurant');
 
 describe('#createMenu', () => {
   it('tests the function has the correct behaviour', () => {
-    assert.strictEqual(createMenu(undefined), undefined);
-    assert.strictEqual(
+    const objetoRetornado = createMenu({
+      food: { coxinha: 3.9, sanduiche: 9.9 },
+      drinks: { agua: 3.9, cerveja: 6.9 }
+    });
+
+    assert.deepEqual(
       createMenu({
-        food: {},
-        drink: {}
+        food: { coxinha: 3.9, sanduiche: 9.9 },
+        drinks: { agua: 3.9, cerveja: 6.9 }
       }),
-      { fetchMenu: { food: {}, drink: {} } }
+      {
+        fetchMenu: {
+          food: { coxinha: 3.9, sanduiche: 9.9 },
+          drinks: { agua: 3.9, cerveja: 6.9 }
+        }
+      }
     );
+    assert.deepEqual(objetoRetornado.fetchMenu, {
+      food: { coxinha: 3.9, sanduiche: 9.9 },
+      drinks: { agua: 3.9, cerveja: 6.9 }
+    });
+    objetoRetornado['consumption'] = [];
+    assert.deepEqual(objetoRetornado.consumption, []);
+    objetoRetornado.order = (Order) => {
+      objetoRetornado.consumption.push(Order);
+      return Order;
+    };
+    objetoRetornado.order('coxinha');
+    assert.deepEqual(objetoRetornado.consumption, ['coxinha']);
+    objetoRetornado.order('agua');
+    objetoRetornado.order('sanduiche');
+    objetoRetornado.order('cerveja');
+    assert.deepEqual(objetoRetornado.consumption, [
+      'coxinha',
+      'agua',
+      'sanduiche',
+      'cerveja'
+    ]);
+    objetoRetornado.pay = () => {
+      let count = 0;
+      for (const key in objetoRetornado.consumption) {
+        if (
+          objetoRetornado.fetchMenu.food[objetoRetornado.consumption[key]] > 0
+        ) {
+          count +=
+            objetoRetornado.fetchMenu.food[objetoRetornado.consumption[key]];
+        }
+        if (
+          objetoRetornado.fetchMenu.drinks[objetoRetornado.consumption[key]] > 0
+        )
+          count +=
+            objetoRetornado.fetchMenu.drinks[objetoRetornado.consumption[key]];
+      }
+      return Math.round(count + count * (10 / 100));
+    };
+    assert.deepEqual(objetoRetornado.pay(), 27);
     // TESTE 1: Verifique que, dado um objeto qualquer passado como um parâmetro para a função createMenu(), checa se o retorno da função é um objeto no seguinte formato: { fetchMenu: objetoQualquer }.
     // ```
     // createMenu(objetoQualquer) // Retorno: { fetchMenu: objetoQualquer }
