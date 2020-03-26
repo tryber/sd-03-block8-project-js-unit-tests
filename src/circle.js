@@ -15,7 +15,7 @@
 
   DICA: Números de ponto flutuante em JavaScript são imprecisos! Para testar, vá no seu navegador e faça `0.2 + 0.1`.
         Uma solução pra isso pode ser fazer a soma no seguinte formato: `parseFloat((0.2 + 0.1).toPrecision(2))`.
-        Use esse conhecimento para te ajudar a lidar com possíveis problemas que esses testes trarão!
+        Use esse conhecimento para te ajudar a lidar com possíveis problemas que esses testes trarão! OI.
 */
 
 const circle = (radius) => {
