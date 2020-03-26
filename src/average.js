@@ -28,6 +28,4 @@ const average = (param) => {
   return Math.round(media);
 };
 
-assert.strictEqual(average([' ']), undefined);
-
 module.exports = average;
