@@ -96,6 +96,9 @@ const products = (arg1, arg2) => {
   return pnf;
 };
 
+const pagamento = (pm, cm) => 0;
+
+/*
 const pagamento = (pm, cm) => {
   let conta = 0;
   const produtos = pm;
@@ -113,7 +116,7 @@ const pagamento = (pm, cm) => {
   conta = parseFloat((conta + (conta * 0.1)).toPrecision(10));
   return conta;
 };
-
+*/
 const createMenu = (obj) => {
   menu = {
     fetchMenu: () => obj,
