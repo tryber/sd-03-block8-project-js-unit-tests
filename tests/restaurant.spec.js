@@ -133,6 +133,12 @@ const createMenu = require('../src/restaurant');
     ordertest.consumption = ['coxinha', 'agua'];
     assert.strictEqual(ordertest.pay(), 7.8);
     assert.deepEqual(ordertest.consumption, [])
+    ordertest.order('coxinha')
+    ordertest.order('agua')
+    ordertest.order('cerveja')
+    ordertest.order('sanduiche')
+    assert.strictEqual(ordertest.pay(), 24.6);
+    assert.deepEqual(ordertest.consumption, []);
     // Agora faça o PASSO 4 no arquivo `src/restaurant.js`.
 //   });
 // });
