@@ -72,15 +72,33 @@
 // PASSO 4: Adicione ao objeto retornado por `createMenu()` uma chave `pay` com uma função que varre todo os itens de `objetoRetornado.consumption`, soma o preço de todos checando-os no menu e retorna o valor somado acrescido de 10%. DICA: para isso, você precisará varrer tanto o objeto da chave `food` quanto o objeto da chave `drink`.
 let menu = {};
 
+const products = (arg1, arg2) => {
+  let productsList = [];
+  let pnf = {};
+
+  for (let i = 0; i < arg2.length; i++) {
+    productsList.push(arg1[arg2[i]]);
+  }
+
+  for (let i = 0; i < productsList.length; i += 1) {
+    let pn = Object.keys(productsList[i]);
+    let pk = Object.values(productsList[i]);
+    for (let j = 0; j < pn.length; j += 1) {
+      pnf[pn[j]] = pk[j];
+    }
+  }
+  return pnf;
+}
+
 const pagamento = (lt, lk, cm) => {
   let conta = 0;
-  for (let i = 0; i < lk.length; i += 1) {
-    const produtos = lt[lk[i]];
-    for (let j = 0; j < Object.keys(produtos).length; j += 1) {
-      for (let k = 0; k < cm.length; k += 1) {
-        if (Object.keys(produtos)[j] === cm[k]) {
-          conta += Object.values(produtos)[j];
-        }
+  let produtos = [];
+  produtos = products(lt, lk);
+
+  for (let j = 0; j < Object.keys(produtos).length; j += 1) {
+    for (let k = 0; k < cm.length; k += 1) {
+      if (Object.keys(produtos)[j] === cm[k]) {
+        conta += Object.values(produtos)[j];
       }
     }
   }
@@ -104,3 +122,4 @@ const createMenu = (obj) => {
 };
 
 module.exports = createMenu;
+
