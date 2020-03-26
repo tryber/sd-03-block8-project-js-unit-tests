@@ -19,9 +19,9 @@
   calculator.div(3, 2) // Retorno: 1;
 */
 const calculator = {
-  add: (numUm, numDois) => Math.floor (numUm + numDois),
-  mult: (numUm, numDois) => Math.floor (numUm * numDois),
-  div: (numUm, numDois) => Math.floor (numUm / numDois),
-  sub: (numUm, numDois) => Math.floor (numUm - numDois),
+  add: (numUm, numDois) => Math.floor(numUm + numDois),
+  mult: (numUm, numDois) => Math.floor(numUm * numDois),
+  div: (numUm, numDois) => Math.floor(numUm / numDois),
+  sub: (numUm, numDois) => Math.floor(numUm - numDois),
 }
 module.exports = calculator;
