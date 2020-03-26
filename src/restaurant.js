@@ -100,12 +100,12 @@ const calculaConta = (pk, pv, cm) => {
   let result = 0;
 
   // for (let j = 0; j < pk.length; j += 1) {
-    for (let k = 0; k < cm.length; k += 1) {
-      let j = pk.indexOf(cm[k]);
-      if (pk[j] === cm[k]) {
-        result += pv[j];
-      }
+  for (let k = 0; k < cm.length; k += 1) {
+    const j = pk.indexOf(cm[k]);
+    if (pk[j] === cm[k]) {
+      result += pv[j];
     }
+  }
   // }
   return result;
 };
