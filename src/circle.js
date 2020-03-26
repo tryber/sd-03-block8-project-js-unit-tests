@@ -31,3 +31,5 @@ const circle = (num) => {
 };
 
 module.exports = circle;
+
+console.log(circle(3).area);
