@@ -44,6 +44,6 @@ describe('#productDetails', () => {
     assert.ok(productDetails('Alcool gel', 'Máscara').length === 2);
     assert.ok(typof (productDetails('Alcool gel', 'Máscara')[0]) === 'object' && typeof (productDetails('Alcool gel', 'Máscara')[1]) === 'object');
     assert.notEqual(productDetails('Alcool gel', 'Máscara')[0], productDetails('Alcool gel', 'Máscara')[1]);
-    assert.ok((productDetails('Alcool gel', 'Máscara')[0].details.productId.slice(-3) === '123') && (productDetails('Alcool gel', 'Máscara')[1].details.productId.slice(-3) === '123'));
+    assert.ok((productDetails('Alcool gel', 'Máscara')[1].details.productId.slice(-3) === '123') && (productDetails('Alcool gel', 'Máscara')[0].details.productId.slice(-3) === '123'));
   });
 });
