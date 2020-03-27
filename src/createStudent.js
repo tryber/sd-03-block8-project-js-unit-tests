@@ -7,7 +7,7 @@
   Faça a função da chave feedback com arrow functions!
 
   Parâmetros:
-    - Uma string;
+    - Uma nome;
   Comportamento:
     const estudante = createStudent('Leandrão, o Lobo Solitário')
 
@@ -15,6 +15,13 @@
     estudante.feedback() // Retorna: 'Eita pessoa boa!'
 */
 
-const createStudent = () => {};
+const createStudent = (nome) => {
+  const obj = {};
+
+  obj.name = nome;
+  obj.feedback = () => 'Eita pessoa boa!';
+
+  return obj;
+};
 
 module.exports = createStudent;

@@ -7,7 +7,7 @@
   - Uma string;
 
   Comportamento:
-  productDetails('Alcool gel', 'Máscara') // Retorna:
+  productDetails(c) // Retorna:
   [
     {
       name: 'Alcool gel'
