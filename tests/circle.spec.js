@@ -31,7 +31,7 @@ describe('#circle', () => {
     assert.strictEqual(circle(2).circumference, 12.56);
     assert.strictEqual(
       parseFloat(parseFloat(circle(3).area).toFixed(2)),
-      28.26
+      28.26,
     );
     assert.deepEqual(Object.values(circle(3)), [3, 28.259999999999998, 18.84]);
     // ESCREVA SEUS TESTES ABAIXO:
