@@ -16,41 +16,24 @@
 */
 
 const myCounter = () => {
-  const myArray = [];
-  for (let counter = 0; counter <= 3; counter += 1) {
+  var myArray = [];
+  myArray.push(0, 2, 3);
+  for (var counter = 1; counter <= 3; counter += 1) {
     myArray.push(counter);
-    for (counter = 2; counter <= 3; counter += 1) {
+  }
+  for (var counter = 2; counter <= 3; counter += 1) {
+    myArray.push(counter);
+
+    for (var counter = 2; counter <= 3; counter += 1) {
       myArray.push(counter);
+      myArray.push(counter - 1);
     }
   }
 
-  for (let counter1 = 1; counter1 <= 3; counter1 +=1) {
-    myArray.push(counter1);
+  for (var counter = 2; counter <= 3; counter += 1) {
+    myArray.push(counter);
   }
-
-  for (let counter1 = 2; counter1 < 3; counter1 +=1) {
-    myArray.push(counter1);
-  }
-  
-  for (let counter1 = 2; counter1 < 3; counter1 +=1) {
-    myArray.push(counter1);
-  }
-
-  for (let counter1 = 3; counter1 < 4; counter1 +=1) {
-    myArray.push(counter1);
-  }
-
-  for (let counter1 = 3; counter1 < 4; counter1 +=1) {
-    myArray.push(counter1);
-  }
-
-
-  for (let counter1 = 2; counter1 < 4; counter1 +=1) {
-    myArray.push(counter1);
-  }
-
   return myArray;
-
 };
-console.log(myCounter());
+
 module.exports = myCounter;
