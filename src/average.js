@@ -12,6 +12,37 @@
     - average([1, '2']) // Retorno: undefined;
 */
 
-const average = () => {};
+// const average = (valor) => {
+//   let media = 0;
+//   let resultado = 0;
+
+//   if (valor.length == 0) {
+//     return undefined;
+//   } else {
+//     for (let i = 0; i < valor.length; i++) {
+//       if (typeof valor[i] === 'number') {
+//         resultado += valor[i];
+//         media = (resultado / valor.length);
+//       } else {
+//         return undefined;
+//       }
+//     }
+//     return Math.round(media);
+//     //return console.log(Math.round(media));
+//   }
+// }
+
+const average = (valor) => {
+  let media = 0;
+  let resultado = 0;
+
+  if (valor.length === 0) return undefined;
+  for (let i = 0; i < valor.length; i += 1) {
+    if (typeof valor[i] !== 'number') return undefined;
+    resultado += valor[i];
+    media = (resultado / valor.length);
+  }
+  return Math.round(media);
+};
 
 module.exports = average;
