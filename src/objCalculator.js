@@ -19,6 +19,12 @@
   calculator.div(3, 2) // Retorno: 1;
 */
 
-const calculator = {};
+const calculator = {
+  add: (numeroum, numerodois) => Math.round(numeroum + numerodois),
+  sub: (numeroum, numerodois) => Math.round(numeroum - numerodois),
+  mult: (numeroum, numerodois) => Math.round(numeroum * numerodois),
+  div: (numeroum, numerodois) => Math.floor(numeroum / numerodois),
+};
+// console.log(calculator.add(1, 2));
 
 module.exports = calculator;
