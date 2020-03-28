@@ -14,18 +14,17 @@
 
 const average = array => {
   let soma = 0;
-  let x = ''
+  let x;
   array.forEach(element => {
     soma += element;
-    if (typeof element !== 'number'){
-      x = 'undefined'
+    if (typeof element !== 'number') {
+      x = 'undefined';
     }
   });
-  if (x == 'undefined' || array.length === 0){
-    return
-  }
-  else{
-    let resposta = Math.round(soma / array.length)
+  if (x === 'undefined' || array.length === 0) {
+    return;
+  } else {
+    let resposta = Math.round(soma / array.length);
     return resposta;
   }
 };
