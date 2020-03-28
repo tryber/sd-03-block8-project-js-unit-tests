@@ -127,6 +127,7 @@ describe('#createMenu', () => {
     objetoRetornado.order('agua');
     objetoRetornado.order('coxinha');
     assert.equal(objetoRetornado.pay(), 11.77);
-    // Agora faça o PASSO 4 no arquivo `src/restaurant.js`.
+
+// Agora faça o PASSO 4 no arquivo `src/restaurant.js`.
   });
 });
