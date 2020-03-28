@@ -12,10 +12,10 @@
     - average([1, '2']) // Retorno: undefined;
 */
 
-const average = (array) => {
+const average = array => {
   let soma = 0;
   let x;
-  array.forEach((element) => {
+  array.forEach(element => {
     soma += element;
     if (typeof element !== 'number') {
       x = 'undefined';
@@ -23,7 +23,8 @@ const average = (array) => {
   });
   if (x === 'undefined' || array.length === 0) {
     return undefined;
-  } else {
+  }
+  {
     const resposta = Math.round(soma / array.length);
     return resposta;
   }
