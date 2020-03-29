@@ -12,8 +12,6 @@
     - average([1, '2']) // Retorno: undefined;
 */
 
-const average = () => {
-  return
-};
+const average = () => console.log('inicio')
 
 module.exports = average;
