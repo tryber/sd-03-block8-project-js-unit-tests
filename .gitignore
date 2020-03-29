@@ -1,1 +1,4 @@
 node_modules/
+npm-debug.log
+codeclimate-master/
+report.20200327.092752.7908.0.001.json
