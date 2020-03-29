@@ -79,13 +79,16 @@ const createMenu = object => ({
   },
   pay() {
     let valor = 0;
-    for (let pedido of this.consumption) {
-      for (let item of Object.entries(this.fetchMenu)) {
-        if (Object.keys(item[1]).includes(pedido)) {
-          valor += item[1][pedido];
-        }
-      }
+    let valores = [];
+    for (const pedido of Object.entries(this.fetchMenu)) {
+      Object.entries(pedido[1]).forEach(e => valores.push(e));
     }
+    valores = valores.flat();
+    for (const pedido of this.consumption) {
+      if (valores.includes(pedido))
+        valor += valores[valores.indexOf(pedido) + 1];
+    }
+
     return valor;
   }
 });
