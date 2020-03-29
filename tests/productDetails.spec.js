@@ -36,7 +36,7 @@ describe('#productDetails', () => {
     assert.strictEqual(Array.isArray(productDetails()),true);
     assert.strictEqual(productDetails().length,2);
     assert.strictEqual(typeof productDetails()[0] && typeof productDetails()[1],'object')
-    assert.strictEqual(productDetails()[0],!productDetails()[1])
+    assert.strictEqual(productDetails()[0]===productDetails()[1],false)
     assert.strictEqual(productDetails()[0].details.productId.substring(productDetails()[0].details.productId.length-3)
                         && productDetails()[1].details.productId.substring(productDetails()[1].details.productId.length-3),
                         '123');
