@@ -36,9 +36,21 @@ describe('#productDetails', () => {
     assert.fail();
     // ESCREVA SEUS TESTES ABAIXO:
     // Teste que o retorno da função é um array.
+    const funResult = productDetails();
+    assert.strictEqual(funResult instanceof Array, true);
+
     // Teste que o array retornado pela função contém dois itens dentro.
+    assert.strictEqual(funResult.length, 2);
+
     // Teste que os dois itens dentro do array retornado pela função são objetos.
+    assert.strictEqual(typeof funResult[0], 'object');
+    assert.strictEqual(typeof funResult[1], 'object');
+
     // Teste que os dois objetos são diferentes entre si.
+    assert.strictEqual(funResult[0] !== funResult[1], true);
+
     // (Difícil) Teste que os dois productIds terminam com 123.
+    const id1 = funResult[0].details.productId;
+    assert.strictEqual(id1.substr(id1.length-3), '123');
   });
 });
