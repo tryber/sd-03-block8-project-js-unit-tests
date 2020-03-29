@@ -10,7 +10,7 @@
     - average([2, 2]) // Retorno: 2;
     - average([1, 2]) // Retorno: 1;
     - average([1, '2']) // Retorno: undefined;
-*/
+
 const average = (array) => {
   let total = 0;
   let media = 0;
@@ -26,4 +26,13 @@ const average = (array) => {
   media = Math.round(total / array.length);
   return media;
 };
+*/
+const average = (array) => {
+  const verificaTemString = array.some((element) => {
+    if (typeof element === 'string') return true;
+  });
+  if (verificaTemString || array.length === 0) return undefined;
+  const total = array.reduce((acumulador, valorAtual) => acumulador + valorAtual, 0);
+  return Math.round((total / array.length));
+}
 module.exports = average;
