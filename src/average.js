@@ -18,13 +18,12 @@ const average = (array) => {
     if (typeof array[i] !== 'number') {
       return undefined;
     }
+
     sum += array[i];
   }
-  let average = sum / array.length;
-  average = Math.floor(average);
-  return average;
+  let resultado = sum / array.length;
+  resultado = Math.floor(resultado);
+  return resultado;
 };
 
-console.log(average([1, 2, 3, 4, 3]));
-
-// module.exports = average
+module.exports = average;
