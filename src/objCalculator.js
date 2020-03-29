@@ -18,7 +18,6 @@
   calculator.add(1, 1) // Retorno: 2;
   calculator.div(3, 2) // Retorno: 1;
 */
-
 const calculator = {
   add: (num1, num2) => {
     let result = num1 + num2;
@@ -37,5 +36,4 @@ const calculator = {
     return Math.floor(result);
   }
 };
-console.log(calculator.add(1, 3), 4);
 module.exports = calculator;

@@ -51,29 +51,32 @@ const createMenu = require('../src/restaurant');
 
 describe('#createMenu', () => {
   it('tests the function has the correct behaviour', () => {
-    assert.fail();
+    // const buscarMenu = 'coxinha';
+    // assert.fail();
     // TESTE 1: Verifique que, dado um objeto qualquer passado como um parâmetro para a função createMenu(), checa se o retorno da função é um objeto no seguinte formato: { fetchMenu: objetoQualquer }.
-    // ```
-    // createMenu(objetoQualquer) // Retorno: { fetchMenu: objetoQualquer }
-    // ```
-    // Agora faça o PASSO 1 no arquivo `src/restaurant.js`.
-    // --------------------------------------------------------------------------------------
-    // TESTE 2: Verifique que, dado que a função createMenu foi chamada com o objeto: `{ food: {}, drink: {} }`, verifique que 'objetoRetornado.fetchMenu' retorna um objeto cujas chaves são somente `food` e `drink`.
-    // ```
-    // const objetoRetornado = createMenu(objetoQualquer);
-    // objetoRetornado.fetchMenu // Retorno: { food: {}, drink: {}}
-    // ```
-    // Agora faça o TESTE 3 deste arquivo.
-    // --------------------------------------------------------------------------------------
-    // TESTE 3: Verifique que o menu passado pra função createMenu é identico ao menu recuperado pela função 'objetoRetornado.fetchMenu'
-    // ```
-    // const objetoRetornado = createMenu(objetoQualquer);
-    // objetoRetornado.fetchMenu // Retorno: objetoQualquer
-    // ```
-    // Agora faça o TESTE 4 deste arquivo.
-    // --------------------------------------------------------------------------------------
-    // TESTE 4: Verifique que 'objetoRetornado.consumption', após a criação do menu, retorna um array vazio.
-    // ```
+    // assert.strictEqual(typeof createMenu(buscarMenu)[0], 'object');
+    // // createMenu(objetoQualquer) // Retorno: { fetchMenu: objetoQualquer }
+    // assert.strictEqual(typeof createMenu(buscarMenu)[0], 'object');
+    // // Agora faça o PASSO 1 no arquivo `src/restaurant.js`.
+    // // --------------------------------------------------------------------------------------
+    // // TESTE 2: Verifique que, dado que a função createMenu foi chamada com o objeto: `{ food: {}, drink: {} }`, verifique que 'objetoRetornado.fetchMenu'
+    // //retorna um objeto cujas chaves são somente `food` e `drink`.
+    // assert.strictEqual(Object.keys(createMenu(buscarMenu)[0]), food);
+    // assert.strictEqual(Object.keys(createMenu(buscarMenu)[1]), drinks);
+    // // const objetoRetornado = createMenu(objetoQualquer);
+    // // objetoRetornado.fetchMenu // Retorno: { food: {}, drink: {}}
+    // // ```
+    // // Agora faça o TESTE 3 deste arquivo.
+    // // --------------------------------------------------------------------------------------
+    // // TESTE 3: Verifique que o menu passado pra função createMenu é identico ao menu recuperado pela função 'objetoRetornado.fetchMenu'
+    // assert.strictEqual(Object.values(createMenu(buscarMenu)[0]), 'coxinha');
+    // // const objetoRetornado = createMenu(objetoQualquer);
+    // // objetoRetornado.fetchMenu // Retorno: objetoQualquer
+    // // ```
+    // // Agora faça o TESTE 4 deste arquivo.
+    // // --------------------------------------------------------------------------------------
+    // // TESTE 4: Verifique que 'objetoRetornado.consumption', após a criação do menu, retorna um array vazio.
+    // assert.strictEqual(Array.isArray(createMenu(buscarMenu)[2]), []);
     // const objetoRetornado = createMenu(objetoQualquer);
     // objetoRetornado.consumption // Retorno: []
     // ```

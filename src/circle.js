@@ -1,5 +1,4 @@
 /* eslint-disable max-len */
-
 /*
   Essa função recebe o raio de um círculo,
   retornando um objeto contendo suas informações (Raio, Área e Circunferência).
@@ -17,17 +16,13 @@
         Uma solução pra isso pode ser fazer a soma no seguinte formato: `parseFloat((0.2 + 0.1).toPrecision(2))`.
         Use esse conhecimento para te ajudar a lidar com possíveis problemas que esses testes trarão!
 */
-
 const circle = (radius) => {
   const PI = 3.14;
-
   if (!radius) { return undefined; }
-
   return {
     radius,
     area: PI * radius * radius,
     circumference: 2 * PI * radius,
   };
 };
-console.log(circle(2));
 module.exports = circle;
