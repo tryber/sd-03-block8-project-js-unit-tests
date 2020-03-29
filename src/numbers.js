@@ -9,9 +9,10 @@
     - numbers([2, 'errado', 5]); // Retorna: false
 */
 
-const numbers = (myArray) => {
+const numbers = myArray => {
+  console.log(myArray);
   for (let i = 0; i < myArray.length; i += 1) {
-    if (typeof myArray[i] !== 'number') {
+    if (!Number.isInteger(myArray[i])) {
       return false;
     }
   }
