@@ -10,7 +10,7 @@
     - average([2, 2]) // Retorno: 2;
     - average([1, 2]) // Retorno: 1;
     - average([1, '2']) // Retorno: undefined;
-
+// COM FOR
 const average = (array) => {
   let total = 0;
   let media = 0;
