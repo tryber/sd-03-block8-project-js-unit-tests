@@ -79,7 +79,8 @@ const createMenu = restaurant => {
     consumption: [],
     order : (request) => {
       let request1 = request;
-    return restaurant.consumption = request1;
+      request1 = restaurant;
+    return request1.consumption;
     },
     pay: () => {
      let price =0;
