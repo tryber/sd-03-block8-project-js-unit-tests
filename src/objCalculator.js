@@ -20,20 +20,20 @@
 */
 const calculator = {
   add: (num1, num2) => {
-    let result = num1 + num2;
+    const result = num1 + num2;
     return Math.floor(result);
   },
   mult: (num1, num2) => {
-    let result = num1 * num2;
+    const result = num1 * num2;
     return Math.floor(result);
   },
   div: (num1, num2) => {
-    let result = num1 / num2;
+    const result = num1 / num2;
     return Math.floor(result);
   },
   sub: (num1, num2) => {
-    let result = num1 - num2;
+    const result = num1 - num2;
     return Math.floor(result);
-  }
+  },
 };
 module.exports = calculator;
