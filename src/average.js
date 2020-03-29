@@ -14,22 +14,20 @@
 
 const average = (array) => {
   let soma = 0;
- 
-  for (let i = 0; i < array.length; i += 1) {
-    if (typeof array[i] == 'number') {
-      soma += array[i];
-    }
-   else {
-    return undefined
-    }
+  if (array.length === 0) {
+    return undefined;
   }
-  const media = soma /array.length;
+  for (let i = 0; i < array.length; i += 1) {
+    if (typeof array[i] !== 'number') {
+      return undefined;
+    }
+    soma += array[i];
+  }
+  const media = soma / array.length;
   return Math.round(media);
-}
+};
 
-const a = ['um','dois','tres']
-console.log(average(a))
+const a = ['um', 'dois', 'tres'];
+console.log(average(a));
 
 module.exports = average;
-
-array = isNaN (array) ? [] : array

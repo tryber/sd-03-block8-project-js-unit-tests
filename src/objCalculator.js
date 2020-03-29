@@ -19,18 +19,10 @@
   calculator.div(3, 2) // Retorno: 1;
 */
 
-const calculator = (para1, para2) => {
-  
-   add = (para1 + para2)
-    return add
-  }
-   
-//    mult = (para1 * para2);
-//    div : para1 / para2; 
-//    sub : para1 - para2;
-  
-// };
-
+const calculator = {
+  add: (para1, para2) => para1 + para2,
+  mult: (para1, para2) => para1 * para2,
+  div: (para1, para2) => Math.trunc(para1 / para2),
+  sub: (para1, para2) => para1 - para2,
+};
 module.exports = calculator;
-
-console.log(calculator(100,1));
