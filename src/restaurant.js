@@ -77,7 +77,7 @@ const entriesFunction = (pedido, valores) =>
 const createValores = menu => {
   let valores = [];
 
-  for (let i = 0; i < Object.entries(menu.fetchMenu).length; i++) {
+  for (let i = 0; i < Object.entries(menu.fetchMenu).length; i += 1) {
     entriesFunction(Object.entries(menu.fetchMenu)[i], valores);
   }
 
