@@ -12,6 +12,19 @@
     - average([1, '2']) // Retorno: undefined;
 */
 
-const average = () => console.log('inicio');
+const average = (listaN) => {
+  if (listaN.length === 0) return undefined;
+  let count = 0;
+  for (let i = 0; i < listaN.length; i += 1) {
+    if (typeof listaN[i] === 'number') {
+      count += listaN[i];
+    } else {
+      return undefined;
+    }
+  }
+  const media = count / listaN.length;
+  return Math.round(media);
+};
+
 
 module.exports = average;
