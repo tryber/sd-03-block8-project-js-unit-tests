@@ -51,7 +51,28 @@ const createMenu = require("../src/restaurant");
 
 describe("#createMenu", () => {
   it("tests the function has the correct behaviour", () => {
-    // assert.equal(createMenu(object), { fetchMenu: objetoQualquer });
+    // assert.deepEqual(createMenu("object"), { fetchMenu: "object" });
+    assert.deepEqual(createMenu({ food: {}, drink: {} }).fetchMenu, {
+      food: {},
+      drink: {}
+    });
+    assert.deepEqual(createMenu("objeto").fetchMenu, "objeto");
+    assert.deepEqual(createMenu("objeto").consumption, []);
+
+    const objetoRetornado = createMenu("objetoQualquer");
+    objetoRetornado.order("coxinha");
+    assert.deepEqual(objetoRetornado.consumption, ["coxinha"]);
+
+    objetoRetornado.order("agua");
+    objetoRetornado.order("sopa");
+    objetoRetornado.order("sashimi");
+    assert.deepEqual(objetoRetornado.consumption, [
+      "coxinha",
+      "agua",
+      "sopa",
+      "sashimi"
+    ]);
+
     // TESTE 1: Verifique que, dado um objeto qualquer passado como um parâmetro para a função createMenu(), checa se o retorno da função é um objeto no seguinte formato: { fetchMenu: objetoQualquer }.
     // ```
     // createMenu(objetoQualquer) // Retorno: { fetchMenu: objetoQualquer }
