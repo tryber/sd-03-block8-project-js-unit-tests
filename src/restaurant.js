@@ -66,32 +66,46 @@
 
 // PASSO 4: Adicione ao objeto retornado por `createMenu()` uma chave `pay` com uma função que varre todo os itens de `objetoRetornado.consumption`, soma o preço de todos checando-os no menu e retorna o valor somado acrescido de 10%. DICA: para isso, você precisará varrer tanto o objeto da chave `food` quanto o objeto da chave `drink`.
 
-const cardapio = {
-  food: { coxinha: 3.9, sopa: 9.9 },
-  drink: { agua: 3.9, cerveja: 6.9 },
-};
+/*const cardapio = {
+  food: { 
+    coxinha: 3.9, 
+    sopa: 9.9 },
+  drink: { 
+    agua: 3.9, 
+    cerveja: 6.9 },
+};*/
 
-const orderFromMenu = (request) => restaurant.consumption.push(request);
-const restaurant = {}
-const createMenu = (objeto) => { 
-  Object.assign(restaurant, {
-  fetchMenu: objeto,
-  consumption: [],
-  order: (item) => orderFromMenu(item)
-  });
-  return restaurant;
+const restaurant = {};
+const orderFromMenu = (request) => { restaurant.consumption.push(request) };
+const somaPrecos = (comanda, menu) => { 
+  let totalFinal = 0;
+  for (let i in comanda) {
+    for (let [item, preco] of Object.entries(menu.food))
+      item == comanda[i] ? totalFinal += preco : 1;
+    for (let [item, preco] of Object.entries(menu.drink))
+      item == comanda[i] ? totalFinal += preco : 1;
+  }
+  console.log(`Total da conta: R$ ${totalFinal}`);
+  return totalFinal;
 }
 
+const createMenu = (objeto) => {
+  Object.assign(restaurant, {
+    fetchMenu: objeto,
+    consumption: [],
+    order: (item) => { orderFromMenu(item) },
+    pay: (consumption, fetchMenu) => { somaPrecos(consumption, fetchMenu) }
+  });
+  return restaurant;
+};
 
-
-
-createMenu(cardapio);
-restaurant.order('coxinha');
-restaurant.order("coxinha");
-restaurant.order("agua");
-restaurant.order("sopa");
-restaurant.order("sashimi");
-console.log(restaurant.consumption);
-
-
+//createMenu(cardapio);
+//restaurant.order('coxinha');
+//restaurant.order('coxinha');
+//restaurant.order('agua');
+//restaurant.order('sopa');
+//restaurant.order('sashimi');
+//console.log(restaurant.fetchMenu);
+//console.log(restaurant.consumption);
+//console.log(restaurant.pay(restaurant.consumption,restaurant.fetchMenu));
 module.exports = createMenu;

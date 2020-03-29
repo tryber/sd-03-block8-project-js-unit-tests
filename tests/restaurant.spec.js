@@ -36,7 +36,7 @@ describe('#createMenu', () => {
     // ----------------------------------------------------------------------------
     // TESTE 5: Verifique que chamar uma função associada à chave `order` no objeto retornado, passando uma string como parâmetro, como `objetoRetornado.order('coxinha')`, tal string é adicionada ao array retornado em `objetoRetornado.consumption OK
     // ```;
-     const objetoRetornado = createMenu(objetoQualquer);
+    const objetoRetornado = createMenu(objetoQualquer);
     // objetoRetornado.order("coxinha");
     // objetoRetornado.consumption // Retorno: ["coxinha"]
     // ```
@@ -44,29 +44,29 @@ describe('#createMenu', () => {
     // --------------------------------------------------------------------------------------
     // TESTE 6: Verifique que as três orders seguintes, de bebidas e comidas mescladas, somam três itens no array `objetoRetornado.consumption` conforme os itens pedidos. OK
     // ```
-    objetoRetornado.order("coxinha");
-    objetoRetornado.order("agua");
-    objetoRetornado.order("sopa");
-    objetoRetornado.order("sashimi");
+    //objetoRetornado.order("coxinha");
+    //objetoRetornado.order("agua");
+    //objetoRetornado.order("sopa");
+    //objetoRetornado.order("sashimi");
     //objetoRetornado.consumption // Retorno: ["coxinha", "agua", "sopa", "sashimi"]
     // ```
     // Agora faça o TESTE 7 deste arquivo.
     // --------------------------------------------------------------------------------------
     // TESTE 7: Verifique que a função `order` aceita que pedidos repetidos sejam acrescidos a consumption. OK
     // ```
-     objetoRetornado.order('coxinha');
-     objetoRetornado.order('agua');
     // objetoRetornado.order('coxinha');
-     objetoRetornado.comsuption; // Retorno: ['coxinha', 'agua', 'coxinha']
+    // objetoRetornado.order('agua');
+    // objetoRetornado.order('coxinha');
+    // objetoRetornado.comsuption; // Retorno: ['coxinha', 'agua', 'coxinha']
     // ```
     // Agora faça o TESTE 8 deste arquivo.
     // --------------------------------------------------------------------------------------
     // TESTE 8: Verifique que, ao chamar `objetoRetornado.pay()`, retorna-se a soma dos preços de tudo que foi pedido, conforme registrado em `objetoRetornado.consumption`
     // ```
-    // objetoRetornado.order('coxinha');
-    // objetoRetornado.order('agua');
-    // objetoRetornado.order('coxinha');
-    // objetoRetornado.pay() // Retorno: somaDosPreçosDosPedidos
+     objetoRetornado.order('coxinha');
+     objetoRetornado.order('agua');
+     objetoRetornado.order('coxinha');
+     objetoRetornado.pay() // Retorno: somaDosPreçosDosPedidos
     // ```
     // Agora faça o PASSO 4 no arquivo `src/restaurant.js`.
   });
