@@ -18,9 +18,9 @@ const numbers = (myArray) => {
   return true;
 };
 */
-const numbers = (myArray) => (myArray.every((element) => {
-    if (typeof element === 'number') return true;
-    return false;
-  }));
+const numbers = (myArray) => myArray.every((element) => {
+  if (typeof element === 'number') return true;
+  return false;
+});
 
 module.exports = numbers;
