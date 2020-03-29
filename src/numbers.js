@@ -18,7 +18,7 @@ const numbers = (myArray) => {
   return true;
 };
 */
-const numbers = (myArray) => myArray.every((element) => {
+const numbers = myArray => myArray.every((element) => {
   if (typeof element === 'number') return true;
   return false;
 });
