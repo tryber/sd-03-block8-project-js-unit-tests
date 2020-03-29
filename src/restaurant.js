@@ -44,18 +44,6 @@
 */
 
 // PASSO 1: Crie uma função `createMenu()` que, dado um objeto passado por parâmetro, retorna um objeto com o seguinte formato: { fetchMenu: objetoPassadoPorParametro }.
-
-const createMenu = (obj) => {
-  return {
-    fetchMenu: obj,
-    consumption: [],
-    // order: (str) => consumption.push(str),
-  };
-};
-
-
-module.exports = createMenu;
-
 // PASSO 3: Crie uma função, separada da função `createMenu()`, que, dada uma string recebida por parâmetro, adiciona essa string ao array de `objetoRetornado.consumption`. Adicione essa função à chave `order`.
 // DICA: para criar isso, você vai precisar definir a função `createMenu()`, definir o objeto que a `createMenu()` define separadamente dela e, depois, a função que será definida em `order`.
 // ```
@@ -71,3 +59,37 @@ module.exports = createMenu;
 //------------------------------------------------------------------------------------------
 
 // PASSO 4: Adicione ao objeto retornado por `createMenu()` uma chave `pay` com uma função que varre todo os itens de `objetoRetornado.consumption`, soma o preço de todos checando-os no menu e retorna o valor somado acrescido de 10%. DICA: para isso, você precisará varrer tanto o objeto da chave `food` quanto o objeto da chave `drink`.
+// { food: { 'coxinha': 3.9, 'sopa': 9.9 }, drink: { 'agua': 3.9, 'cerveja': 6.9 } }
+
+const restaurant = {};
+
+const comparaEcalcula = (consumo, keys, values) => {
+  let soma = 0;
+  consumo.forEach((element) => {
+    for (let i = 0; i < keys.length; i += 1) {
+      if (element === keys[i]) {
+        soma += values[i];
+      }
+    }
+  });
+  return soma;
+};
+
+
+const somaDosPreçosDosPedidos = () => {
+  const consumo = restaurant.consumption;
+  const Keys = Object.keys(restaurant.fetchMenu.food).concat(Object.keys(restaurant.fetchMenu.drink));
+  const Values = Object.values(restaurant.fetchMenu.food).concat(Object.values(restaurant.fetchMenu.drink));
+  return comparaEcalcula(consumo, Keys, Values);
+};
+
+const orderFromMenu = str => restaurant.consumption.push(str);
+
+const createMenu = obj => Object.assign(restaurant, {
+  fetchMenu: obj,
+  consumption: [],
+  order: str => orderFromMenu(str),
+  pay: () => somaDosPreçosDosPedidos(),
+});
+
+module.exports = createMenu;
