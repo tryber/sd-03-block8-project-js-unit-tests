@@ -1,8 +1,6 @@
 /* eslint-disable max-len*/
-
 const assert = require('assert');
 const calculator = require('../src/objCalculator');
-
 /*
   Desenvolva um objeto calculator que possui quatro chaves:
     - add;
@@ -23,7 +21,6 @@ const calculator = require('../src/objCalculator');
 
   OBS: Lembre-se que você não precisa se preocupar com o describe e o it por enquanto, isso será aprendido posteriormente.
 */
-
 describe('#calculator', () => {
   it('should return the right values', () => {
     assert.strictEqual(calculator.add(1, 3), 4);
