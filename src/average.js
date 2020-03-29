@@ -30,9 +30,10 @@ const average = (array) => {
 const average = (array) => {
   const verificaTemString = array.some((element) => {
     if (typeof element === 'string') return true;
+    return false;
   });
   if (verificaTemString || array.length === 0) return undefined;
   const total = array.reduce((acumulador, valorAtual) => acumulador + valorAtual, 0);
   return Math.round((total / array.length));
-}
+};
 module.exports = average;
