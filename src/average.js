@@ -20,8 +20,8 @@ const average = (array) => {
     }
     sum += array[i];
   }
-  const average = sum / array.length;
-  const average = Math.floor(average);
+  let average = sum / array.length;
+  average = Math.floor(average);
   return average;
 };
 
