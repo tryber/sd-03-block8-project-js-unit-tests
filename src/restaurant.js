@@ -78,7 +78,7 @@ const createMenu = restaurant => (
     drinks: { agua: 3.90, cerveja: 6.90 } },
     consumption: [],
     order: (request) => {
-      restaurant.consumption = request;     
+      restaurant.consumption = request;
       return restaurant.consumption;
     },
     pay: () => {
