@@ -41,7 +41,7 @@
   - Uma chave `pay` que, quando chamada, invoca uma função que soma o valor de todos os pedidos e dá o preço com acréscimo de 10%.
 
   IMPORTANTE: COMECE PELO TESTE 1 DO ARQUIVO `tests/restaurant.spec.js` E NÃO PELO PASSO 1 DESTE ARQUIVO!
-*/
+estava aqui o fim do comment!!
 
 // PASSO 1: Crie uma função `createMenu()` que, dado um objeto passado por parâmetro, retorna um objeto com o seguinte formato: { fetchMenu: objetoPassadoPorParametro }. OK
 // Agora faça o TESTE 2 no arquivo `tests/restaurant.spec.js`.
@@ -66,46 +66,47 @@
 
 // PASSO 4: Adicione ao objeto retornado por `createMenu()` uma chave `pay` com uma função que varre todo os itens de `objetoRetornado.consumption`, soma o preço de todos checando-os no menu e retorna o valor somado acrescido de 10%. DICA: para isso, você precisará varrer tanto o objeto da chave `food` quanto o objeto da chave `drink`.
 
-/*const cardapio = {
-  food: { 
-    coxinha: 3.9, 
+const cardapio = {
+  food: {
+    coxinha: 3.9,
     sopa: 9.9 },
-  drink: { 
-    agua: 3.9, 
+  drink: {
+    agua: 3.9,
     cerveja: 6.9 },
-};*/
+};
 
 const restaurant = {};
-const orderFromMenu = (request) => { restaurant.consumption.push(request) };
-const somaPrecos = (comanda, menu) => { 
-  let totalFinal = 0;
-  for (let i in comanda) {
-    for (let [item, preco] of Object.entries(menu.food))
-      item == comanda[i] ? totalFinal += preco : 1;
-    for (let [item, preco] of Object.entries(menu.drink))
-      item == comanda[i] ? totalFinal += preco : 1;
-  }
-  console.log(`Total da conta: R$ ${totalFinal}`);
-  return totalFinal;
-}
+const orderFromMenu = (request) => { restaurant.consumption.push(request); };
 
 const createMenu = (objeto) => {
   Object.assign(restaurant, {
     fetchMenu: objeto,
     consumption: [],
-    order: (item) => { orderFromMenu(item) },
-    pay: (consumption, fetchMenu) => { somaPrecos(consumption, fetchMenu) }
+    order: (item) => { orderFromMenu(item); },
+    pay: () => {
+      let totConta = 0;
+      for (let i in restaurant.consumption) {
+        for (const [item, preco] of Object.entries(restaurant.fetchMenu.food)) {
+          item === restaurant.consumption[i] ? totConta += preco : true;
+        }
+        for (const [item, preco] of Object.entries(restaurant.fetchMenu.drink)) {
+          item === restaurant.consumption[i] ? totConta += preco : true;
+        }
+      }
+      return (`Total da conta: R$ ${totConta*1.1}`);
+    }
   });
   return restaurant;
 };
 
-//createMenu(cardapio);
-//restaurant.order('coxinha');
-//restaurant.order('coxinha');
-//restaurant.order('agua');
-//restaurant.order('sopa');
-//restaurant.order('sashimi');
-//console.log(restaurant.fetchMenu);
-//console.log(restaurant.consumption);
-//console.log(restaurant.pay(restaurant.consumption,restaurant.fetchMenu));
+createMenu(cardapio);
+  restaurant.order('coxinha');
+  restaurant.order('coxinha');
+  restaurant.order('agua');
+  restaurant.order('sopa');
+  restaurant.order('cerveja');
+//  console.log(restaurant.consumption);
+//  console.log(restaurant.fetchMenu);
+console.log(restaurant.pay());
 module.exports = createMenu;
+*/
