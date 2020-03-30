@@ -31,10 +31,8 @@ const productDetails = require('../src/productDetails');
   OBS: Lembre-se que você não precisa se preocupar com o describe e o it por enquanto, isso será aprendido posteriormente.
 */
 
-describe('#productDetails', () =>
-{
-  it('tests the function has the correct behaviour', () =>
-  {
+describe('#productDetails', () => {
+  it('tests the function has the correct behaviour', () => {
     // WRITE YOUR TESTS BELOW:
     // Test that the function's return is an array.
     assert(Array.isArray(productDetails()) === true);
@@ -47,6 +45,5 @@ describe('#productDetails', () =>
     // (hard) test that both ends with productIds 123.
     assert.deepStrictEqual(productDetails('a', 'b')[0].details.productId.endsWith('123'), true);
     assert.deepStrictEqual(productDetails('a', 'b')[1].details.productId.endsWith('123'), true);
-
   });
 });

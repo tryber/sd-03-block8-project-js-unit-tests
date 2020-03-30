@@ -20,29 +20,12 @@
 */
 
 const calculator = {
-  add: function (a, b)
-  {
-    return a + b;
-  },
-  mult: function (a, b)
-  {
-    return a * b;
-  },
-  div: function (a, b)
-  {
-    return Math.floor(a / b);
-  },
-  sub: function (a, b)
-  {
-    return a - b;
-  }
+  add(a, b) { return a + b; },
+  mult(a, b) { return a * b; },
+  div(a, b) { return Math.floor(a / b); },
+  sub(a, b) { return a - b; },
 };
 
 console.log(calculator.div(1, 2));
 
 module.exports = calculator;
-
-
-// due_date: function() {
-//   return getDueDate(this.birth_day, this.current_cycle)
-// }
