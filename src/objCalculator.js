@@ -24,6 +24,6 @@ const calculator = {
   mult: (a, b) => parseInt(a * b, 10),
   div: (a, b) => parseInt(a / b, 10),
   sub: (a, b) => parseInt(a - b, 10),
-}
+};
 
 module.exports = calculator;
