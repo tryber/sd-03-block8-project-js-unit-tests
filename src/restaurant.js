@@ -79,8 +79,8 @@ const createMenu = objetoQualquer => ({
   order: orderFromMenu,
   pay () {
     let pagar = 0;
-    this.consumption.forEach( (elemento) => {
-       this.fetchMenu.food[elemento] ? pagar += this.fetchMenu.food[elemento] : pagar += this.fetchMenu.drink[elemento];
+    this.consumption.forEach((elemento) => {
+      this.fetchMenu.food[elemento] ? pagar += this.fetchMenu.food[elemento] : pagar += this.fetchMenu.drink[elemento];
     });
     return pagar * 1.1;
   },
