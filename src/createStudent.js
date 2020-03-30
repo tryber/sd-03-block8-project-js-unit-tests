@@ -12,7 +12,7 @@
     estudante.feedback() // Retorna: 'Eita pessoa boa!'
 */
 
-const createStudent = name => {
+const createStudent = (name) => {
   const ans = Object.create(null);
   ans.name = name;
   ans.feedback = () => 'Eita pessoa boa!';
