@@ -28,7 +28,7 @@ const productDetails = (firstProduct, secondProduct) => [
   {
     name: firstProduct,
     details: {
-      productId: `${firstProduct}`,
+      productId: `${firstProduct}123`,
     },
   },
   {
@@ -40,3 +40,7 @@ const productDetails = (firstProduct, secondProduct) => [
 ];
 
 module.exports = productDetails;
+
+const arrTest = productDetails('a', 'b');
+
+console.log(arrTest);
