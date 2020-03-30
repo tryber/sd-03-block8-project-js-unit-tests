@@ -18,19 +18,24 @@
 
 // module.exports = average;
 
-const average = (array) => {
-  let total = 0;
-  let media = 0;
-  if (array.length === 0) {
-    return undefined;
-  }
-  for (let i = 0; i < array.length; i += 1) {
-    if (typeof (array[i]) === 'string') {
+const average = (arr) => {
+  for (let i = 0; i < arr.length; i += 1) {
+    if (typeof arr[i] !== 'number') {
       return undefined;
     }
-    total += array[i];
   }
-  media = Math.round(total / array.length);
-  return media;
+
+  if (arr.length === 0) {
+    return undefined;
+  }
+
+  let total = 0;
+
+  for (let i = 0; i < arr.length; i += 1) {
+    total += arr[i];
+  }
+
+  return (Math.round(total / arr.length));
 };
 
+module.exports = average;

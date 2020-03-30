@@ -16,7 +16,7 @@
 */
 
 const createStudent = (nome) => {
-const estudante = 
+  const estudante = 
   {
     name: nome,
     feedback: () => 'Eita pessoa boa!',
@@ -24,8 +24,5 @@ const estudante =
 //  console.log(estudante.nome);
   return estudante;
 };
-
-//createStudent('a', 'b');
-
 
 module.exports = createStudent;
