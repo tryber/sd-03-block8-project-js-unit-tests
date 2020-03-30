@@ -40,9 +40,11 @@ describe('#productDetails', () => {
     assert.strictEqual((productDetails().length), 2);
     // Teste que os dois itens dentro do array retornado pela função são objetos.
     const arrTest = productDetails('a', 'b');
-    assert.strictEqual(typeof (arrTest), 'object')
+    assert.strictEqual(typeof (arrTest), 'object');
     // Teste que os dois objetos são diferentes entre si.
-    assert.strictEqual((arrTest[0] != arrTest[1]), true)
+    assert.strictEqual((arrTest[0] != arrTest[1]), true);
     // (Difícil) Teste que os dois productIds terminam com 123.
+    assert.ok(productDetails('a', 'b')[0].details.productId.endsWith('123'));
+    assert.ok(productDetails('a', 'b')[1].details.productId.endsWith('123'));
   });
 });
