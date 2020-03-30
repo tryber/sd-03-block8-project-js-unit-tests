@@ -77,14 +77,14 @@ const createMenu = objetoQualquer => ({
   fetchMenu: objetoQualquer,
   consumption: [],
   order: orderFromMenu,
-  pay ( ) {
+  pay() {
     let pagar = 0;
     this.consumption.forEach((elemento) => {
       if (this.fetchMenu.food[elemento]) {
-        pagar += this.fetchMenu.food[elemento]
+        pagar += this.fetchMenu.food[elemento];
       } else {
         pagar += this.fetchMenu.drink[elemento];
-      };
+      }
     });
     return pagar * 1.1;
   },
