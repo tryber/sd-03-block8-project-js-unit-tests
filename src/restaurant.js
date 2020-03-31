@@ -74,7 +74,7 @@
 const controle = {};
 let valor = 0;
 
-const registro = item => {
+const registro = (item) => {
   controle.consumption.push(item);
 };
 
@@ -91,12 +91,12 @@ const pagamento = () => {
   return parseFloat(valor.toFixed(1));
 };
 
-const createMenu = entrada => {
+const createMenu = (entrada) => {
   Object.assign(controle, {
     menu: { fetchMenu: entrada },
     consumption: [],
-    order: item => registro(item),
-    pay: () => pagamento()
+    order: (item) => registro(item),
+    pay: () => pagamento(),
   });
   return controle;
 };
