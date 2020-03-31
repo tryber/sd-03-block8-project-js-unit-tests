@@ -77,8 +77,8 @@ const createMenu = (restaurantMenu = { food: {}, drink: {} }) => {
   restaurantMenu.fetchMenu = { fetchMenu: `${Object.keys(restaurantMenu)}` };
   restaurantMenu.consumption = [];
   restaurantMenu.order = customerOrder;
-  restaurantMenu.pay = restaurantMenu.consumption.reduce((food, drink) => {
-    restaurantMenu.fetchMenu.food + restaurantMenu.fetchMenu.drink;
+  restaurantMenu.pay = (restaurantMenu.consumption).reduce((food, drink) => {
+    return restaurantMenu.fetchMenu.food + restaurantMenu.fetchMenu.drink;
   }, 1.1);
 
   return restaurantMenu;
