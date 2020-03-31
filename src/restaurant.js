@@ -12,17 +12,18 @@
 
   Parâmetros:
   - Um objeto. Exemplos: { food: {'coxinha': 3.9, 'sopa': 9.9}, drink: {'agua': 3.9, 'cerveja': 6.9} }.
+
   Comportamento:
 
-  const meuRestaurante = createMenu({ food: {'coxinha': 3.9, 'sopa': 9.9}, drink: {'agua': 3.9, 'cerveja': 6.9} }).
+  - const meuRestaurante = createMenu({ food: {'coxinha': 3.9, 'sopa': 9.9}, drink: {'agua': 3.9, 'cerveja': 6.9} }).
 
-  meuRestaurante.fetchMenu() // Retorno: { food: {'coxinha': 3.9, 'sopa': 9.9}, drink: {'agua': 3.9, 'cerveja': 6.9} }
+  - meuRestaurante.fetchMenu() // Retorno: { food: {'coxinha': 3.9, 'sopa': 9.9}, drink: {'agua': 3.9, 'cerveja': 6.9} }
 
-  meuRestaurante.order('coxinha') // Retorno: undefined
+  - meuRestaurante.order('coxinha') // Retorno: undefined
 
-  meuRestaurante.consumption // Retorno: ['coxinha']
+  - meuRestaurante.consumption // Retorno: ['coxinha']
 
-  meuRestaurante.pay() // Retorno: 3.9
+  - meuRestaurante.pay() // Retorno: 3.9
 
   Uma função createMenu retorna um objeto com as seguintes características:
   - Uma chave `fetchMenu` retorna o objeto que a função `createMenu` recebe por parâmetro. O menu tem sempre duas chaves, `food` e `drink`, no seguinte formato:
@@ -71,6 +72,25 @@
 
 // PASSO 4: Adicione ao objeto retornado por `createMenu()` uma chave `pay` com uma função que varre todo os itens de `objetoRetornado.consumption`, soma o preço de todos checando-os no menu e retorna o valor somado acrescido de 10%. DICA: para isso, você precisará varrer tanto o objeto da chave `food` quanto o objeto da chave `drink`.
 
-const createMenu = () => {};
+const createMenu = (obj) => {
+  let menu = {
+    fetchMenu: obj, 
+    consumption: [], 
+    order: (request) => menu.consumption.push(request),
+    pay: () => {
+      let products = Object.values(menu.fetchMenu);
+      let sum = 0;
+      
+      for (i in products) {
+        if (menu.consumption[i] == Object.keys(products[i])) {         
+          sum += Object.values(products[i])[0];
+        };
+      }
+
+      return sum;
+    },
+  };
+  return menu;
+};
 
 module.exports = createMenu;
