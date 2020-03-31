@@ -16,18 +16,12 @@ const average = (array) => {
   // add your implemetation here
   // Using .every() method to test array elements type and defining condi
   if (
-    array.every(element => typeof element === 'number') === false ||
+    array.every((element) => typeof element === 'number') === false ||
     array.length === 0
   ) {
     return undefined;
   }
-  let arraySum = 0;
-  let arrayAverageValue = 0;
-  for (let i = 0; i < array.length; i += 1) {
-    arraySum += array[i];
-    arrayAverageValue = arraySum / array.length;
-  }
-  return Math.round(arrayAverageValue);
+  return Math.round(array.reduce((a, b) => a + b) / array.length);
 };
 
 module.exports = average;
