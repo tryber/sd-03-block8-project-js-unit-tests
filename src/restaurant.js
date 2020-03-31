@@ -73,18 +73,23 @@
 
 // Observação: Refazer prototipagem das funções, a lógica está imperfeita e a aplicação não está funcional
 
-const customerOrder = (...string) => restaurant.consumption.push(...string);
+let restaurantMenu = {
+  fetchMenu: { food: {}, drink: {} },
+  consumption: [],
+  order: {},
+  pay: 0,
+};
 
-const createMenu = (restaurantMenu = { food: {}, drink: {} }) => 
-{  restaurantMenu.fetchMenu = {};
-  restaurantMenu.consumption = [];
+const customerOrder = (...string) => restaurantMenu.consumption.push(...string);
+
+const createMenu = (object) => {
+  restaurantMenu.fetchMenu = object;
   restaurantMenu.order = customerOrder;
   restaurantMenu.pay = restaurantMenu.consumption.reduce(
-    (fetchMenu) =>
-      (restaurantMenu.fetchMenu.food + restaurantMenu.fetchMenu.drink) * 1.1,
-    0
+    (restaurantMenu) =>
+      (restaurantMenu.fetchMenu.food + restaurantMenu.fetchMenu.drink) * 1.1
   );
   return restaurantMenu;
-}
+};
 
 module.exports = createMenu;
