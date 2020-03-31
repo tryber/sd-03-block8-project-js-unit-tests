@@ -27,13 +27,12 @@
   Uma função createMenu retorna um objeto com as seguintes características:
   - Uma chave `fetchMenu` retorna o objeto que a função `createMenu` recebe por parâmetro. O menu tem sempre duas chaves, `food` e `drink`, no seguinte formato:
 
-  
   meuRestaurante.fetchMenu() // Retorno: Menu acima
-  
+
   - Uma chave `consumption` que contém um array de strings, com cada string sendo a chave de um pedido. Por exemplo: ['coxinha', 'cerveja']
-  
+
   - Uma chave `order` que tem uma função que, recebida uma string como parâmetro, adiciona essa string à lista salva em `consumption`.
-  
+
   const meuRestaurante = createMenu({
     food: {'coxinha': 3.90, 'sanduiche', 9.90},
     drinks: {'agua': 3.90, 'cerveja': 6.90}
@@ -46,8 +45,6 @@
 // PASSO 1: Crie uma função `createMenu()` que, dado um objeto passado por parâmetro, retorna um objeto com o seguinte formato: { fetchMenu: objetoPassadoPorParametro }.
 //
 // Agora faça o TESTE 2 no arquivo `tests/restaurant.spec.js`.
-
-//const meuRestaurante =  createMenu({food: {'coxinha': 2.90, 'sanduiche': 9.90}, drinks: {'agua': 1.90,'refrigerante': 4.90}, consumption: []})
 
 //------------------------------------------------------------------------------------------
 
@@ -72,7 +69,5 @@
 //------------------------------------------------------------------------------------------
 
 // PASSO 4: Adicione ao objeto retornado por `createMenu()` uma chave `pay` com uma função que varre todo os itens de `objetoRetornado.consumption`, soma o preço de todos checando-os no menu e retorna o valor somado acrescido de 10%. DICA: para isso, você precisará varrer tanto o objeto da chave `food` quanto o objeto da chave `drink`.
-
-
 
 module.exports = createMenu;
