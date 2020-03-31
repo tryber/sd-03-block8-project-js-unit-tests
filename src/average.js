@@ -13,7 +13,7 @@
 */
 
 const average = (array) => {
-  if (array.every(e => typeof e === 'number' && array.length > 0)) {
+  if (typeof array === 'object' && array.length > 0 && array.every(e => typeof e === 'number')) {
     return Math.round(array.reduce((a, e) => a + e) / array.length);
   }
   return undefined;
