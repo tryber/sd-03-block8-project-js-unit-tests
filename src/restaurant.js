@@ -75,5 +75,7 @@ const createMenu = restaurant => (
       restaurant.consumption = request;
       return restaurant.consumption;
     },
-    
-  module.exports = createMenu;
+
+)};
+
+module.exports = createMenu;
