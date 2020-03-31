@@ -20,7 +20,7 @@ const myCounter = () => {
   for (var counter = 0; counter <= 3; counter += 1) {
     myArray.push(counter);
     for (var n = 0; n < 2; n += 1) {
-      myArray.push( n + 2 );
+      myArray.push(n + 2);
     }
   }
   return myArray;
