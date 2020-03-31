@@ -47,7 +47,7 @@
 //
 // Agora faça o TESTE 2 no arquivo `tests/restaurant.spec.js`.
 
- const meuRestaurante =  createMenu({food: {'coxinha': 2.90, 'sanduiche': 9.90}, drinks: {'agua': 1.90,'refrigerante': 4.90}, consumption: []}) =>
+//const meuRestaurante =  createMenu({food: {'coxinha': 2.90, 'sanduiche': 9.90}, drinks: {'agua': 1.90,'refrigerante': 4.90}, consumption: []})
 
 //------------------------------------------------------------------------------------------
 
