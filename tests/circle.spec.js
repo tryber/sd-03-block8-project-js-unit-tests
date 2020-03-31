@@ -25,13 +25,19 @@ const circle = require('../src/circle');
 
 describe('#circle', () => {
   it('given a radius, should return an object with circles info', () => {
-    assert.fail();
-    // ESCREVA SEUS TESTES ABAIXO:
-    // Teste se circle retorna um objeto.
-    // Teste se o objeto retornado tem 3 entradas.
-    // Teste se a função, quando não recebe nenhum parâmetro, retorna undefined.
-    // Teste que a função retorna, dentro de um objeto, a circunferência correta para um círculo de raio 2.
-    // Teste que a função retorna, dentro de um objeto, a área correta para um círculo de raio 3.
-    // Teste que a função retorna, num objeto, os dados corretos de um círculo de raio 3.
+    // WRITE YOUR TESTS BELOW:
+    // Test whether the circle returns an object.
+    assert(typeof Object.entries(circle) === 'object');
+    // Test if the object returned 3 entries.
+    assert(Object.entries(circle(2)).length === 3);
+    // Test whether a function, when it receives no parameters, returns undefined.
+    assert(circle() === undefined);
+    // Test that the functions return, within an object, the correct circumference for a circle of radius 2.
+    assert(circle(2).circumference === 12.56);
+    // Test that the functions return, within an object, a correct area for a circle of radius 3.
+    assert(circle(3).area === 28.259999999999998);
+    // Test that the functions return, in an object, the correct data from a circle of radius 3.
+    const expected = { radius: 3, area: 28.259999999999998, circumference: 18.84 };
+    assert(Object.entries(circle(3)).toString() === Object.entries(expected).toString());
   });
 });
