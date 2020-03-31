@@ -74,7 +74,7 @@
 const controle = {};
 let valor = 0;
 
-const registro = item => { controle.consumption.push(item); };
+const registro = (item) => { controle.consumption.push(item); };
 
 const pagamento = () => {
   const newArr = controle.consumption;
