@@ -75,15 +75,16 @@
 
 const customerOrder = (...string) => restaurant.consumption.push(...string);
 
-const createMenu = (restaurantMenu = { food: {}, drink: {} }) => {
-  restaurantMenu.fetchMenu = {};
+const createMenu = (restaurantMenu = { food: {}, drink: {} }) => 
+{  restaurantMenu.fetchMenu = {};
   restaurantMenu.consumption = [];
   restaurantMenu.order = customerOrder;
-  restaurantMenu.pay = restaurantMenu.consumption.reduce((food, drink) => {
-    return restaurantMenu.fetchMenu.food + restaurantMenu.fetchMenu.drink;
-  }, 1.1);
-
+  restaurantMenu.pay = restaurantMenu.consumption.reduce(
+    (fetchMenu) =>
+      (restaurantMenu.fetchMenu.food + restaurantMenu.fetchMenu.drink) * 1.1,
+    0
+  );
   return restaurantMenu;
-};
+}
 
 module.exports = createMenu;
