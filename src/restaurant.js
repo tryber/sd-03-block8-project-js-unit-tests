@@ -81,6 +81,6 @@ const createMenu = (restaurantMenu) => {
   return restaurantMenu;
 };
 
-const customerOrder = (string) => restaurant.consumption.push(string);
+const customerOrder = (...string) => restaurant.consumption.push(...string);
 
 module.exports = createMenu;
