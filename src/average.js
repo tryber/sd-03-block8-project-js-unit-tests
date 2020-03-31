@@ -15,18 +15,15 @@
 const average = (arr) => {
   let sum = 0;
 
-for (let i in arr) {
-    sum = (sum + arr[i]);
-}
+  for (let i in arr) {
+      sum = (sum + arr[i]);
+  }
 
-if (typeof sum !== 'number') {
-  console.log(undefined);
-} else {
-console.log(Math.round(sum/arr.length));
-}
+  if (typeof sum !== 'number') {
+    console.log(undefined);
+  } else {
+  console.log(Math.round(sum/arr.length));
+  }
 };
 
-
 module.exports = average;
-
-
