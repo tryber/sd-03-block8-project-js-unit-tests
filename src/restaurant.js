@@ -75,12 +75,12 @@ const restaurantMenu ={};
 const createMenu = (restaurantMenu) => {
   restaurantMenu.fetchMenu = { fetchMenu: (`${Object.keys(restaurantMenu)}`)  };
   restaurantMenu.consumption = [];
-  // restaurantMenu.order = ;
+  restaurantMenu.order = customerOrder ;
   // restaurantMenu.pay = ;
 
   return restaurantMenu;
 };
 
-const customerOrder = string =>  ;
+const customerOrder = (string) => restaurant.consumption.push(string);
 
 module.exports = createMenu;
