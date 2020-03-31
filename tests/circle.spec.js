@@ -40,3 +40,4 @@ describe('#circle', () => {
         assert.deepEqual(Object.values(circle(3)), [3, 28.259999999999998, 18.84]);
     });
 });
+
