@@ -66,7 +66,7 @@ describe('#createMenu', () => {
     // ```
     const createdMenu = createMenu({ food: {}, drink: {} }); // Variável referência de testes unitários
 
-    assert.deepStrictEqual(createdMenu.fetchMenu,{ food: {}, drink: {} });
+    assert.deepStrictEqual(createdMenu.fetchMenu, { food: {}, drink: {} });
     // Agora faça o TESTE 3 deste arquivo.
     // --------------------------------------------------------------------------------------
     // TESTE 3: Verifique que o menu passado pra função createMenu é identico ao menu recuperado pela função 'objetoRetornado.fetchMenu'
@@ -105,6 +105,10 @@ describe('#createMenu', () => {
     // objetoRetornado.order("sashimi");
     // objetoRetornado.consumption // Retorno: ["coxinha", "agua", "sopa", "sashimi"]
     // ```
+    assert.deepStrictEqual(
+      createdMenu.order('coxinha', 'agua', 'sopa', 'sashimi'),
+      ['coxinha', 'agua', 'sopa', 'sashimi']
+    );
     // Agora faça o TESTE 7 deste arquivo.
     // --------------------------------------------------------------------------------------
     // TESTE 7: Verifique que a função `order` aceita que pedidos repetidos sejam acrescidos a consumption.
@@ -114,6 +118,7 @@ describe('#createMenu', () => {
     // objetoRetornado.order('coxinha');
     // objetoRetornado.comsuption // Retorno: ['coxinha', 'agua', 'coxinha']
     // ```
+    assert.deepStrictEqual(createdMenu.order('coxinha', 'agua', 'coxinha'), ['coxinha', 'agua', 'coxinha'])
     // Agora faça o TESTE 8 deste arquivo.
     // --------------------------------------------------------------------------------------
     // TESTE 8: Verifique que, ao chamar `objetoRetornado.pay()`, retorna-se a soma dos preços de tudo que foi pedido, conforme registrado em `objetoRetornado.consumption`
