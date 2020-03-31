@@ -95,7 +95,7 @@ const createMenu = (entrada) => {
   Object.assign(controle, {
     menu: { fetchMenu: entrada },
     consumption: [],
-    order: (item) => registro(item),
+    order: item => registro(item),
     pay: () => pagamento(),
   });
   return controle;
