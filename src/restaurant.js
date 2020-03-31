@@ -73,21 +73,20 @@
 
 // Observação: Refazer prototipagem das funções, a lógica está imperfeita e a aplicação não está funcional
 
-const restaurantMenu = {
-  fetchMenu: { food: {}, drink: {} },
-  consumption: [],
-  order: {},
-  pay: 0,
-};
-
 const customerOrder = (...string) => restaurantMenu.consumption.push(...string);
 
 const createMenu = (object) => {
+  const restaurantMenu = {
+    fetchMenu: { food: {}, drink: {} },
+    consumption: [],
+    order: {},
+    pay: 0,
+  };
   restaurantMenu.fetchMenu = object;
   restaurantMenu.order = customerOrder;
   restaurantMenu.pay = restaurantMenu.consumption.reduce(
-    restaurantMenu =>
-      (restaurantMenu.fetchMenu.food + restaurantMenu.fetchMenu.drink) * 1.1,
+    (restaurantMenu) =>
+      (restaurantMenu.fetchMenu.food + restaurantMenu.fetchMenu.drink) * 1.1
   );
   return restaurantMenu;
 };
