@@ -121,4 +121,4 @@ const createMenu = (obj) => {
   return menu;
 };
 
-module.exports = createMenu;
+module.exports = restaurant;
