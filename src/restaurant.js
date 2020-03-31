@@ -82,8 +82,8 @@ const restaurantMenu = {
 
 const customerOrder = (...string) => restaurantMenu.consumption.push(...string);
 
-const consumptionValue = restaurantMenu.consumption.reduce((restaurantMenu) => {
-  return (restaurantMenu.fetchMenu.food + restaurantMenu.fetchMenu.drink) * 1.1;
+const consumptionValue = restaurantMenu.consumption.reduce((object,_value) => {
+  return (object.food + object.fetchMenu.drink) * 1.1;
 });
 
 const createMenu = (object) => {
