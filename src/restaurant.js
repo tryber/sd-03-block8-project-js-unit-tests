@@ -33,10 +33,6 @@
 
   - Uma chave `order` que tem uma função que, recebida uma string como parâmetro, adiciona essa string à lista salva em `consumption`.
 
-  const meuRestaurante = createMenu({
-    food: {'coxinha': 3.90, 'sanduiche', 9.90},
-    drinks: {'agua': 3.90, 'cerveja': 6.90}
-  });
   - Uma chave `pay` que, quando chamada, invoca uma função que soma o valor de todos os pedidos e dá o preço com acréscimo de 10%.
 
   IMPORTANTE: COMECE PELO TESTE 1 DO ARQUIVO `tests/restaurant.spec.js` E NÃO PELO PASSO 1 DESTE ARQUIVO!
@@ -70,8 +66,14 @@
 
 // PASSO 4: Adicione ao objeto retornado por `createMenu()` uma chave `pay` com uma função que varre todo os itens de `objetoRetornado.consumption`, soma o preço de todos checando-os no menu e retorna o valor somado acrescido de 10%. DICA: para isso, você precisará varrer tanto o objeto da chave `food` quanto o objeto da chave `drink`.
 
-function createMenu() {
-
-}
-
-module.exports = createMenu;
+const createMenu = restaurant => (
+  restaurant = { fetchMenu: {
+    food: { coxinha: 3.90, sanduiche: 9.90 },
+    drinks: { agua: 3.90, cerveja: 6.90 } },
+    consumption: [],
+    order: (request) => {
+      restaurant.consumption = request;
+      return restaurant.consumption;
+    },
+    
+  module.exports = createMenu;
