@@ -74,7 +74,7 @@
 const controle = {};
 let valor = 0;
 
-const registro = (item) => {
+const registro = () => {
   return controle.consumption.push(item);
 };
 
