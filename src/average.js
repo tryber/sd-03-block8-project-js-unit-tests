@@ -16,7 +16,7 @@ const average = (array) => {
   // add your implemetation here
   // Using .every() method to test array elements type and defining condi
   if (
-    array.every((element) => typeof element === 'number') === false ||
+    array.every(element => typeof element === 'number') === false ||
     array.length === 0
   ) {
     return undefined;
