@@ -1,14 +1,16 @@
 /* eslint-disable max-len */
 
 /*
-  Você é responsável por escrever o código do sistema de pedidos de um restaurante. Deve ser possível, através desse sistema, cadastrar um menu. Dado que um menu foi cadastrado, o sistema deve disponibilizar um objeto através do qual se consegue:
+  Você é responsável por escrever o código do sistema de pedidos de um restaurante.
+  Deve ser possível, através desse sistema, cadastrar um menu. Dado que um menu foi cadastrado, o sistema deve disponibilizar um objeto através do qual se consegue:
   - ler o menu cadastrado;
   - fazer pedidos;
   - verificar o que foi pedido;
   - somar o valor da conta.
 
   A estrutura deste código e deste objeto já foi definida e você irá implementá-la.
-  Abaixo você verá uma série de testes e passos que devem ser, NECESSARIAMENTE, feitos em ordem para o bom desenvolvimento do sistema. Eles guiarão você pelo desenvolvimento.
+  Abaixo você verá uma série de testes e passos que devem ser, NECESSARIAMENTE, feitos em ordem para o bom desenvolvimento do sistema.
+  Eles guiarão você pelo desenvolvimento.
 
   Parâmetros:
   - Um objeto. Exemplos: { food: {'coxinha': 3.9, 'sopa': 9.9}, drink: {'agua': 3.9, 'cerveja': 6.9} }.
@@ -55,22 +57,55 @@
 
 //------------------------------------------------------------------------------------------
 
-// PASSO 3: Crie uma função, separada da função `createMenu()`, que, dada uma string recebida por parâmetro, adiciona essa string ao array de `objetoRetornado.consumption`. Adicione essa função à chave `order`.
-// DICA: para criar isso, você vai precisar definir a função `createMenu()`, definir o objeto que a `createMenu()` define separadamente dela e, depois, a função que será definida em `order`.
+// PASSO 3: Crie uma função, separada da função `createMenu()`, que,
+// dada uma string recebida por parâmetro, adiciona essa string ao array de `objetoRetornado.consumption`.
+// Adicione essa função à chave `order`.
+// DICA: para criar isso, você vai precisar definir a função `createMenu()`,
+// definir o objeto que a `createMenu()` define separadamente dela e, depois, a função que será definida em `order`.
 // ```
 // const restaurant = {}
 
 //
 // const createMenu = (myMenu) => // Lógica que edita o objeto `restaurant`
 //
-// const orderFromMenu = (request) => // Lógica que adiciona à chave `consumption` de `restaurant` a string recebida no parâmetro `request`. Essa função deve ser associada à chave `order` de `restaurant`
+// const orderFromMenu = (request) => //Lógica que adiciona à chave `consumption` de `restaurant` a string recebida no parâmetro `request`.
+// Essa função deve ser associada à chave `order` de `restaurant`
 // ```
 // Agora faça o TESTE 6 no arquivo `tests/restaurant.spec.js`.
 
 //------------------------------------------------------------------------------------------
 
-// PASSO 4: Adicione ao objeto retornado por `createMenu()` uma chave `pay` com uma função que varre todo os itens de `objetoRetornado.consumption`, soma o preço de todos checando-os no menu e retorna o valor somado acrescido de 10%. DICA: para isso, você precisará varrer tanto o objeto da chave `food` quanto o objeto da chave `drink`.
+// PASSO 4: Adicione ao objeto retornado por `createMenu()` uma chave `pay` com uma função que varre todo os itens de `objetoRetornado.consumption`,
+// soma o preço de todos checando-os no menu e retorna o valor somado acrescido de 10%.
+// DICA: para isso, você precisará varrer tanto o objeto da chave `food` quanto o objeto da chave `drink`.
 
-const createMenu = () => {};
+const createdMenu = {
+  fetchMenu: {},
+  consumption: [],
+  order: [],
+  pay: 0,
+};
+
+const createMenu = (inputs) => {
+  if (!inputs) { return createdMenu; }
+  createdMenu.fetchMenu = inputs;
+  createdMenu.order = orderFromMenu;
+  createdMenu.pay = payTotal;
+  return createdMenu;
+};
+
+orderFromMenu = (...str) => str.forEach(e => createdMenu.consumption.push(e));
+
+payTotal = () => {
+  let counter = 0;
+  this.consumption.forEach((a) => {
+    if (this.fetchMenu.food[a]) {
+      counter += this.fetchMenu.food[a];
+    } else {
+      counter += this.fetchMenu.drink[a];
+    }
+  });
+  return counter;
+};
 
 module.exports = createMenu;
