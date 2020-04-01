@@ -130,9 +130,10 @@ describe('#createMenu', () => {
     // objetoRetornado.consumption // Retorno: ["coxinha", "agua", "sopa", "sashimi"]
     // ```
     const teste6 = createMenu({
-      food: {'sopa': 9.9},
-      drink: {'cerveja': 6.9},
+      food: {'coxinha': 3.9, 'sopa': 9.9},
+      drink: {'agua': 3.9, 'cerveja': 6.9},
     });
+    teste6.consumption = [];
     teste6.order('coxinha', 'agua', 'sopa', 'sashimi');
     assert.deepStrictEqual(teste6.consumption, ['coxinha', 'agua', 'sopa', 'sashimi']);
     // Agora faça o TESTE 7 deste arquivo.
@@ -144,7 +145,8 @@ describe('#createMenu', () => {
     // objetoRetornado.order('coxinha');
     // objetoRetornado.comsuption // Retorno: ['coxinha', 'agua', 'coxinha']
     // ```
-    teste.order('coxinha', 'agua', 'coxinha');
+    teste6.consumption = [];
+    teste6.order('coxinha', 'agua', 'coxinha');
     assert.deepStrictEqual(teste.consumption, ["coxinha", "agua", "coxinha"]);
     // Agora faça o TESTE 8 deste arquivo.
     // --------------------------------------------------------------------------------------

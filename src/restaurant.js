@@ -90,9 +90,22 @@ const createMenu = (inputs) => {
   if (!inputs) { return createdMenu; }
   createdMenu.fetchMenu = inputs;
   createdMenu.order = orderFromMenu;
+  createdMenu.pay = payTotal;
   return createdMenu;
 };
 
 orderFromMenu = (...str) => str.forEach(e => createdMenu.consumption.push(e));
+
+payTotal = () => {
+  let counter = 0;
+  this.consumption.forEach((a) => {
+    if (this.fetchMenu.food[a]) {
+      counter += this.fetchMenu.food[a];
+    } else {
+      counter += this.fetchMenu.drink[a];
+    }
+  });
+  return counter;
+};
 
 module.exports = createMenu;
