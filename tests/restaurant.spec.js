@@ -127,7 +127,7 @@ describe('#createMenu', () => {
     // ```
     // Agora faça o TESTE 8 deste arquivo.
     // --------------------------------------------------------------------------------------
-    assert.deepStrictEqual(objetoRetornado.pay(), 31.35)
+    assert.deepStrictEqual(objetoRetornado.pay(), 31.35);
 
     // TESTE 8: Verifique que, ao chamar `objetoRetornado.pay()`, retorna-se a soma dos preços de tudo que foi pedido, conforme registrado em `objetoRetornado.consumption`
     // ```
