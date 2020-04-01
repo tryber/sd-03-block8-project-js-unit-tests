@@ -79,8 +79,10 @@ const createMenu = (objetoQualquer) => {
 
 restaurant.consumption = [];
 
-const orderFromMenu = (restaurant, itemKey) => {
-  restaurant.consumption = itemKey;
+const orderFromMenu = (request) => {
+  restaurant.consumption = request;
 };
+
+restaurant.order = orderFromMenu();
 
 module.exports = createMenu;
