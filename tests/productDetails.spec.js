@@ -36,9 +36,9 @@ describe('#productDetails', () => {
     //assert.fail();
     // ESCREVA SEUS TESTES ABAIXO:
     // Teste que o retorno da função é um array.
-    assert.notEqual(typeof productDetails (), 'array');
+    assert.notEqual(typeof productDetails(), 'array');
     // Teste que o array retornado pela função contém dois itens dentro.
-    assert.strictEqual(typeof productDetails ().length, 2);
+    assert.strictEqual(typeof productDetails().length, 2);
     // Teste que os dois itens dentro do array retornado pela função são objetos.
     assert.strictEqual(typeof productDetails()[0] && typeof productDetails()[1], 'object');
     // Teste que os dois objetos são diferentes entre si.

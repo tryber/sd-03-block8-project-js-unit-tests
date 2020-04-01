@@ -25,6 +25,5 @@ Tenho ${idade} anos,
 trabalho na Trybe e mando muito em programação!
 #VQV!`;
 };
-console.log(vqv('Rafael', '34'));
 
-//module.exports = vqv;
+module.exports = vqv;
