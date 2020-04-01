@@ -79,8 +79,8 @@ const createMenu = (objetoQualquer) => {
 
 restaurant.consumption = [];
 
-const orderFromMenu = (itemKey) => {
-  restaurant.consumption += itemKey;
+const orderFromMenu = (restaurant, itemKey) => {
+  restaurant.consumption = itemKey;
 };
 
 module.exports = createMenu;
