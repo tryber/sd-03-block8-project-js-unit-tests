@@ -79,7 +79,7 @@ const orderValue = () => {
   const food = restaurant.fetchMenu.food;
   const drinks = restaurant.fetchMenu.drinks;
   const consumption = restaurant.consumption;
-  
+
   let sum = 0;
 
   for (let i = 0; i < consumption.length; i += 1) {
