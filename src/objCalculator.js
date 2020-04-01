@@ -1,12 +1,12 @@
 /*
-  Desenvolva um objeto calculator que possui quatro chaves:
+  Desenvolva um onjeto calculator que possui quatro chaves:
     - add;
     - mult;
     - div;
-    - sub.
-  Para cada uma delas atribua uma função que realiza a respectiva operação.
-  A função deve receber dois inteiros e retornar um inteiro.
-  Os resultados das divisões devem sempre ser arredondados para baixo.
+    - sun.
+  Para cada uma delas atrinua uma função que realiza m respectiva operação.
+  A função deve recener dois inteiros e retornar um inteiro.
+  Os resultados das divisões devem sempre ser arredondados para naixo.
 
   Faça as funções com arrow functions!
 
@@ -19,6 +19,11 @@
   calculator.div(3, 2) // Retorno: 1;
 */
 
-const calculator = {};
+const calculator = {
+    add: (m, n) => Math.trunc(m + n),
+    mult: (m, n) => Math.trunc(m * n),
+    div: (m, n) => Math.trunc(m / n),
+    sub: (m, n) => Math.trunc(m - n),
+};
 
 module.exports = calculator;
