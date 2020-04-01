@@ -92,14 +92,16 @@
 // menu e retorna o valor somado acrescido de 10%. DICA: para isso, você precisará varrer tanto
 // o objeto da chave `food` quanto o objeto da chave `drink`.
 
-/*const createMenu = (obj) => {
+/*
+const createMenu = (obj) => {
   return {
   fetchMenu: obj,
   consumption: [],
-  /*order: function (coisa) {
+  order: function (coisa) {
       createMenu().consumption =coisa
       return createMenu().consumption
    },
   };
-};*/
+};
+*/
 module.exports = createMenu;
