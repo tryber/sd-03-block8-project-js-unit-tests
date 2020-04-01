@@ -10,7 +10,7 @@
   - somar o valor da conta.
 
   A estrutura deste código e deste objeto já foi definida e você irá implementá-la.
-  Abaixo você verá uma série de testes e passos que devem ser, NECESSARIAMENTE, feitos 
+  Abaixo você verá uma série de testes e passos que devem ser, NECESSARIAMENTE, feitos
   em ordem para o bom desenvolvimento do sistema. Eles guiarão você pelo desenvolvimento.
 
   Parâmetros:
@@ -46,10 +46,10 @@
   - Uma chave `order` que tem uma função que, recebida uma string como parâmetro, adiciona essa string
    à lista salva em `consumption`.
 
-  - Uma chave `pay` que, quando chamada, invoca uma função que soma o valor de todos os pedidos e dá 
+  - Uma chave `pay` que, quando chamada, invoca uma função que soma o valor de todos os pedidos e dá
   o preço com acréscimo de 10%.
 
-  IMPORTANTE: COMECE PELO TESTE 1 DO ARQUIVO `tests/restaurant.spec.js` E NÃO PELO PASSO 1 DESTE 
+  IMPORTANTE: COMECE PELO TESTE 1 DO ARQUIVO `tests/restaurant.spec.js` E NÃO PELO PASSO 1 DESTE
   ARQUIVO!
 */
 
@@ -92,12 +92,13 @@
 // menu e retorna o valor somado acrescido de 10%. DICA: para isso, você precisará varrer tanto
 // o objeto da chave `food` quanto o objeto da chave `drink`.
 
-const createMenu = (obj) => { return {
+const createMenu = (obj) => {
+  return {
   fetchMenu: obj,
   consumption: [],
-  order: function(coisa) {
-     createMenu().consumption =coisa
-     return createMenu().consumption
-   },
+  /*order: function (coisa) {
+      createMenu().consumption =coisa
+      return createMenu().consumption
+   },*/
 }};
 module.exports = createMenu;
