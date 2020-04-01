@@ -82,9 +82,9 @@ const restaurantMenu = {
 
 const customerOrder = (...string) => restaurantMenu.consumption.push(...string);
 
-/*const consumptionValue = restaurantMenu.consumption.reduce((object) => 
+/*  const consumptionValue = restaurantMenu.consumption.reduce((object) => 
    (object.food + object.fetchMenu.drink) * 1.1
- );*/
+ ); */
 
 const createMenu = (object) => {
   restaurantMenu.fetchMenu = object;
