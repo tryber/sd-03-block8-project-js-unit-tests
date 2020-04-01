@@ -100,5 +100,6 @@ const createMenu = (obj) => {
       createMenu().consumption =coisa
       return createMenu().consumption
    },*/
-}};
+  };
+};
 module.exports = createMenu;
