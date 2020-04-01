@@ -84,15 +84,15 @@ const createdMenu = {
   consumption: [],
   order: [],
   pay: 0,
-}
+};
 
 const createMenu = (inputs) => {
-  if (!inputs) {return createdMenu};
+  if (!inputs) { return createdMenu }
   createdMenu.fetchMenu = inputs;
   createdMenu.order = orderFromMenu;
   return createdMenu;
 };
 
-orderFromMenu = (...str) => str.forEach((e) => createdMenu.consumption.push(e));
+orderFromMenu = (...str) => str.forEach(e => createdMenu.consumption.push(e));
 
 module.exports = createMenu;
