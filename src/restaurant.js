@@ -71,7 +71,8 @@ const createMenu = restaurant => {
     food: { coxinha: 3.90, sanduiche: 9.90 },
     drinks: { agua: 3.90, cerveja: 6.90 } },
     consumption: [],
-    order: (request) => restaurant.consumption = request
+    order: (request) => restaurant.consumption = request;
+  }
 };
 
 module.exports = createMenu;
