@@ -19,7 +19,7 @@ const average = (arr) => {
     sum += arr[i];
   }
   if (typeof arr[i] === 'number') {
-    console.log(Math.round(sum/arr.length));
+    console.log(Math.round(sum / arr.length));
   } else {
     console.log('undefined');
   }
