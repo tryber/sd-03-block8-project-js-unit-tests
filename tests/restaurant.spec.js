@@ -51,14 +51,14 @@ const createMenu = require('../src/restaurant');
 
 describe('#createMenu', () => {
   it('tests the function has the correct behaviour', () => {
-    const createdMenu = createMenu(restaurantMenu); // Variável referência de testes unitários
+    const createdMenu = createMenu(Object); // Variável referência de testes unitários
     //assert.fail();
     // TESTE 1: Verifique que, dado um objeto qualquer passado como um parâmetro para a função createMenu(), checa se o retorno da função é um objeto no seguinte formato: { fetchMenu: objetoQualquer }.
     // ```
     // createMenu(objetoQualquer) // Retorno: { fetchMenu: objetoQualquer }
     // ```
-    assert.deepStrictEqual(createMenu(restaurantMenu), {
-      fetchMenu: 'restaurantMenu ',
+    assert.deepStrictEqual(createMenu(Object), {
+      fetchMenu: 'Object ',
     });
     // Agora faça o PASSO 1 no arquivo `src/restaurant.js`.
     // --------------------------------------------------------------------------------------
@@ -75,7 +75,7 @@ describe('#createMenu', () => {
     // const objetoRetornado = createMenu(objetoQualquer);
     // objetoRetornado.fetchMenu // Retorno: objetoQualquer
     // ```
-    assert.deepStrictEqual(createdMenu.fetchMenu, restaurantMenu);
+    assert.deepStrictEqual(createdMenu.fetchMenu, Object);
     // Agora faça o TESTE 4 deste arquivo.
     // --------------------------------------------------------------------------------------
     // TESTE 4: Verifique que 'objetoRetornado.consumption', após a criação do menu, retorna um array vazio.
