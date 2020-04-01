@@ -87,7 +87,7 @@ const createdMenu = {
 };
 
 const createMenu = (inputs) => {
-  if (!inputs) { return createdMenu }
+  if (!inputs) { return createdMenu; }
   createdMenu.fetchMenu = inputs;
   createdMenu.order = orderFromMenu;
   return createdMenu;
