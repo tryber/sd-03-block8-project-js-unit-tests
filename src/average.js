@@ -12,18 +12,34 @@
     - average([1, '2']) // Retorno: undefined;
 */
 
+/* const average = () => {};
+
+module.exports = average; */
+
 const average = (arr) => {
   let sum = 0;
-
-  for (let i in arr) {
-      sum = (sum + arr[i]);
+  let i;
+  for (i in arr) {
+    sum = (sum + arr[i]);
   }
-
-  if (typeof sum !== 'number') {
-    console.log(undefined);
+  if (typeof arr[i] === 'number') {
+    console.log(sum);
   } else {
-  console.log(Math.round(sum/arr.length));
+    console.log('undefined');
   }
-};
+}
 
 module.exports = average;
+
+/* console.log(Math.round(sum/arr.length)); */
+
+/* if (typeof arr[i] !== 'number') {
+  console.log('undefined');
+}*/
+
+
+
+
+
+
+/* module.exports = average; */
