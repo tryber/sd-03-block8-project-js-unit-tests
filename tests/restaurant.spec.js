@@ -86,24 +86,25 @@ describe('#createMenu', () => {
     // TESTE 5: Verifique que chamar uma função associada à chave `order` no objeto retornado, passando uma string como parâmetro, como `objetoRetornado.order('coxinha')`, tal string é adicionada ao array retornado em `objetoRetornado.consumption
     // ```
     // const objetoRetornado = createMenu(objetoQualquer);
-    // objetoRetornado.order("coxinha");
-    // objetoRetornado.comsuption // Retorno: ["coxinha"]
+    // objetoRetornado.order('coxinha');
+    // objetoRetornado.comsuption // Retorno: ['coxinha']
     // ```
-    objetoRetornado.order("coxinha");
-    assert.equal(objetoRetornado.consumption, "coxinha");
+    objetoRetornado.order('coxinha');
+    assert.equal(objetoRetornado.consumption, 'coxinha');
     // Agora faça o PASSO 3 no arquivo `src/restaurant.js`.
     // --------------------------------------------------------------------------------------
     // TESTE 6: Verifique que as três orders seguintes, de bebidas e comidas mescladas, somam três itens no array `objetoRetornado.consumption` conforme os itens pedidos.
-    objetoRetornado.order("agua");
-    objetoRetornado.order("sopa");
+    objetoRetornado.order('agua');
+    objetoRetornado.order('sopa');
     assert.equal(objetoRetornado.consumption.length, 3);
-    // objetoRetornado.consumption // Retorno: ["coxinha", "agua", "sopa"]
+    // objetoRetornado.consumption // Retorno: ['coxinha', 'agua', 'sopa']
     // ```
     // Agora faça o TESTE 7 deste arquivo.
     // --------------------------------------------------------------------------------------
     // TESTE 7: Verifique que a função `order` aceita que pedidos repetidos sejam acrescidos a consumption.
-    objetoRetornado.order("coxinha");
-    assert.equal(objetoRetornado.consumption, ["coxinha", "agua", "sopa", "coxinha"]);
+    objetoRetornado.order('coxinha');
+    str = ['coxinha', 'agua', 'sopa', 'coxinha'];
+    assert.deepEqual(objetoRetornado.consumption, str);
     // objetoRetornado.comsuption // Retorno: ['coxinha', 'agua', 'coxinha']
     // ```
     // Agora faça o TESTE 8 deste arquivo.
