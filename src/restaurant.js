@@ -67,80 +67,33 @@
 
 // PASSO 4: Adicione ao objeto retornado por `createMenu()` uma chave `pay` com uma função que varre todo os itens de `objetoRetornado.consumption`, soma o preço de todos checando-os no menu e retorna o valor somado acrescido de 10%. DICA: para isso, você precisará varrer tanto o objeto da chave `food` quanto o objeto da chave `drink`.
 
+const restaurant = {};
 
-const createMenu = (obj) => {
-  const newMenu = {
-    fetchMenu: obj,
-    consumption: [],
-    order: request => newMenu.consumption.push(request),
-    pay: () => {
-      const products = Object.values(newMenu.fetchMenu);
+const orderFromMenu = request => restaurant.consumption.push(request);
 
-      for (let i = 0; i < products.length; i += 1) {
-        console.log(products[i]);
-        
-      }
+const orderPayment = () => {
+  const food = restaurant.fetchMenu.food;
+  const drinks = restaurant.fetchMenu.drinks;
+  const consumed = restaurant.consumption;
+  let sum = 0;
+
+  for (let i = 0; i < consumed.length; i += 1) {
+    const current = consumed[i];
+    if (Object.keys(food).includes(current)) {
+      sum += food[current];
+    } if (Object.keys(drinks).includes(current)) {
+      sum += drinks[current];
     }
-  };
-  return newMenu;
+  }
+  return sum;
 };
 
-const restaurant = createMenu({
-  food: { coxinha: 3.90, sanduiche: 9.90, },
-  drinks: { agua: 3.90, cerveja: 6.90, },
-});
-
-restaurant.order('coxinha');
-restaurant.pay();
+const createMenu = (obj) => {
+  restaurant.fetchMenu = obj;
+  restaurant.consumption = [];
+  restaurant.order = orderFromMenu;
+  restaurant.pay = orderPayment;
+  return restaurant;
+};
 
 module.exports = createMenu;
-
-/*
-const products = Object.values(menu.fetchMenu);
-const consumed = menu.consumption;
-let sum = 0;
-for (let i = 0; i < products.length; i += 1) {
-  const current = products[i];
-  const currentLength = Object.values(current).length;
-  for (let x = 0; x < currentLength; x += 1) {
-    const currentKey = Object.keys(current)[x];
-    const currentValue = Object.values(current)[x];
-    for (let y = 0; y < consumed.length; y += 1) {
-      if (consumed[y] === currentKey) {
-        sum += currentValue;
-      }
-    }
-  }
-}
-return sum;
-*/
-
-/*
-const productsSections = Object.values(menu.fetchMenu);
-let products = [];
-let prices = [];
-let consumed = menu.consumption;
-let sum = 0;
-
-// This loop gets all products names (keys) and prices (values) from the menu (fetchMenu Object).
-
-for (let i = 0; i < productsSections.length; i += 1) {
-  const currentProduct = Object.keys(productsSections[i]);
-  const currentPrice = Object.values(productsSections[i]);
-  
-  for (let i = 0; i < currentProduct.length; i += 1) {
-    products.push(currentProduct[i]);
-    prices.push(currentPrice[i]);
-  }
-}
-
-for (let i = 0; i < consumed.length; i += 1) {
-  const currentConsumed = consumed[i];
-  for (let i = 0; i < consumed.length; i += 1) {
-    if (currentConsumed == products[i]) {
-      sum += prices[i];
-    }
-    
-  }
-}
-*/
