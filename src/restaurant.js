@@ -69,7 +69,8 @@
 const cardapio = {
   food: {
     coxinha: 3.9,
-    sopa: 9.9 },
+    sopa: 9.9,
+    sushi: 15.75 },
   drink: {
     agua: 3.9,
     cerveja: 6.9 },
@@ -77,35 +78,33 @@ const cardapio = {
 
 const restaurant = {};
 const orderFromMenu = (request) => { restaurant.consumption.push(request); };
-const finalizaComanda = () => {
-  let totConta = 0;
-  for (let i in restaurant.consumption) {
-    for (const [item, preco] of Object.entries(restaurant.fetchMenu.food)) {
-      item === restaurant.consumption[i] ? totConta += preco : true;
-    }
-    for (const [item, preco] of Object.entries(restaurant.fetchMenu.drink)) {
-      item === restaurant.consumption[i] ? totConta += preco : true;
-    }
-  }
-  console.log(`Total da conta: R$ ${totConta*1.1}`);
-}
 
 const createMenu = (objeto) => {
   Object.assign(restaurant, {
     fetchMenu: objeto,
     consumption: [],
     order: (item) => { orderFromMenu(item); },
-    pay: () => { finalizaComanda(); }
+    pay: () => {
+      totConta = restaurant.consumption.reduce((acc, itemAtual) => {
+        for (let i in Object.keys(cardapio.food))
+          Object.keys(cardapio.food)[i] === itemAtual ? acc += Object.values(cardapio.food)[i] : true;
+        for (let i in Object.keys(cardapio.drink))
+          Object.keys(cardapio.food)[i] === itemAtual ? acc += Object.values(cardapio.drink)[i] : true;
+        return acc;
+      }, 0);
+      console.log(`Total da conta: R$ ${ totConta * 1.1 }`);
+    }
   });
 };
 
 createMenu(cardapio);
-  restaurant.order('coxinha');
-  restaurant.order('coxinha');
-  restaurant.order('agua');
-  restaurant.order('sopa');
-  restaurant.order('cerveja');
-//  console.log(restaurant.consumption);
-//  console.log(restaurant.fetchMenu);
-console.log(restaurant.pay());
+restaurant.order('coxinha');
+restaurant.order('sushi');
+restaurant.order('agua');
+restaurant.order('sopa');
+restaurant.order('cerveja');
+restaurant.order('sushi');
+console.log(restaurant.consumption);
+restaurant.pay();
+
 module.exports = createMenu;
