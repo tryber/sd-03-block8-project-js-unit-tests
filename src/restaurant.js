@@ -86,22 +86,29 @@ const createMenu = (objeto) => {
     order: (item) => { orderFromMenu(item); },
     pay: () => {
       totConta = restaurant.consumption.reduce((acc, itemAtual) => {
-        for (let i in Object.keys(cardapio.food))
-          Object.keys(cardapio.food)[i] === itemAtual ? acc += Object.values(cardapio.food)[i] : true;
-        for (let i in Object.keys(cardapio.drink))
-          Object.keys(cardapio.food)[i] === itemAtual ? acc += Object.values(cardapio.drink)[i] : true;
+        for (const i in Object.keys(cardapio.food)) {
+          if (Object.keys(cardapio.food)[i] === itemAtual) {
+            acc += Object.values(cardapio.food)[i];
+          }
+        }
+        for (const i in Object.keys(cardapio.drink)) {
+          if (Object.keys(cardapio.food)[i] === itemAtual) {
+            acc += Object.values(cardapio.drink)[i];
+          }
+        }
         return acc;
       }, 0);
-      console.log(`Total da conta: R$ ${ totConta * 1.1 }`);
-    }
+      console.log(`Total da conta: R$ ${totConta * 1.1}`);
+    },
   });
 };
 
 createMenu(cardapio);
 restaurant.order('coxinha');
 restaurant.order('sushi');
-restaurant.order('agua');
 restaurant.order('sopa');
+restaurant.order('sopa');
+restaurant.order('agua');
 restaurant.order('cerveja');
 restaurant.order('sushi');
 console.log(restaurant.consumption);
