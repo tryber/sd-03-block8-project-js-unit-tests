@@ -41,7 +41,7 @@
   - Uma chave `pay` que, quando chamada, invoca uma função que soma o valor de todos os pedidos e dá o preço com acréscimo de 10%.
 
   IMPORTANTE: COMECE PELO TESTE 1 DO ARQUIVO `tests/restaurant.spec.js` E NÃO PELO PASSO 1 DESTE ARQUIVO!
-estava aqui o fim do comment!!
+*/
 
 // PASSO 1: Crie uma função `createMenu()` que, dado um objeto passado por parâmetro, retorna um objeto com o seguinte formato: { fetchMenu: objetoPassadoPorParametro }. OK
 // Agora faça o TESTE 2 no arquivo `tests/restaurant.spec.js`.
@@ -77,26 +77,26 @@ const cardapio = {
 
 const restaurant = {};
 const orderFromMenu = (request) => { restaurant.consumption.push(request); };
+const finalizaComanda = () => {
+  let totConta = 0;
+  for (let i in restaurant.consumption) {
+    for (const [item, preco] of Object.entries(restaurant.fetchMenu.food)) {
+      item === restaurant.consumption[i] ? totConta += preco : true;
+    }
+    for (const [item, preco] of Object.entries(restaurant.fetchMenu.drink)) {
+      item === restaurant.consumption[i] ? totConta += preco : true;
+    }
+  }
+  console.log(`Total da conta: R$ ${totConta*1.1}`);
+}
 
 const createMenu = (objeto) => {
   Object.assign(restaurant, {
     fetchMenu: objeto,
     consumption: [],
     order: (item) => { orderFromMenu(item); },
-    pay: () => {
-      let totConta = 0;
-      for (let i in restaurant.consumption) {
-        for (const [item, preco] of Object.entries(restaurant.fetchMenu.food)) {
-          item === restaurant.consumption[i] ? totConta += preco : true;
-        }
-        for (const [item, preco] of Object.entries(restaurant.fetchMenu.drink)) {
-          item === restaurant.consumption[i] ? totConta += preco : true;
-        }
-      }
-      return (`Total da conta: R$ ${totConta*1.1}`);
-    }
+    pay: () => { finalizaComanda(); }
   });
-  return restaurant;
 };
 
 createMenu(cardapio);
@@ -109,4 +109,3 @@ createMenu(cardapio);
 //  console.log(restaurant.fetchMenu);
 console.log(restaurant.pay());
 module.exports = createMenu;
-*/
