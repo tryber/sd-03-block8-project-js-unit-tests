@@ -17,7 +17,6 @@
         Uma solução pra isso pode ser fazer a soma no seguinte formato: `parseFloat((0.2 + 0.1).toPrecision(2))`.
         Use esse conhecimento para te ajudar a lidar com possíveis problemas que esses testes trarão!
 */
-
 const circle = (radius) => {
   const PI = 3.14;
   if (!radius) { return undefined; }
@@ -29,3 +28,8 @@ const circle = (radius) => {
 };
 
 module.exports = circle;
+
+/* assert.deepStrictEqual(circle('s'), undefined)
+assert.deepEqual(circle(10), {radius: 10, area: 314, circumference: 62.8})
+assert.deepStrictEqual(circle(3), {radius: 3, area: 28.26, circumference: 18.84})
+*/
