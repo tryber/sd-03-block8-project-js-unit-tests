@@ -12,7 +12,7 @@
     - average([1, '2']) // Retorno: undefined;
 */
 const assert = require('assert');
-
+// mudança de nome do usuario git
 
 const average = (arr) => {
   if (arr.length === 0) { return undefined; }
