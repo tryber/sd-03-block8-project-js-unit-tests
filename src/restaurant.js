@@ -45,32 +45,21 @@
 
 // PASSO 1: Crie uma função `createMenu()` que, dado um objeto passado por parâmetro, retorna um objeto com o seguinte formato: { fetchMenu: objetoPassadoPorParametro }.
 //
-// Agora faça o TESTE 2 no arquivo `tests/restaurant.spec.js`.
 
-//------------------------------------------------------------------------------------------
-
-// PASSO 2: Adicione ao objeto retornado por `createMenu` uma chave `consumption` que, como valor inicial, tem um array vazio.
-//
-// Agora faça o TESTE 5 no arquivo `tests/restaurant.spec.js`.
-
-//------------------------------------------------------------------------------------------
-
-// PASSO 3: Crie uma função, separada da função `createMenu()`, que, dada uma string recebida por parâmetro, adiciona essa string ao array de `objetoRetornado.consumption`. Adicione essa função à chave `order`.
-// DICA: para criar isso, você vai precisar definir a função `createMenu()`, definir o objeto que a `createMenu()` define separadamente dela e, depois, a função que será definida em `order`.
-// ```
-// const restaurant = {}
-
-//
-// const createMenu = (myMenu) => // Lógica que edita o objeto `restaurant`
-//
-// const orderFromMenu = (request) => // Lógica que adiciona à chave `consumption` de `restaurant` a string recebida no parâmetro `request`. Essa função deve ser associada à chave `order` de `restaurant`
-// ```
-// Agora faça o TESTE 6 no arquivo `tests/restaurant.spec.js`.
-
-//------------------------------------------------------------------------------------------
-
-// PASSO 4: Adicione ao objeto retornado por `createMenu()` uma chave `pay` com uma função que varre todo os itens de `objetoRetornado.consumption`, soma o preço de todos checando-os no menu e retorna o valor somado acrescido de 10%. DICA: para isso, você precisará varrer tanto o objeto da chave `food` quanto o objeto da chave `drink`.
-
-const createMenu = () => {};
+const createMenu = (menu) => {
+  const object = {
+    fetchMenu: menu,
+    consumption: [],
+    order: (ord) => { object.consumption.push(ord); },
+    pay: () => {
+      let price = 0;
+      const reducer = (acc, cur) => acc + cur;
+      price += Number(Object.values(object.fetchMenu.food).reduce(reducer));
+      price += Number(Object.values(object.fetchMenu.drinks).reduce(reducer));
+      return price * 1.1;
+    },
+  };
+  return object;
+};
 
 module.exports = createMenu;
