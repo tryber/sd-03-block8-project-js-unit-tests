@@ -47,20 +47,20 @@
 //
 
 const createMenu = (menu) => {
-    const object = {
-      fetchMenu: menu,
-      consumption: [],
-      order: (ord) => { object.consumption.push(ord); },
-      pay: () => {
-        let price = 0;
-        const reducer = (acc, cur) => acc + cur;
-        price += Number(Object.values(object.fetchMenu.food).reduce(reducer));
-        price += Number(Object.values(object.fetchMenu.drinks).reduce(reducer));
-        return price * 1.1;
-      },
-    };
+const object = {
+    fetchMenu: menu,
+    consumption: [],
+    order: (ord) => { object.consumption.push(ord); },
+    pay: () => {
+    let price = 0;
+    const reducer = (acc, cur) => acc + cur;
+    price += Number(Object.values(object.fetchMenu.food).reduce(reducer));
+    price += Number(Object.values(object.fetchMenu.drinks).reduce(reducer));
+    return price * 1.1;
+    },
+};
     return object;
-  };
-  
-  module.exports = createMenu;
+};
+
+module.exports = createMenu;
   
