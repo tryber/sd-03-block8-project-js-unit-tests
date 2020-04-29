@@ -19,7 +19,7 @@ const average = (numbers) => {
     if (typeof numbers[i] !== 'number') return undefined;
     sum += numbers[i];
   }
-  return sum / numbers.length;
+  return Math.round(sum / numbers.length);
 };
 
 module.exports = average;
