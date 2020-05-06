@@ -1,13 +1,13 @@
 /*
   A função numbers recebe um array (tamanho variável),
   retornando true se todos os parâmetros forem do tipo 'number' e false caso contrário.
-
   Parâmetros:
     - Um array. Exemplos: [1, 2]; [1, 2, 3, 4, 5]; [1, 2, 'a']; [].
   Comportamento:
     - numbers([2, 3, 4]); // Retorna: true
     - numbers([2, 'errado', 5]); // Retorna: false
 */
+const assert = require('assert');
 
 const numbers = (myArray) => {
   for (let i = 0; i < myArray.length; i += 1) {
@@ -17,5 +17,7 @@ const numbers = (myArray) => {
   }
   return true;
 };
-
+assert.strictEqual(numbers([2, 1, 3, 8]), true);
+assert.strictEqual(numbers([2, 'a', '.']), false);
+assert.strictEqual(numbers([]), true);
 module.exports = numbers;
