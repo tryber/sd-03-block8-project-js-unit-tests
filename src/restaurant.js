@@ -98,7 +98,7 @@ const createMenu = (objeto) => {
         }
         return acc;
       }, 0);
-      console.log(`Total da conta: R$ ${totConta * 1.1}`);
+      console.log(`Total da conta: R$ ${(totConta * 1.1).toFixed(2)}`);
     },
   });
 };
